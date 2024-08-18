@@ -1,69 +1,25 @@
-# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-<div align="center">
-  <h2>🔋 hackbattle-24</h2>
-  <p>Next.js + Tailwind CSS + TypeScript starter packed with useful development features.</p>
+## Making Commits
 
-</div>
-
-## Features
-
-This repository is 🔋 battery packed with:
-
-- ⚡️ Next.js 14 with App Router
-- ⚛️ React 18
-- ✨ TypeScript
-- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
-- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
-- 🃏 Jest — Configured for unit testing
-- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
-- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
-- 💖 Prettier — Format your code consistently
-- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
-- 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
-- ⏰ Release Please — Generate your changelog by activating the `release-please` workflow
-- 👷 Github Actions — Lint your code on PR
-- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
-- 🔥 Snippets — A collection of useful snippets
-- 👀 Open Graph Helper Function — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
-- 🗺 Site Map — Automatically generate sitemap.xml
-
+This project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to standardize commit messages. This allows for automatic versioning and changelog generation.
 
 ## Getting Started
 
-### 1. Clone this template
-```bash
-git clone https://github.com/IEEECS-VIT/hackbattle-24
- ```
-
-### 2. Install dependencies
-
-It is encouraged to use **pnpm** so the husky hooks can work properly.
+First, run the development server:
 
 ```bash
-pnpm install
-```
-
-### 3. Run the development server
-
-You can start the server using this command:
-
-```bash
+npm run dev
+# or
+yarn dev
+# or
 pnpm dev
+# or
+bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### 4. Change defaults
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-There are some things you need to change including title, urls, favicons, etc.
-
-Find all comments with !STARTERCONF, then follow the guide.
-
-Don't forget to change the package name in package.json
-
-### 5. Commit Message Convention
-
-This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
-
-
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
