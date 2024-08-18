@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {},
+      fontFamily: {
+        pixeboy: ["var(--pixeboy)"],
+      },
     },
   },
   plugins: [],

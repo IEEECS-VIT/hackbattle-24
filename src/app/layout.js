@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const pixeboy = localFont({
+  src: "fonts/Pixeboy.ttf",
+  variable: "--pixeboy",
+});
 
 export const metadata = {
   title: "HackBattle '24",
@@ -12,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${pixeboy.variable}`}>{children}</body>
     </html>
   );
 }
