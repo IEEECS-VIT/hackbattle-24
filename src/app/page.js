@@ -1,6 +1,10 @@
 import Image from "next/image";
-import TeamCode from "./components/Teamcode";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main className="bg-black w-full h-full">
+      <Navbar />
+    </main>
+  );
 }
