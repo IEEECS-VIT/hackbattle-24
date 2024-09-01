@@ -1,10 +1,10 @@
 import Image from "next/image";
-import TeamCode from "./Components/TeamCode";
+import TeamCode from "./teamcode/page";
 
 export default function Home() {
   return (
     <main>
-      <TeamCode />
+      
     </main>
   );
 }
