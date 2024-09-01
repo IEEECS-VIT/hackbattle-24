@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
+import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
-    <main className="bg-black w-full h-full">
+    <main classname="bg-green-300 p-4">
       <Navbar />
+      <Marquee />
     </main>
   );
 }
