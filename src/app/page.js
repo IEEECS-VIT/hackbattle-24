@@ -5,7 +5,7 @@ import Notifs from "./components/Notifs";
 
 export default function Home() {
   return (
-    <main classname="bg-green-300 p-4">
+    <main>
       <Navbar />
       <Marquee />
       <Notifs cleared = {1}/>
