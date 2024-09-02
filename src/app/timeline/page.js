@@ -20,7 +20,9 @@ export default function Timeline() {
       </section>
       {/* Text container positioned absolutely */}
       <div className="absolute top-[calc(79vh-1rem)] left-1/2 transform -translate-x-1/2">
-        <h1 className="text-4xl font-bold text-white">TASK SUBMISSION</h1>
+        <h1 className="text-4xl font-bold text-customBlue font-crackman">
+          TASK SUBMISSION
+        </h1>
       </div>
     </main>
   );

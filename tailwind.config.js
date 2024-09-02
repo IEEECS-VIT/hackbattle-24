@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {},
       fontFamily: {
         pixeboy: ["var(--pixeboy)"],
+        crackman: ["var(--crackman"],
       },
       colors: {
         customBlue: "#3E8BFF", // Added custom color
@@ -30,9 +31,10 @@ module.exports = {
       backgroundImage: {},
       fontFamily: {
         pixeboy: ["var(--pixeboy)"],
+        crackman: ["var(--crackman"],
       },
       colors: {
-        customBlue: "#3E8BFF", // Added custom color
+        customBlue: "#3E8BFF",
       },
     },
   },

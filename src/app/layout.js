@@ -1,9 +1,15 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import local from "next/font/local";
 
 const pixeboy = localFont({
   src: "fonts/Pixeboy.ttf",
   variable: "--pixeboy",
+});
+
+const crackman = localFont({
+  src: "fonts/Crackman.otf",
+  variable: "--crackman",
 });
 
 export const metadata = {
@@ -15,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${pixeboy.variable}`}>{children}</body>
+      <body className={`${pixeboy.variable}  ${crackman.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
