@@ -4,7 +4,7 @@ import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
-    <main classname="bg-green-300 p-4">
+    <main>
       <Navbar />
       <Marquee />
     </main>

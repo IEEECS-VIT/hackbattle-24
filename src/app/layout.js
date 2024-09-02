@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import local from "next/font/local";
 
 const pixeboy = localFont({
   src: "fonts/Pixeboy.ttf",
