@@ -51,8 +51,8 @@ export default function Memories() {
     ];
 
     return (
-        <div className="p-2 min-h-screen bg-memories-bg bg-cover bg-center flex flex-col">
-            <h1 className="mt-16 mb-24 text-6xl text-center text-white">MEMORIES</h1>
+        <div className="p-2 min-h-screen bg-memories bg-cover bg-center flex flex-col">
+            <h1 className="mt-16 mb-24 text-9xl text-center text-white font-pixeboy">MEMORIES</h1>
             <div className="flex flex-wrap justify-between p-4 flex-grow">
                 {memoryCards.map((card, index) => (
                     <div className="w-full sm:w-1/2 md:w-1/4" key={index}>
@@ -68,7 +68,7 @@ export default function Memories() {
             <div className="p-8">
             <MemoryImg></MemoryImg>
             </div>
-            
+
         </div>
     );
 }

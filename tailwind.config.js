@@ -7,7 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      boxShadow: {
+        custom: '-1rem 1rem 0 0 black',
+      },
+      backgroundImage: {
+        "memories":"url('/memories.svg')",
+        "register":"url('/register.svg')",
+      },
       fontFamily: {
         pixeboy: ["var(--pixeboy)"],
         crackman: ["var(--crackman)"],
@@ -16,6 +22,7 @@ module.exports = {
       colors: {
         customBlue: "#3E8BFF", // Added custom color
       },
+
       screens: {
         small: { raw: "(max-height: 800px)" },
       },
