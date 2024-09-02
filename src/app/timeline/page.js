@@ -1,10 +1,20 @@
+"use client";
+
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 
 export default function Timeline() {
+  const [type, setType] = useState(0);
+
   return (
     <main className="relative">
       <Navbar />
       <section className="relative w-screen h-[70vh] bg-[#5AD178] overflow-hidden">
+        <img
+          src="state1timeline.svg"
+          alt="state image"
+          className="absolute inset-0 w-full h-full object-cover opacity-100"
+        />
         <img
           src="pixelated-filter.svg"
           alt="Overlay Image"

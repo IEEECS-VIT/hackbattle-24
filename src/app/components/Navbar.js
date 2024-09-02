@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,18 +16,24 @@ export default function Navbar() {
     <nav className="relative flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-screen font-pixeboy">
       {/* Logo */}
       <div className="flex items-center">
-        <Image
-          src="ieeecslogo.svg"
-          width={150}
-          height={150}
-          alt="IEEE Computer Society Logo"
-        />
+        <Link href="/">
+          <Image
+            src="ieeecslogo.svg"
+            width={150}
+            height={150}
+            alt="IEEE Computer Society Logo"
+          />
+        </Link>
       </div>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
         <li className="hover:underline">Home</li>
         <li className="hover:underline">Tracks</li>
+        <Link href="/timeline">
+          {" "}
+          <li className="hover:underline">Timeline</li>
+        </Link>
         <li className="hover:underline">About</li>
         <li className="hover:underline">FAQ</li>
         <li className="hover:underline">Team</li>
