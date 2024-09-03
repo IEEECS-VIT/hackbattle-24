@@ -13,6 +13,7 @@ module.exports = {
       backgroundImage: {
         "memories":"url('/memories.svg')",
         "register":"url('/register.svg')",
+        "register-leader":"url('/formLeader')",
       },
       fontFamily: {
         pixeboy: ["var(--pixeboy)"],
