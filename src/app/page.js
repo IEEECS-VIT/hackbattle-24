@@ -1,7 +1,8 @@
 "use client"; 
 
 import { useState } from "react";
-import TeamCode from "./components/Teamcode" 
+import TeamCode from "./components/TeamCode" 
+import Login from "./components/Login"
 
 export default function Home() {
   const [code,setCode]=useState("Hello");
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main>
       <TeamCode visible={flag} code={code}/>
+      <Login />
     </main>
   );
 }

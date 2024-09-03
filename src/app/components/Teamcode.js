@@ -1,7 +1,5 @@
 "use client"; 
 
-import Image from "next/image"; 
-
 export default function TeamCode({ visible,code }) {
   return (
     <div className={`flex justify-center items-center h-screen ${visible ? 'visible' : 'hidden'}`}>
