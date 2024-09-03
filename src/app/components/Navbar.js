@@ -7,9 +7,8 @@ import Link from "next/link";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu open/close state
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (

@@ -14,7 +14,7 @@ export default function Timeline() {
   };
 
   return (
-    <main className="relative">
+    <div className="overflow-hidden">
       <Navbar />
       <section className="relative w-screen h-[20vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
@@ -46,6 +46,6 @@ export default function Timeline() {
           TASK SUBMISSION
         </h1>
       </div>
-    </main>
+    </div>
   );
 }

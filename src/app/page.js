@@ -5,7 +5,7 @@ import Notifs from "./components/Notifs";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden w-full">
       <Navbar />
       <Marquee />
     </main>
