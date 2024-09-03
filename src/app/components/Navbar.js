@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-screen font-pixeboy">
+    <nav className="absolute flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-full font-pixeboy z-10">
       {/* Logo */}
       <div className="flex items-center">
         <Link href="/">

@@ -14,7 +14,7 @@ export default function Marquee() {
 
   return (
     <div
-      className="font-pixeboy relative w-full h-fit py-20 rotate-3 overflow-hidden"
+      className="font-pixeboy w-[99.8%] h-fit rotate-[1.5deg] overflow-hidden"
       ref={ref}
     >
       {["#FFC43E", "#FB624C", "#FF88BE"].map((color, index) => (
