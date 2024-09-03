@@ -27,15 +27,18 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
-        <li className="hover:underline">Home</li>
+        <Link href="/">
+          {" "}
+          <li className="hover:underline">Home</li>
+        </Link>
         <li className="hover:underline">Tracks</li>
+        <li className="hover:underline">About</li>
+        <li className="hover:underline">FAQ</li>
+        <li className="hover:underline">Team</li>
         <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
         </Link>
-        <li className="hover:underline">About</li>
-        <li className="hover:underline">FAQ</li>
-        <li className="hover:underline">Team</li>
       </ul>
 
       {/* Login Button - Hidden on Mobile */}
