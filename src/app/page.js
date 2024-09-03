@@ -8,7 +8,6 @@ export default function Home() {
     <main>
       <Navbar />
       <Marquee />
-      <Notifs cleared = {1}/>
     </main>
   );
 }
