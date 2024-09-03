@@ -1,26 +1,48 @@
+"use client";
+
 import Image from "next/image";
 import Pacman from "../../assets/yellowPacman.svg";
 import abstractbg from "../../assets/landingbg.svg";
 import Marquee from "./Marquee";
+import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
+import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+
 export default function Landing() {
   return (
     <>
       <main className="bg-[#0375F9] w-full h-[100vh] flex items-center font-pixeboy overflow-hidden">
-        <section className="flex flex-col gap-4 ">
+        <section className="flex flex-col gap-4  ml-[10%] w-[20%] justify-start">
           <Image
-            width={90}
-            height={90}
+            width={120}
+            height={120}
             src={Pacman}
             alt="Pacman"
-            className="absolute -left-10 "
+            className="absolute left-0 mt-[20px]"
           ></Image>
-          <p className="">HACK</p>
-          <p>BATTLE</p>
-          <button className="bg-[#F5ED02] border-2 border-black px-3 py-2 text-3xl">
+          <div>
+            <p className="font-crackman text-8xl text-black">HACK</p>
+            <p className="font-crackman text-8xl">BATTLE</p>
+          </div>
+          <button className="bg-[#F5ED02] border-2 border-black max-w-[250px]  py-3 text-3xl">
             REGISTER NOW!
           </button>
-          <p className="text-white text-3xl">TIME REMAINING...</p>
-          <p>TIme Component</p>
+          <p className=" text-2xl text-white">TIME REMAINING...</p>
+          <FlipClockCountdown
+            digitBlockStyle={{
+              color: "black",
+              backgroundColor: "yellow",
+              height: 30,
+              width: 20,
+              fontSize: 20,
+              fontWeight: 600
+            }}
+            dividerStyle={{
+              backgroundColor: "black",
+              color: "black",
+              height: 3,
+            }}
+            to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
+          />
         </section>
         <Image
           src={abstractbg}
