@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         customBlue: "#3E8BFF", // Added custom color
       },
+      screens: {
+        'small': { 'raw': '(max-height: 800px)' },
+      },
     },
   },
   plugins: [],
