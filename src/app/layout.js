@@ -6,6 +6,16 @@ const pixeboy = localFont({
   variable: "--pixeboy",
 });
 
+const crackman = localFont({
+  src: "fonts/Crackman.otf",
+  variable: "--crackman",
+});
+
+const mercutio = localFont({
+  src: "fonts/Mercutio.ttf",
+  variable: "--mercutio",
+});
+
 export const metadata = {
   title: "HackBattle '24",
   description:
@@ -15,7 +25,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${pixeboy.variable}`}>{children}</body>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <body
+        className={`${pixeboy.variable}  ${crackman.variable} ${mercutio.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
