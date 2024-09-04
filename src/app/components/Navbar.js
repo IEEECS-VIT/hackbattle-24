@@ -7,13 +7,12 @@ import Link from "next/link";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu open/close state
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="relative flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-screen font-pixeboy">
+    <nav className="absolute flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-full font-pixeboy z-10">
       {/* Logo */}
       <div className="flex items-center">
         <Link href="/">
@@ -28,15 +27,18 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
-        <li className="hover:underline">Home</li>
+        <Link href="/">
+          {" "}
+          <li className="hover:underline">Home</li>
+        </Link>
         <li className="hover:underline">Tracks</li>
+        <li className="hover:underline">About</li>
+        <li className="hover:underline">FAQ</li>
+        <li className="hover:underline">Team</li>
         <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
         </Link>
-        <li className="hover:underline">About</li>
-        <li className="hover:underline">FAQ</li>
-        <li className="hover:underline">Team</li>
       </ul>
 
       {/* Login Button - Hidden on Mobile */}
