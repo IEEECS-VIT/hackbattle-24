@@ -12,6 +12,11 @@ export default function Landing() {
     <>
       <main className="bg-[#0375F9] w-full h-[100vh] flex items-center font-pixeboy overflow-hidden">
         <section className="flex flex-col gap-4  ml-[10%] w-[20%] justify-start">
+          <img
+            src="bigassPackman.svg"
+            alt="packman"
+            className="absolute right-[10%] top-[20%] z-10 h-[60%]"
+          />
           <Image
             width={120}
             height={120}
@@ -34,7 +39,7 @@ export default function Landing() {
               height: 30,
               width: 20,
               fontSize: 20,
-              fontWeight: 600
+              fontWeight: 600,
             }}
             dividerStyle={{
               backgroundColor: "black",

@@ -34,17 +34,12 @@ export default function Marquee() {
             style={{ backgroundColor: color }}
           >
             {Array.from({ length: 39 }).map((_, i) => (
-              <span
-                key={i}
-                className={`px-${
-                  index === 0 ? "4" : index === 1 ? "[0.85rem]" : "[1.65rem]"
-                }`}
-              >
+              <span key={i} className={`px-${index === 0 ? "4" : "2"}`}>
                 {index === 0
-                  ? "SYNTHESIZE"
+                  ? "SYNTHESIZE "
                   : index === 1
-                  ? "MATERIALIZE"
-                  : "OPTIMIZE"}
+                  ? " MATERIALIZE "
+                  : " OPTIMIZE  "}
               </span>
             ))}
           </div>
