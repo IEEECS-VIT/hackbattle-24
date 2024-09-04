@@ -8,6 +8,9 @@ import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 
 export default function Landing() {
+  // Set the event date and time (25th September 2024, 8:00 AM)
+  const eventDate = new Date("2024-09-25T08:00:00");
+
   return (
     <>
       <main className="bg-[#0375F9] w-full h-[100vh] flex items-center font-pixeboy overflow-hidden">
@@ -46,7 +49,7 @@ export default function Landing() {
               color: "black",
               height: 3,
             }}
-            to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
+            to={eventDate.getTime()}
           />
         </section>
         <Image
