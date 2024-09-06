@@ -2,15 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .glow-text {
-  text-shadow: 
-    2px 2px 0 #ff0000, 
-    -2px -2px 0 #0d9c9f, 
-    2px -2px 0 #0d9c9f,  
-    -2px 2px 0 #ff0000,  
-    4px 4px 10px #000;   
+  text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #0d9c9f, 2px -2px 0 #0d9c9f,
+    -2px 2px 0 #ff0000, 4px 4px 10px #000;
+}
+
+/* Define the pixelate filter */
+.filter.pixelate {
+  image-rendering: pixelated; /* Makes image backgrounds pixelated */
+  image-rendering: -moz-crisp-edges; /* Firefox-specific pixelation */
+  image-rendering: crisp-edges; /* Edge-specific pixelation */
 }

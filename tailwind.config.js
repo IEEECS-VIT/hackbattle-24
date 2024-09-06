@@ -10,6 +10,14 @@ module.exports = {
       backgroundImage: {},
       fontFamily: {
         pixeboy: ["var(--pixeboy)"],
+        crackman: ["var(--crackman)"],
+        mercutio: ["var(--mercutio)"],
+      },
+      colors: {
+        customBlue: "#3E8BFF", // Added custom color
+      },
+      screens: {
+        small: { raw: "(max-height: 800px)" },
       },
     },
   },
