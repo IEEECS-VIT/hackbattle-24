@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface PageProps {
+interface pageProps {
     fullName?: string;
     registrationNumber?: string;
     email?: string;
@@ -9,7 +9,7 @@ interface PageProps {
     mobileNumber?: string;
 }
 
-const Page: React.FC<PageProps> = ({
+const page: React.FC<pageProps> = ({
     fullName = "FULL NAME",
     registrationNumber = "REGISTRATION NUMBER",
     email = "EMAIL",
@@ -84,7 +84,7 @@ const Page: React.FC<PageProps> = ({
     );
 };
 
-export default Page;
+export default page;
 
 
 
