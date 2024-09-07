@@ -7,6 +7,7 @@ import Tracks from "./components/track";
 import Speaker from "./components/speaker";
 import Conducted from "./components/conducted";
 import FAQ from "./components/faq";
+import Form from "./components/Form";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Navbar />
       <Landing />
       <About />
+      <Form />
+
       {/* <Tracks />
       <Speaker />
       <Conducted />
