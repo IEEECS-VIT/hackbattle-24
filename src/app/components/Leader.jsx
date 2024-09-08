@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Leaderpage({ 
+function Leader({ 
   fullName, 
   registrationNumber, 
   email, 
@@ -31,9 +31,9 @@ export default function Leaderpage({
                 <div className="relative bg-[url('/p7.svg')] bg-repeat bg-center bg-[#FF553E] h-[30vh] lg:h-[72.32vh]">
                   <img className="ml-[2vw] h-[5vh] pt-[1.75vh] lg:h-[10.642225031605562vh]" src="p2.svg" />
                   <div className="flex justify-center lg:mt-[0vh]">
-                    <img className="absolute z-0  mt-[2vh] lg:mt-[4vh] lg:h-[30vh]" src="p3.svg" alt="p3" />
+                    <img className="absolute z-0 mt-[2vh] lg:mt-[4vh] lg:h-[30vh]" src="p3.svg" alt="p3" />
                     <img className="absolute z-40 h-[5vh] mt-[4vh] lg:h-[10vh] lg:mt-[9.2vh]" src="p4.svg" alt="p4" />
-                    <img className="absolute z-20 h-[5vh] mt-[8vh] lg:mt-[17.2vh] lg:h-[10vh]" src="p5.svg" alt="p5" />
+                    <img className="absolute z-20 h-[5vh] mt-[7vh] lg:mt-[17.2vh] lg:h-[10vh]" src="p5.svg" alt="p5" />
                   </div>
                   <p className="mt-[17.5vh] lg:mt-[40vh] text-center font-pixeboy text-shadowfinal text-with-border text-[4.424778761061947vh] text-white text-shadow lg:text-shadowpinkish pb-[2vh] lg:text-[7.585335018963337vh]">TEAM LEADER</p>
                 </div>
@@ -75,7 +75,7 @@ export default function Leaderpage({
   );
 }
 
-Leaderpage.propTypes = {
+Leader.propTypes = {
   fullName: PropTypes.string,
   registrationNumber: PropTypes.string,
   email: PropTypes.string,
@@ -84,7 +84,7 @@ Leaderpage.propTypes = {
   mobileNumber: PropTypes.string,
 };
 
-Leaderpage.defaultProps = {
+Leader.defaultProps = {
   fullName: "FULL NAME",
   registrationNumber: "REGISTRATION NUMBER",
   email: "EMAIL",
@@ -92,3 +92,5 @@ Leaderpage.defaultProps = {
   referralCode: "REFERRAL CODE",
   mobileNumber: "MOBILE NUMBER",
 };
+
+export default Leader;
