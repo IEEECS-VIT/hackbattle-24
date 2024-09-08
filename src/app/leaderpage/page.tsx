@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface pageProps {
+interface PageProps {
     fullName?: string;
     registrationNumber?: string;
     email?: string;
@@ -9,7 +9,7 @@ interface pageProps {
     mobileNumber?: string;
 }
 
-const page: React.FC<pageProps> = ({
+const Page: React.FC<PageProps> = ({
     fullName = "FULL NAME",
     registrationNumber = "REGISTRATION NUMBER",
     email = "EMAIL",
@@ -76,7 +76,7 @@ const page: React.FC<pageProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex font-mercutio justify-around text-[2.5605562579013906vh] text-white lg:justify-center lg:mt-[2.5vh] mt-[2.5vh] lg:text-[3.7926675094816686vh] lg:font-pixeboy lg:text-shadowfinal">
+        <div className="flex font-mercutio lg:text-with-border justify-around text-[2.5605562579013906vh] text-white lg:justify-center lg:mt-[2.5vh] mt-[2.5vh] lg:text-[3.7926675094816686vh] lg:font-pixeboy lg:text-shadowfinal">
           Already Registered? <span className="text-[2.5605562579013906vh] text-[#FFDA56] ml-[5vw] lg:text-[3.7926675094816686vh] font-mercutio lg:ml-[2vw] lg:font-pixeboy">Log In</span>
         </div>
         </div>
@@ -84,7 +84,7 @@ const page: React.FC<pageProps> = ({
     );
 };
 
-export default page;
+export default Page;
 
 
 
