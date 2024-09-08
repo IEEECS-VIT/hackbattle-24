@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function leaderpage({ 
+export default function Leaderpage({ 
   fullName, 
   registrationNumber, 
   email, 
@@ -75,7 +75,7 @@ export default function leaderpage({
   );
 }
 
-Page.propTypes = {
+Leaderpage.propTypes = {
   fullName: PropTypes.string,
   registrationNumber: PropTypes.string,
   email: PropTypes.string,
@@ -84,7 +84,7 @@ Page.propTypes = {
   mobileNumber: PropTypes.string,
 };
 
-Page.defaultProps = {
+Leaderpage.defaultProps = {
   fullName: "FULL NAME",
   registrationNumber: "REGISTRATION NUMBER",
   email: "EMAIL",
