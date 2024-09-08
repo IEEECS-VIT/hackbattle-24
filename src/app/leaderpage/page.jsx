@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-const Page = ({ 
+export default function leaderpage({ 
   fullName, 
   registrationNumber, 
   email, 
   teamName, 
   referralCode, 
   mobileNumber, 
-}) => {
+}) {
   return (
     <>
       <div className="h-screen w-full bg-[#2EBF54] bg-[url('/p7.svg')] bg-repeat bg-center">
@@ -92,5 +92,3 @@ Page.defaultProps = {
   referralCode: "REFERRAL CODE",
   mobileNumber: "MOBILE NUMBER",
 };
-
-export default Page;
