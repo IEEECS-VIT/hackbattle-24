@@ -17,7 +17,7 @@ export default function Timeline() {
   return (
     <div className="overflow-hidden h-">
       <Navbar />
-      <section className="relative w-screen h-[20vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
+      <section className="relative w-screen h-[30vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
         <div className="absolute inset-0 flex justify-center items-center">
           <Image
@@ -34,7 +34,7 @@ export default function Timeline() {
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
       </section>
-      <section className="relative w-screen h-[109vh] md:h-[120vh]  bg-[#FEC46F] overflow-hidden">
+      <section className="relative w-screen h-[110vh] md:h-[120vh]  bg-[#FEC46F] overflow-hidden">
         <img
           src="pixelated-filter.svg"
           alt="Overlay Image"
