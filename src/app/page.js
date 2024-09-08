@@ -16,10 +16,10 @@ export default function Home() {
       <Navbar />
       <Landing />
       <About />
-      <Tracks />
+      {/* <Tracks />
       <Speaker />
       <Conducted />
-      <FAQ />
+      <FAQ /> */}
     </main>
   );
 }
