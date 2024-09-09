@@ -26,6 +26,7 @@ module.exports = {
 
       screens: {
         small: { raw: "(max-height: 800px)" },
+        'ws': '1300px',
       },
     },
   },
