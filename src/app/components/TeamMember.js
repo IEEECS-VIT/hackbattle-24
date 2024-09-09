@@ -1,4 +1,4 @@
-export default function TeamBox(props){
+export default function TeamMember(props){
     return(
         <div className="flex items-center justify-center h-fit">
             <div className="border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] xl:w-[35vw] xl:h-[18vw] bg-[#2EBF54] w-[75vw] h-[22vh] lg:w-[40vw] sm:h-[28vh]">
