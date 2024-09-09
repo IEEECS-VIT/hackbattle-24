@@ -15,9 +15,9 @@ export default function Timeline() {
   };
 
   return (
-    <div className="overflow-hidden h-">
+    <div className="overflow-hidden ">
       <Navbar />
-      <section className="relative w-screen h-[30vh] md:h-[65vh] bg-[#5AD178] overflow-hidden">
+      <section className="relative w-screen h-[30vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
         <div className="absolute inset-0 flex justify-center items-center">
           <Image
