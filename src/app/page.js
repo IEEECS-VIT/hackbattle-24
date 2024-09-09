@@ -8,7 +8,8 @@ import Tracks from "./components/track";
 import Speaker from "./components/speaker";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
-import TeamCode from "./components/TeamCode"
+import TeamCode from "./components/TeamCode";
+import Team from "./components/Team";
 
 export default function Home() {
   const [code,setCode]=useState("Hello");
@@ -23,6 +24,7 @@ export default function Home() {
       <Speaker />
       <Conducted /> */}
       <FAQ /> 
+      <Team />
     </main>
   );
 }
