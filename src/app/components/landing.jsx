@@ -59,7 +59,7 @@ export default function Landing() {
           className="absolute top-5 h-[95%] right-0"
         ></Image>
       </main>
-      <div className="absolute bottom-[-10%] w-full">
+      <div className="absolute bottom-[-10%] w-full z-10">
         <Marquee />
       </div>
     </>

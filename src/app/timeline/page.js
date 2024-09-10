@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Timeline() {
-  const [type, setType] = useState(0);
+  const [type, setType] = useState(1);
 
   const handleChangeState = (newState) => {
     if (newState >= 1 && newState <= 4) {

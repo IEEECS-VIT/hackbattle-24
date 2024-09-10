@@ -9,20 +9,18 @@ import Speaker from "./components/speaker";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
 
-import Code from "./components/Code"
-
+import Code from "./components/Code";
 
 export default function Home() {
-  const [code,setCode]=useState("Hello");
-  const [flag,setFlag]=useState(true);
+  const [code, setCode] = useState("Hello");
   return (
     <main className="overflow-hidden w-full">
       <Navbar />
       <Landing />
       <About />
-      <TeamCode visible={flag} code={code}/>
       <Tracks />
-      <Code visible={flag} code={code}/>
+      <Speaker />
+      <FAQ />
     </main>
   );
 }
