@@ -1,4 +1,4 @@
-import TeamCode from "./Teamcode";
+import TeamCode from "./Code";
 
 export default function Tracks() {
   return (
