@@ -56,7 +56,7 @@ export default function Landing() {
           src={abstractbg}
           alt="Abstract Background"
           // height={"50vh"}
-          className="absolute top-5 h-[95%] right-0 md:max-w-[50%] md:opacity-[100] opacity-[10]  w-full"
+          className="absolute top-5 h-[95%] right-0 md:max-w-[50%] md:opacity-[100] opacity-[10]  w-full hidden md:block"
         ></Image>
       </main>
       <div className="absolute bottom-[-10%] w-full z-10">
