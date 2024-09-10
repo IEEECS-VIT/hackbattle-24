@@ -16,14 +16,17 @@ export default function About() {
         const scrollTop = window.scrollY;
         const textTop = rect.top + scrollTop;
         const textHeight = rect.height;
+        const viewportMiddle = scrollTop + windowHeight / 2;
+        const coloringStart = textTop + textHeight * 0.2;
+        const coloringEnd = textTop + textHeight * 0.8;
 
         // Calculate scroll percentage
-        const scrollPosition = Math.max(0, scrollTop - textTop + windowHeight);
+        const scrollPosition = Math.max(0, viewportMiddle - coloringStart);
+        const coloringRange = coloringEnd - coloringStart;
         const percentage = Math.min(
           1,
-          scrollPosition / (textHeight + windowHeight)
+          Math.max(0, scrollPosition / coloringRange)
         );
-
         setScrollPercentage(percentage);
       }
     };
@@ -62,15 +65,9 @@ export default function About() {
     "innovation.",
   ];
 
-  const blueWords = [
-    // Add the words you want to color blue here
-    "36-hour",
-    "challenges",
-    "sessions",
-    "activities",
-  ];
+  const blueWords = ["36-hour", "challenges", "sessions", "activities"];
 
-  const fillColor = "red"; // Default color to fill the text with
+  const fillColor = "red";
   const blueColor = "#3E8BFF"; // Color to fill certain words with
 
   const textElements = words.map((word, index) => (
@@ -94,8 +91,8 @@ export default function About() {
   return (
     <div className="bg-[#6F3CDC] w-full h-[100vh] flex items-center font-pixeboy relative ">
       <div className="w-[60%] ml-[5%]" ref={textRef}>
-        <p className="text-8xl">ABOUT</p>
-        <p className="text-6xl">{textElements}</p>
+        <p className="text-6xl md:text-8xl">ABOUT</p>
+        <p className="text-3xl md:text-6xl">{textElements}</p>
       </div>
       <div className="absolute right-[5%]">
         <Image src={Pacman} height={580} />
