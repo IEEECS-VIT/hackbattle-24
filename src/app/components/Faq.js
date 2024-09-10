@@ -51,10 +51,10 @@ const HackFaqItems = [
     ),
   },
   {
-    title: "Will OD's be provided to participants?",
+    title: "Will ODs be provided to participants?",
     content: (
       <>
-        Yes, OD's will be provided to all participants of both the events for
+        Yes, ODs will be provided to all participants of both the events for
         the whole duration of the event.
       </>
     ),

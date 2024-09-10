@@ -8,7 +8,8 @@ import Tracks from "./components/track";
 import Speaker from "./components/speaker";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
-import TeamCode from "./components/TeamCode"
+
+import Code from "./components/Code"
 
 
 export default function Home() {
@@ -19,12 +20,9 @@ export default function Home() {
       <Navbar />
       <Landing />
       <About />
-    < main >
+      <TeamCode visible={flag} code={code}/>
       <Tracks />
-      {/*<Speaker />
-      <Conducted />
-      <FAQ /> */}
-
+      <Code visible={flag} code={code}/>
     </main>
   );
 }
