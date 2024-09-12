@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Accordion from "./Accordion.js";
 
@@ -54,8 +55,8 @@ const HackFaqItems = [
     title: "Will ODs be provided to participants?",
     content: (
       <>
-        Yes, ODs will be provided to all participants of both the events for
-        the whole duration of the event.
+        Yes, ODs will be provided to all participants of both the events for the
+        whole duration of the event.
       </>
     ),
   },
@@ -78,13 +79,13 @@ const Faq = () => {
   };
 
   return (
-    <div className="relative font-pixeboy flex min-h-screen w-screen flex-col items-center justify-around p-2 text-2xl sm:p-4 ws:flex-row md:p-10">
+    <div className="relative bg-[#683fd4] font-pixeboy flex min-h-screen w-screen flex-col items-center justify-around p-2 text-2xl sm:p-4 ws:flex-row md:p-10">
       {/* Background Image */}
-      <img
+      {/* <img
         src="/purple.png"
         className="absolute top-0 left-0 h-full w-full object-cover z-0"
         alt="Background"
-      />
+      /> */}
 
       {/* Content in front of the background */}
       <div className="relative z-10 flex flex-col items-center gap-4 text-center my-12">

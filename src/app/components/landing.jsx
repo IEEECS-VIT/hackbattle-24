@@ -14,18 +14,18 @@ export default function Landing() {
   return (
     <>
       <main className="bg-[#0375F9] w-full h-[100vh] flex items-center font-pixeboy overflow-hidden">
-        <section className="flex flex-col gap-4  ml-[10%] w-[20%] justify-start">
+        <section className="flex flex-col gap-4  lg:ml-[10%] ml-[5%] min-w-[350px] w-[20%] justify-start z-10">
           <img
             src="bigassPackman.svg"
             alt="packman"
-            className="absolute right-[10%] top-[20%] z-10 h-[60%]"
+            className="absolute lg:right-[10%] right-[5%] top-[20%] z-10 lg:h-[60%] md:h-[45%] md:block hidden"
           />
           <Image
             width={120}
             height={120}
             src={Pacman}
             alt="Pacman"
-            className="absolute left-0 mt-[20px]"
+            className="absolute left-0 mt-[20px] lg:block hidden"
           ></Image>
           <div>
             <p className="font-crackman text-8xl text-black">HACK</p>
@@ -39,15 +39,15 @@ export default function Landing() {
             digitBlockStyle={{
               color: "black",
               backgroundColor: "yellow",
-              height: 30,
-              width: 20,
-              fontSize: 20,
+              height: 40,
+              width: 30,
+              fontSize: 30,
               fontWeight: 600,
             }}
             dividerStyle={{
-              backgroundColor: "black",
-              color: "black",
-              height: 3,
+              backgroundColor: "blue",
+              color: "blue",
+              height: 2,
             }}
             to={eventDate.getTime()}
           />
@@ -56,10 +56,10 @@ export default function Landing() {
           src={abstractbg}
           alt="Abstract Background"
           // height={"50vh"}
-          className="absolute top-5 h-[95%] right-0"
+          className="absolute top-5 h-[95%] right-0 md:max-w-[50%] md:opacity-[100] opacity-[10]  w-full hidden md:block"
         ></Image>
       </main>
-      <div className="absolute bottom-[-10%] w-full">
+      <div className="absolute bottom-[-10%] w-full z-10">
         <Marquee />
       </div>
     </>

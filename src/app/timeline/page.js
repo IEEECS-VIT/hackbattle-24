@@ -6,7 +6,8 @@ import Image from "next/image";
 import Card from "../components/cards";
 
 export default function Timeline() {
-  const [type, setType] = useState(4);
+
+  const [type, setType] = useState(1);
 
   const handleChangeState = (newState) => {
     if (newState >= 1 && newState <= 4) {
