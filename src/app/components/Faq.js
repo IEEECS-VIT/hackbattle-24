@@ -79,7 +79,10 @@ const Faq = () => {
   };
 
   return (
-    <div className="relative bg-[#683fd4] font-pixeboy flex min-h-screen w-screen flex-col items-center justify-around p-2 text-2xl sm:p-4 ws:flex-row md:p-10">
+    <div
+      className="relative bg-[#683fd4] font-pixeboy flex min-h-screen w-screen flex-col items-center justify-around p-2 text-2xl sm:p-4 ws:flex-row md:p-10"
+      id="faq"
+    >
       {/* Background Image */}
       {/* <img
         src="/purple.png"
