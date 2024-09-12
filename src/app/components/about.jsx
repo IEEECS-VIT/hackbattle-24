@@ -89,7 +89,10 @@ export default function About() {
   ));
 
   return (
-    <div className="bg-[#6F3CDC] w-full h-[100vh] flex items-center font-pixeboy relative ">
+    <div
+      className="bg-[#6F3CDC] w-full h-[100vh] flex items-center font-pixeboy relative "
+      id="about"
+    >
       <div className="w-[60%] ml-[5%]" ref={textRef}>
         <p className="text-6xl md:text-8xl">ABOUT</p>
         <p className="text-3xl md:text-6xl">{textElements}</p>
