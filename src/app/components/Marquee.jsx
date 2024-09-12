@@ -3,10 +3,10 @@ import React from "react";
 
 export default function Marquee() {
   const colors = ["#FFC43E", "#FB624C", "#FF88BE"];
-  const words = ["SYNTHESIZE", "MATERIALIZE", "OPTIMIZE"];
+  const words = ["COLLABORATE", "CODE", "CONQUER"];
 
   return (
-    <div className="font-pixeboy w-[99.8%] overflow-hidden text-3xl rotate-3">
+    <div className="font-pixeboy md:w-[99.8%] w-[99.5%] overflow-hidden text-3xl rotate-3">
       {colors.map((color, index) => (
         <div
           key={index}

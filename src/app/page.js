@@ -13,7 +13,7 @@ export default function Home() {
       <Landing />
       <About />
       <Tracks />
-      <Speaker />
+      {/* <Speaker /> */}
       <Conducted />
       <FAQ />
     </main>
