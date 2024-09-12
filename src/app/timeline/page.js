@@ -3,8 +3,10 @@
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import Image from "next/image";
+import Card from "../components/cards";
 
 export default function Timeline() {
+
   const [type, setType] = useState(1);
 
   const handleChangeState = (newState) => {
@@ -14,9 +16,9 @@ export default function Timeline() {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden ">
       <Navbar />
-      <section className="mt-[8vh] md:mt-[10vh] relative w-screen h-[25vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
+      <section className="relative w-screen h-[30vh] md:h-[75vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
         <div className="absolute inset-0 flex justify-center items-center">
           <Image
@@ -33,7 +35,7 @@ export default function Timeline() {
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
       </section>
-      <section className="relative w-screen h-[75vh] md:h-[50vh] bg-[#FEC46F] overflow-hidden">
+      <section className="relative w-screen h-[110vh] md:h-[160vh]  bg-[#FEC46F] overflow-hidden">
         <img
           src="pixelated-filter.svg"
           alt="Overlay Image"
@@ -41,10 +43,11 @@ export default function Timeline() {
         />
       </section>
       {/* Text container positioned absolutely */}
-      <div className="absolute top-[calc(35vh-1rem)] md:top-[calc(80vh-1rem)] left-1/2 transform -translate-x-1/2">
+      <div className="absolute top-[calc(30vh-1rem)] md:top-[calc(80vh-1rem)] left-1/2 transform -translate-x-1/2">
         <h1 className="text-[4vh] md:text-[10vh] text-center font-bold text-customBlue font-crackman">
           TASK SUBMISSION
         </h1>
+<Card></Card>
       </div>
     </div>
   );
