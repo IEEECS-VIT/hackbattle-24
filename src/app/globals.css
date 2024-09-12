@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-.letter {
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee-container-left {
+  display: inline-block;
+  animation: marquee-left 30s linear infinite;
+}
+.marquee-container-right {
+  display: inline-block;
+  animation: marquee-right 30s linear infinite;
+}
+.marquee-content {
+  display: inline-block;
+}.letter {
   display: inline-block;
   transition: color 0.3s ease;
 }
