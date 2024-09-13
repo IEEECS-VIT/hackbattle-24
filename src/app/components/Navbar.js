@@ -41,10 +41,10 @@ export default function Navbar() {
           <a href="#faq">FAQ</a>
         </li>
         {/* <li className="hover:underline">Team</li> */}
-        {/* <Link href="/timeline">
+        <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
-        </Link> */}
+        </Link>
       </ul>
 
       {/* Login Button - Hidden on Mobile */}
