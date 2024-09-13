@@ -18,7 +18,11 @@ export default function Card() {
                     </div>
                 </div>
                 <textarea
+<<<<<<< HEAD
   className="absolute bg-white text-[4vw] md:text-[130%] lg:text-[1.5vw] sm:w-[90%] sm:mt-2 sm:h-[60%] w-[90%] md:w-[90%] font-pixeboy lg:w-[90%] md:mt-2 md:h-[60%] h-[70%] mt-3 ml-3 md:h-[70%] xl:h-[29vh] lg:h-[18vh]  xl:mt-[3vh] md:ml-6 lg:mr-[15vh] rounded-xl border border-gray-300 px-4 py-2 focus:outline-none overflow-y-auto whitespace-nowrap"
+=======
+  className="absolute bg-white text-[4vw] md:text-[130%] lg:text-[1.5vw] sm:w-[90%] sm:mt-2 sm:h-[60%] w-[90%] md:w-[90%] font-pixeboy lg:w-[90%] md:mt-2 md:h-[60%] h-[70%] mt-4 ml-4 md:h-[70%] lg:h-[29vh]  lg:mt-[3vh] md:ml-6 lg:mr-[15vh] rounded-xl border border-gray-300 px-4 py-2 focus:outline-none overflow-y-auto whitespace-nowrap"
+>>>>>>> 08c78dcdab8d7b73122c47314c46d76951260bf9
 />
 
 </div>
