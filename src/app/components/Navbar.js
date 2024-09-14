@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({ loginAction }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -28,7 +28,7 @@ export default function Navbar() {
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
         <Link href="/">
-          {" "} 
+          {" "}
           <li className="hover:underline">Home</li>
         </Link>
         <li className="hover:underline">
@@ -49,8 +49,8 @@ export default function Navbar() {
 
       {/* Login Button - Hidden on Mobile */}
       <button
-        className="hidden md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700 hover:cursor-not-allowed"
-        disabled={true}
+        className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700 hover:cursor-not-allowed"
+        onClick={loginAction}
       >
         LOGIN
       </button>
