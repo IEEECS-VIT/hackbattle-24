@@ -6,20 +6,25 @@ const HackFaqItems = [
   {
     title: "Where can I register for HackBattle?",
     content: (
-      <>You can register for HackBattle on the official Gravitas website.</>
+      <>
+        You can register for HackBattle on the official Gravitas website.
+      </>
     ),
   },
   {
     title: "What is the team size for HackBattle?",
-    content: <>The team size should be between 3 to 6 members.</>,
-  },
-  {
-    title: "What should I do if I don't have a team for HackBattle?",
     content: (
       <>
-        If you don't have a team before the event, don't worry! You can either
-        form a team beforehand, or we'll pair you with others who are also
-        without a team before HackBattle begins.
+        The team size should be between 3 to 6 members.
+      </>
+    ),
+  },
+  {
+    title: "What should I do if I don’t have a team for HackBattle?",
+    content: (
+      <>
+        If you don’t have a team before the event, don’t worry! You can either form a team beforehand, 
+        or we’ll pair you with others who are also without a team before HackBattle begins.
       </>
     ),
   },
@@ -27,24 +32,25 @@ const HackFaqItems = [
     title: "Will there be any sessions during HackBattle?",
     content: (
       <>
-        Yes, there will be a tech talk by an industry expert to enhance your
-        skills, along with some fun activities to keep the energy up!
+        Yes, there will be a tech talk by an industry expert to enhance your skills, along with some fun 
+        activities to keep the energy up!
       </>
     ),
   },
   {
     title: "Will there be breaks during the event?",
     content: (
-      <>Yes, there will be scheduled breaks for breakfast, lunch, and dinner.</>
+      <>
+        Yes, there will be scheduled breaks for breakfast, lunch, and dinner.
+      </>
     ),
   },
   {
     title: "What should I bring to HackBattle?",
     content: (
       <>
-        Make sure to bring your laptop, charger, water bottle, power bank,
-        extension cord, and ID card. These essentials will help you stay
-        prepared throughout the event.
+        Make sure to bring your laptop, charger, water bottle, power bank, extension cord, and ID card. 
+        These essentials will help you stay prepared throughout the event.
       </>
     ),
   },
@@ -52,8 +58,9 @@ const HackFaqItems = [
     title: "Will students get OD (On Duty) for attending HackBattle?",
     content: (
       <>
-        Yes, students will receive OD for participating in the hackathon. ID
-        cards will be scanned at regular intervals during the event.
+        Yes, students will receive OD for participating in the hackathon. ID cards will be scanned at 
+        regular intervals during the event.
+
       </>
     ),
   },
@@ -61,8 +68,8 @@ const HackFaqItems = [
     title: "Is HackBattle fresher-friendly?",
     content: (
       <>
-        Yes, the hackathon is fresher-friendly! Seniors will be present to guide
-        you, although they won’t assist with the projects directly.
+        Yes, the hackathon is fresher-friendly! Seniors will be present to guide you, although they won’t 
+        assist with the projects directly.
       </>
     ),
   },
