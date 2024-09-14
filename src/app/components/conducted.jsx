@@ -22,7 +22,7 @@ export default function Conducted() {
         className="absolute top-0 text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-crackman text-center text-black mt-4"
         data-aos="fade-down"
       >
-        CONDUCTED BY
+        SPONSORED BY
       </h1>
       <div className="md:hidden flex flex-col items-center justify-center gap-8 mt-20">
         <img
@@ -56,19 +56,19 @@ export default function Conducted() {
       <img
         src="./bglogo.cms"
         alt="BG Logo"
-        className="hidden md:block absolute top-[11%] left-[17%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
+        className="hidden md:block absolute top-[6%] left-[17%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
         data-aos="fade-right"
       />
       <img
         src="./creamlogo.png"
         alt="Cream Logo"
-        className="hidden md:block absolute top-[11%] right-[14%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
+        className="hidden md:block absolute top-[6%] right-[14%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
         data-aos="fade-left"
       />
       <img
         src="./easelogo.jpg"
         alt="Ease Logo"
-        className="hidden md:block absolute left-[17%] bottom-[22%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
+        className="hidden md:block absolute left-[17%] bottom-[21%] md:w-48 md:h-48 lg:w-56 lg:h-40 object-contain"
         data-aos="fade-up-right"
       />
       <img

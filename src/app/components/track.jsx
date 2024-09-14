@@ -13,7 +13,7 @@ export default function Tracks() {
         TRACKS
       </p>
 
-      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-24 p-4 pb-10">
+      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-28 p-4 pb-10">
         <Card title="AI/ML" imageSrc="./fluent-mdl2_robot.svg" />
         <Card title="AI/ML" imageSrc="./fluent-mdl2_robot.svg" />
         <Card title="AI/ML" imageSrc="./fluent-mdl2_robot.svg" />

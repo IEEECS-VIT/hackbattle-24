@@ -14,7 +14,7 @@ const AccordionItem = ({ title, content, isExpanded, onClick }) => {
         {title}
       </button>
       {isExpanded && (
-        <div className={`mb-2 text-pretty ${isExpanded && ""} p-2 text-[2vh]`}>
+        <div className={`mb-2 text-pretty ${isExpanded && ""} p-2 text-[2.5vh]`}>
           {content}
         </div>
       )}
