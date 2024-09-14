@@ -97,7 +97,7 @@ export default function About() {
         <p className="text-6xl md:text-8xl">ABOUT</p>
         <p className="text-3xl md:text-6xl">{textElements}</p>
       </div>
-      <div className="absolute right-[5%]">
+      <div className="absolute right-[5%] lg:top-[20%]">
         <Image src={Pacman} height={580} />
       </div>
     </div>
