@@ -51,7 +51,8 @@ export default function Landing() {
             target="_blank"
             data-aos="fade-up"
           >
-            <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] p-3 text-3xl">
+
+            <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] py-3 px-2  text-3xl">
               REGISTER NOW!
             </button>
           </a>
