@@ -4,59 +4,72 @@ import Accordion from "./Accordion.js";
 
 const HackFaqItems = [
   {
-    title: "What is ARCS?",
+    title: "Where can I register for HackBattle?",
     content: (
       <>
-        ARCS is the flagship event of IEEE-CS which has Hackbattle and Cicada as
-        its two main events. It is a platform for students to showcase their
-        technical skills and knowledge.
+        You can register for HackBattle on the official Gravitas website.
       </>
     ),
   },
   {
-    title: "Where can we register?",
+    title: "What is the team size for HackBattle?",
     content: (
       <>
-        Registrations will be open soon, stay tuned to our social media handles
-        for updates. We will be updating the registration links on our website
-        as well.
+        The team size should be between 3 to 6 members.
       </>
     ),
   },
   {
-    title: "When are the events?",
+    title: "What should I do if I don’t have a team for HackBattle?",
     content: (
       <>
-        ARCS will be hosted during pre-gravitas, the dates for the same will be
-        announced soon.
+        If you don’t have a team before the event, don’t worry! You can either form a team beforehand, 
+        or we’ll pair you with others who are also without a team before HackBattle begins.
       </>
     ),
   },
   {
-    title: "Where can we register?",
+    title: "Will there be any sessions during HackBattle?",
     content: (
       <>
-        Registrations will be open soon, stay tuned to our social media handles
-        for updates. We will be updating the registration links on our website
-        as well.
+        Yes, there will be a tech talk by an industry expert to enhance your skills, along with some fun 
+        activities to keep the energy up!
       </>
     ),
   },
   {
-    title: "When are the events?",
+    title: "Will there be breaks during the event?",
     content: (
       <>
-        ARCS will be hosted during pre-gravitas, the dates for the same will be
-        announced soon.
+        Yes, there will be scheduled breaks for breakfast, lunch, and dinner.
       </>
     ),
   },
   {
-    title: "Will ODs be provided to participants?",
+    title: "What should I bring to HackBattle?",
     content: (
       <>
-        Yes, ODs will be provided to all participants of both the events for the
-        whole duration of the event.
+        Make sure to bring your laptop, charger, water bottle, power bank, extension cord, and ID card. 
+        These essentials will help you stay prepared throughout the event.
+      </>
+    ),
+  },
+  {
+    title: "Will students get OD (On Duty) for attending HackBattle?",
+    content: (
+      <>
+        Yes, students will receive OD for participating in the hackathon. ID cards will be scanned at 
+        regular intervals during the event.
+
+      </>
+    ),
+  },
+  {
+    title: "Is HackBattle fresher-friendly?",
+    content: (
+      <>
+        Yes, the hackathon is fresher-friendly! Seniors will be present to guide you, although they won’t 
+        assist with the projects directly.
       </>
     ),
   },

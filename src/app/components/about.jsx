@@ -67,8 +67,8 @@ export default function About() {
 
   const blueWords = ["36-hour", "challenges", "sessions", "activities"];
 
-  const fillColor = "red";
-  const blueColor = "#3E8BFF"; // Color to fill certain words with
+  const fillColor = "#FFA33C";
+  const blueColor = "#15F5BA"; // Color to fill certain words with
 
   const textElements = words.map((word, index) => (
     <span
