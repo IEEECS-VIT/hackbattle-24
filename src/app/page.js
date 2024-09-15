@@ -11,7 +11,7 @@ import { useState } from "react";
 import Google from "./components/Google";
 
 export default function Home() {
-  const [googleVisible, setGoogleVisible] = useState(true);
+  const [googleVisible, setGoogleVisible] = useState(false);
 
   return (
     <main className="overflow-hidden w-full">

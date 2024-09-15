@@ -2,6 +2,7 @@ import React from "react";
 
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 export default function GoogleModal({ visible, onClose }) {
   const firebaseConfig = {
@@ -22,6 +23,11 @@ export default function GoogleModal({ visible, onClose }) {
 
   const auth = getAuth();
   if (!visible) return null;
+
+  function getUserContext(accessToken) {
+    // accessToken is the Google Access Token received after login
+    axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google`, {});
+  }
 
   function handleClick() {
     // Implement Google login logic here
