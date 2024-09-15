@@ -1,5 +1,5 @@
 import React from "react";
-
+import Draggable from "react-draggable";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
@@ -60,33 +60,35 @@ export default function GoogleModal({ visible, onClose }) {
         className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      <div className="relative z-50 w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[35vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white">
-        <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex justify-between items-center border-black border-b-2 px-[0.5vw]">
-          <img
-            src="/yellow-circles.svg"
-            alt="Yellow Circles"
-            className="h-[1vh] lg:h-[2vh]"
-          />
-          <button
-            onClick={onClose}
-            className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
-          >
-            &#x2715;
-          </button>
-        </div>
+      <Draggable handle=".handle">
+        <div className="relative z-50 w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[35vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white">
+          <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex justify-between items-center border-black border-b-2 px-[0.5vw] handle cursor-move">
+            <img
+              src="/yellow-circles.svg"
+              alt="Yellow Circles"
+              className="h-[1vh] lg:h-[2vh]"
+            />
+            <button
+              onClick={onClose}
+              className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
+            >
+              &#x2715;
+            </button>
+          </div>
 
-        <div className="flex flex-col items-center h-[38vh] font-pixeboy text-[3vh] lg:text-[5vh]">
-          <p className="py-[5vh] [text-shadow:2px_2px_4px_var(--tw-shadow-color)] shadow-[#3EB85D]">
-            LOGIN WITH GOOGLE
-          </p>
-          <button
-            className="bg-[#4285F4] mt-[5vh] px-[4vw] py-[1vh] text-white border-black border-2 hover:bg-[#357AE8] transition-colors duration-200"
-            onClick={handleClick}
-          >
-            GOOGLE
-          </button>
+          <div className="flex flex-col items-center h-[38vh] font-pixeboy text-[3vh] lg:text-[5vh]">
+            <p className="py-[5vh] [text-shadow:2px_2px_4px_var(--tw-shadow-color)] shadow-[#3EB85D]">
+              LOGIN WITH GOOGLE
+            </p>
+            <button
+              className="bg-[#4285F4] mt-[5vh] px-[4vw] py-[1vh] text-white border-black border-2 hover:bg-[#357AE8] transition-colors duration-200"
+              onClick={handleClick}
+            >
+              GOOGLE
+            </button>
+          </div>
         </div>
-      </div>
+      </Draggable>
     </div>
   );
 }
