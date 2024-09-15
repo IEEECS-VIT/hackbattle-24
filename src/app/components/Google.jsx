@@ -25,8 +25,28 @@ export default function GoogleModal({ visible, onClose }) {
   if (!visible) return null;
 
   function getUserContext(accessToken) {
+    console.log(accessToken);
     // accessToken is the Google Access Token received after login
-    axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google`, {});
+    axios
+      .post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+      .then((res) => {
+        const userStatus = res.data.status;
+        if (userStatus === 0) {
+          //User exists but not in a team
+          //redirect to team creation / join page
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching user context:", error);
+      });
   }
 
   function handleClick() {
@@ -38,8 +58,8 @@ export default function GoogleModal({ visible, onClose }) {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user);
         // IdP data available using getAdditionalUserInfo(result)
+        getUserContext(user.accessToken);
         // ...
       })
       .catch((error) => {
