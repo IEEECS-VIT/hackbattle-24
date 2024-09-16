@@ -1,0 +1,103 @@
+/* AOS Animations */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+  }
+  
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
+  
+  [data-aos="fade"] {
+    transform: translate3d(0, 50px, 0);
+  }
+  
+  [data-aos="fade"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  [data-aos="fade-up"] {
+    transform: translate3d(0, 50px, 0);
+  }
+  
+  [data-aos="fade-up"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  [data-aos="fade-down"] {
+    transform: translate3d(0, -50px, 0);
+  }
+  
+  [data-aos="fade-down"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  [data-aos="fade-left"] {
+    transform: translate3d(-50px, 0, 0);
+  }
+  
+  [data-aos="fade-left"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  [data-aos="fade-right"] {
+    transform: translate3d(50px, 0, 0);
+  }
+  
+  [data-aos="fade-right"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  [data-aos="zoom-in"] {
+    transform: scale(0.9);
+  }
+  
+  [data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+  }
+  
+  [data-aos="zoom-out"] {
+    transform: scale(1.1);
+  }
+  
+  [data-aos="zoom-out"].aos-animate {
+    transform: scale(1);
+  }
+  
+  [data-aos="slide-up"] {
+    transform: translateY(100%);
+  }
+  
+  [data-aos="slide-up"].aos-animate {
+    transform: translateY(0);
+  }
+  
+  [data-aos="slide-down"] {
+    transform: translateY(-100%);
+  }
+  
+  [data-aos="slide-down"].aos-animate {
+    transform: translateY(0);
+  }
+  
+  [data-aos="slide-left"] {
+    transform: translateX(-100%);
+  }
+  
+  [data-aos="slide-left"].aos-animate {
+    transform: translateX(0);
+  }
+  
+  [data-aos="slide-right"] {
+    transform: translateX(100%);
+  }
+  
+  [data-aos="slide-right"].aos-animate {
+    transform: translateX(0);
+  }
+  
+  /* Easing */
+  [data-aos][data-aos-easing="ease-out-cubic"] {
+    transition-timing-function: ease-out;
+  }
+  
