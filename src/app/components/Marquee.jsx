@@ -1,50 +1,70 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 
 export default function Marquee() {
-  const [scroll, setScroll] = useState(0);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setScroll((scroll) => (scroll + 3) % 250);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
+  const colors = ["#FFC43E", "#FB624C", "#FF88BE"];
+  const words = ["COLLABORATE", "CODE", "CONQUER"];
 
   return (
-    <div
-      className="font-pixeboy w-[99.8%] h-fit rotate-[1.5deg] overflow-hidden"
-      ref={ref}
-    >
-      {["#FFC43E", "#FB624C", "#FF88BE"].map((color, index) => (
+    <div className="font-pixeboy md:w-[99.8%] w-[99.5%] overflow-hidden text-3xl rotate-3">
+      {colors.map((color, index) => (
         <div
           key={index}
-          className="whitespace-nowrap will-change-transform"
-          style={{ transform: `translateX(-${scroll}px)` }}
+          className={`marquee-row ${
+            index === 0 ? "border-t-2" : index === 1 ? "border-2" : "border-b-2"
+          } border-black`}
+          style={{ backgroundColor: color }}
         >
-          <div
-            className={`content p-2 text-xl inline-block ${
-              index === 0
-                ? "border-t-2"
-                : index === 1
-                ? "border-2"
-                : "border-b-2"
-            } border-black`}
-            style={{ backgroundColor: color }}
-          >
-            {Array.from({ length: 39 }).map((_, i) => (
-              <span key={i} className={`px-${index === 0 ? "4" : "2"}`}>
-                {index === 0
-                  ? "SYNTHESIZE "
-                  : index === 1
-                  ? " MATERIALIZE "
-                  : " OPTIMIZE  "}
-              </span>
-            ))}
+          <div className={`marquee-container ${index === 1 ? "reverse" : ""}`}>
+            <div className="marquee-content">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <span key={i} className="px-4">
+                  {words[index]}
+                </span>
+              ))}
+            </div>
+            <div className="marquee-content" aria-hidden="true">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <span key={i} className="px-4">
+                  {words[index]}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))}
+      <style jsx>{`
+        .marquee-row {
+          display: flex;
+          overflow: hidden;
+        }
+        .marquee-container {
+          display: flex;
+          width: 200%;
+        }
+        .marquee-content {
+          flex: 0 0 100%;
+          display: flex;
+          justify-content: space-around;
+          animation: marquee 60s linear infinite;
+        }
+        .reverse .marquee-content {
+          animation-direction: reverse;
+        }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-content {
+            animation-play-state: paused !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

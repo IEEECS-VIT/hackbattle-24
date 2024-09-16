@@ -1,6 +1,6 @@
 "use client"; 
 
-export default function TeamCode({ visible,code }) {
+export default function Code({ visible,code }) {
   return (
     <div className={`flex justify-center items-center h-screen ${visible ? 'visible' : 'hidden'}`}>
       <div className="w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[35vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000]">

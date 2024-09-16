@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body
         className={`${pixeboy.variable}  ${crackman.variable} ${mercutio.variable}`}

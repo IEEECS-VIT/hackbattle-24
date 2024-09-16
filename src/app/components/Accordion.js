@@ -2,34 +2,25 @@ import { useState } from "react";
 
 const AccordionItem = ({ title, content, isExpanded, onClick }) => {
   return (
-    
     <div className="mb-8 bg-[#FFB9A0] border-4 border-[#9C6EFF] w-full">
-      
       <button
         type="button"
         className={`mb-2 flex w-full items-center justify-between gap-4  ${
           !isExpanded && ""
-        } bg-transparent p-2 text-left text-[2.6vh]`}
+        } bg-transparent p-2 text-left text-[3vh]`}
         aria-expanded={isExpanded}
         onClick={onClick}
       >
-       {title}
-        
+        {title}
       </button>
       {isExpanded && (
-        <div
-          className={`mb-2 text-pretty ${
-            isExpanded && ""
-          } p-2 text-[2vh]`}
-        >
+        <div className={`mb-2 text-pretty ${isExpanded && ""} p-2 text-[2.5vh]`}>
           {content}
         </div>
       )}
-      
     </div>
   );
 };
-
 
 const Accordion = ({ items }) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -40,7 +31,6 @@ const Accordion = ({ items }) => {
 
   return (
     <div className="overflow-hidden w-[95vw] md:w-[100%]">
-      
       {items.map((item, index) => (
         <AccordionItem
           key={index}
@@ -49,7 +39,6 @@ const Accordion = ({ items }) => {
           isExpanded={expandedIndex === index}
           onClick={() => handleAccordionClick(index)}
         />
-        
       ))}
     </div>
   );
