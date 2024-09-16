@@ -28,10 +28,7 @@ export default function Home() {
       />
       <Landing />
       <About />
-      <Tracks />
-      {/* <Speaker /> */}
-      <Conducted />
-      <FAQ />
+
     </main>
   );
 }
