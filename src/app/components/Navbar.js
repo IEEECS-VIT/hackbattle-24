@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({ loginAction }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="absolute flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-full font-pixeboy z-10">
+    <nav className="absolute flex items-center justify-between bg-white border-b-2 border-black h-[8vh] md:h-[10vh] px-2 md:px-10 w-full font-pixeboy z-[1000]">
       {/* Logo */}
       <div className="flex items-center">
         <Link href="/">
@@ -31,10 +31,16 @@ export default function Navbar() {
           {" "}
           <li className="hover:underline">Home</li>
         </Link>
-        <li className="hover:underline">Tracks</li>
-        <li className="hover:underline">About</li>
-        <li className="hover:underline">FAQ</li>
-        <li className="hover:underline">Team</li>
+        <li className="hover:underline">
+          <a href="#tracks">Tracks</a>
+        </li>
+        <li className="hover:underline">
+          <a href="#about">About</a>
+        </li>
+        <li className="hover:underline">
+          <a href="#faq">FAQ</a>
+        </li>
+        {/* <li className="hover:underline">Team</li> */}
         <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
@@ -42,12 +48,15 @@ export default function Navbar() {
       </ul>
 
       {/* Login Button - Hidden on Mobile */}
-      <button className="hidden md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700">
+      <button
+        className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700 hover:cursor-not-allowed"
+        onClick={loginAction}
+      >
         LOGIN
       </button>
 
       {/* Mobile Menu Button */}
-      <button className="md:hidden block" onClick={toggleMenu}>
+      <button className="md:hidden block " onClick={toggleMenu}>
         <Image
           src={isMenuOpen ? "cross-icon.svg" : "burger-menu.svg"}
           width={50}
@@ -58,7 +67,7 @@ export default function Navbar() {
 
       {/* Full-Screen Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center text-6xl font-bold font-pixeboy">
+        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center text-6xl font-bold font-pixeboy z-[1001]">
           {/* Cross Icon in the Full-Screen Menu */}
           <button className="absolute top-5 right-5" onClick={toggleMenu}>
             <Image
@@ -95,15 +104,15 @@ export default function Navbar() {
             >
               FAQ
             </li>
-            <li
+            {/* <li
               className="hover:underline cursor-pointer text-center"
               onClick={toggleMenu}
             >
               Team
-            </li>
-            <button className=" bg-customBlue text-[#F5E6DA] font-pixeboy text-5xl  py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700">
+            </li> */}
+            {/* <button className=" bg-customBlue text-[#F5E6DA] font-pixeboy text-5xl  py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700">
               LOGIN
-            </button>
+            </button> */}
           </ul>
         </div>
       )}
