@@ -5,6 +5,7 @@ import AddMember from "./AddMember";
 import TeamLeader from "./TeamLeader";
 import { useEffect } from "react";
 import axios from "axios";
+import TeamNew from "./TeamNew";
 
 export default function Team() {
   function getTeamDetails(userId) {}
@@ -39,12 +40,12 @@ export default function Team() {
         YOUR TEAM!
       </p>
       <div className="flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8">
-        <TeamLeader name="your mom" />
-        <TeamMember name="OKOK AAA" />
-        <TeamMember name="OKOK AAA" />
-        <AddMember />
-        <AddMember />
-        <AddMember />
+        <TeamNew name="Aniruddha Neema" position="Team Leader" logo="/pacmanteam.svg"/>
+        <TeamNew name="Aniruddha Neema" position="Team Member" logo="/pacmanmember.svg"/>
+        <TeamNew name="Aniruddha Neema" position="Team Member" logo="/pacmanaddmember.svg"/>
+        <TeamNew/>
+        <TeamNew/>
+        <TeamNew/>
       </div>
     </div>
   );
