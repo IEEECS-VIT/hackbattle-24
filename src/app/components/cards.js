@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Card() {
     
     return (
-        <div className="min-h-screen flex flex-col lg:flex-col xl:flex-row justify-center  gap-10 lg:gap-[17%] items-center ">
+        <div className=" flex flex-col lg:flex-col xl:flex-row justify-center  gap-10 lg:gap-[17%] items-center ">
             <div className="w-[135%]  md:w-[65vw] xl:w-[47vw] h-[29vh] lg:mt-[40%] lg:w-[100%] xl:mt-[20%] xl:h-[45vh] border-black border-4 rounded-lg shadow-[10px_10px_0_0_#3E8BFF] lg:shadow-[15px_15px_0_0_#3E8BFF] md:shadow-[15px_15px_0_0_#3E8BFF]  relative bg-red-700 lg:mb-[39vh]">
                 <div className="bg-[#28B6BA] h-[8vw] md:h-[6vh] lg:h-[8vh] flex justify-between border-black border-b-1 pl-[1vw]">
                 <div
