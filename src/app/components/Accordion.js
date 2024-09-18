@@ -1,28 +1,23 @@
 import { useState } from "react";
 
-const AccordionItem = ({ title, content, isExpanded, onMouseEnter, onMouseLeave }) => {
+const AccordionItem = ({ title, content, isExpanded, onClick }) => {
   return (
-    <div
-      className="mb-8 bg-[#FFB9A0] border-4 border-[#9C6EFF] w-full"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div className="mb-8 bg-[#FFB9A0] border-4 border-[#9C6EFF] w-full">
       <button
         type="button"
-        className={`mb-2 flex w-full items-center justify-between gap-4 bg-transparent p-2 text-left text-[3vh] transition-all duration-300`}
+        className={`mb-2 flex w-full items-center justify-between gap-4  ${
+          !isExpanded && ""
+        } bg-transparent p-2 text-left text-[3vh]`}
         aria-expanded={isExpanded}
+        onClick={onClick}
       >
         {title}
       </button>
-      <div
-        className={`overflow-hidden transition-max-height duration-800 ease-in-out ${
-          isExpanded ? 'max-h-[500px]' : 'max-h-0'
-        }`}
-      >
-        <div className="mb-2 p-2 text-pretty text-[2.5vh]">
+      {isExpanded && (
+        <div className={`mb-2 text-pretty ${isExpanded && ""} p-2 text-[2.5vh]`}>
           {content}
         </div>
-      </div>
+      )}
     </div>
   );
 };
@@ -30,12 +25,8 @@ const AccordionItem = ({ title, content, isExpanded, onMouseEnter, onMouseLeave 
 const Accordion = ({ items }) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const handleMouseEnter = (index) => {
-    setExpandedIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setExpandedIndex(null);
+  const handleAccordionClick = (index) => {
+    setExpandedIndex(index === expandedIndex ? null : index); // Toggle or close other items
   };
 
   return (
@@ -46,8 +37,7 @@ const Accordion = ({ items }) => {
           title={item.title}
           content={item.content}
           isExpanded={expandedIndex === index}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
+          onClick={() => handleAccordionClick(index)}
         />
       ))}
     </div>
