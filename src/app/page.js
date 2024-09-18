@@ -33,6 +33,7 @@ export default function Home() {
       <Tracks />
       <Conducted />
       <FAQ />
+      <TaskSub />
 
       <Registration />
     </main>
