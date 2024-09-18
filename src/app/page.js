@@ -29,13 +29,6 @@ export default function Home() {
       <Landing />
       <About />
 
-<<<<<<< HEAD
-      {/* <Tracks />
-      <Speaker />
-      <Conducted />
-      <FAQ /> */}
-=======
->>>>>>> 456f9a4ad7f90347a360dd8b90f4b88a66969bf7
     </main>
   );
 }

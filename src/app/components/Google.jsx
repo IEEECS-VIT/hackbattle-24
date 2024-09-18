@@ -28,7 +28,7 @@ export default function GoogleModal({ visible, onClose }) {
   };
 
   const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    apiKey: "hackbattle24-backend-orcin.vercel.app",
     authDomain: "hackathon-2024-1d92e.firebaseapp.com",
     projectId: "hackathon-2024-1d92e",
     storageBucket: "hackathon-2024-1d92e.appspot.com",
@@ -117,6 +117,12 @@ export default function GoogleModal({ visible, onClose }) {
               alt="Yellow Circles"
               className="h-[1vh] lg:h-[2vh] w-auto"
             />  
+            <button
+              onClick={onClose}
+              className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
+            >
+              &#x2715;
+            </button>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-evenly w-[90%] ml-[2.5vw] sm:justify-around sm:items-center h-[90%] font-pixeboy text-[3vh] lg:text-[5vh]">
@@ -125,13 +131,14 @@ export default function GoogleModal({ visible, onClose }) {
               className="h-[5vh] sm:h-[7.5vh] mt-[1vh] md:h-[8vh] lg:h-[20%] "
               alt="Final Google"
             />
+
             <button
-              className="rounded-lg sm:text-[3.9vh]  text-[2.5vh] px-[4vw] py-[1vh] h-[5vh] sm:h-[12.51vh] text-white border-black border-2 bg-[#FFC642] transition-colors duration-200"
+              className="rounded-lg sm:text-[3.9vh] text-[2.5vh] px-[4vw] py-[1vh] h-[5vh] sm:h-[12.51vh] text-white border-black border-2 bg-[#FFC642] transition-colors duration-200"
               style={{
                 textShadow:
                   "1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000",
               }}
-              //onClick={handleClick}
+              onClick={handleClick}
             >
               LOGIN WITH GOOGLE
             </button>
