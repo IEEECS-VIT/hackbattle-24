@@ -32,17 +32,21 @@ export default function Navbar({ loginAction }) {
           <li className="hover:underline">Home</li>
         </Link>
         <li className="hover:underline">
-          <a href="#tracks">Tracks</a>
+          <a href="/#tracks">Tracks</a>
         </li>
         <li className="hover:underline">
-          <a href="#about">About</a>
+          <a href="/#about">About</a>
         </li>
         <li className="hover:underline">
-          <a href="#faq">FAQ</a>
+          <a href="/#faq">FAQ</a>
         </li>
         <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
+        </Link>
+        <Link href="/sponsors">
+          {" "}
+          <li className="hover:underline">Sponsors</li>
         </Link>
       </ul>
 

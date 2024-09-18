@@ -45,6 +45,11 @@ export default function Timeline() {
             className="object-contain"
           />
           </div>
+          <img
+          src="pixelated-filter.svg"
+          alt="Overlay Image"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+        />
         </div>
       </section>
       <section className="relative w-screen h-[110vh] md:h-[160vh] lg:h-[222vh] xl:h-[150vh]  bg-[#FEC46F] overflow-hidden">
