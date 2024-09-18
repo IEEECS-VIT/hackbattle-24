@@ -25,7 +25,7 @@ export default function Conducted() {
         SPONSORED BY
       </h1>
       <div className="md:hidden flex flex-col items-center justify-center gap-8 mt-20">
-      <img
+        <img
           src="./techgreenlogo.jpg"
           alt="Tech Green Logo"
           className="w-56 h-56 sm:w-40 sm:h-40 object-contain"
@@ -52,7 +52,6 @@ export default function Conducted() {
           className="top-[15%] w-36 h-36 sm:w-40 sm:h-40 object-contain"
           data-aos="zoom-in"
         />
-        
       </div>
       <img
         src="./techgreenlogo.jpg"
@@ -73,7 +72,6 @@ export default function Conducted() {
         data-aos="fade-up-right"
       />
       <img
-        
         src="./bglogo.cms"
         alt="Tech Green Logo"
         className="hidden md:block absolute right-[12%] bottom-[20%] md:w-48 md:h-40 lg:w-[270px] lg:h-40 object-contain"
