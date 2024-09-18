@@ -43,7 +43,7 @@ export default function TeamNew({ position = "Team Member", name = "Add Member" 
               >
                 {position}
               </button>
-              <p className="font-mercutio 2xl:text-6xl lg:text-5xl text-white xl:ml-8 xl:mt-4 text-4xl ml-5 min-w-[15vw] max-w-[17vw] break-words text-left leading-tight">
+              <p className="font-mercutio 2xl:text-6xl lg:text-5xl text-white xl:ml-8 xl:mt-4 text-[2rem] ml-5 min-w-[15vw] max-w-[17vw] sm:break-words text-left leading-tight">
                 {name}
               </p>
             </div>
