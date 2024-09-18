@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 .text-with-border {
     color: white; /* Color of the text */
     -webkit-text-stroke: 1px black; /* Text border for Webkit browsers */
@@ -22,4 +23,40 @@
 
 .big-shadow {
   box-shadow: -15px 15px 0px rgba(0, 0, 0, 0.6); /* Added missing values for the shadow */
+=======
+.glow-text {
+    text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #0d9c9f, 2px -2px 0 #0d9c9f,
+      -2px 2px 0 #ff0000, 4px 4px 10px #000;
+  }
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee-container-left {
+  display: inline-block;
+  animation: marquee-left 30s linear infinite;
+}
+.marquee-container-right {
+  display: inline-block;
+  animation: marquee-right 30s linear infinite;
+}
+.marquee-content {
+  display: inline-block;
+}.letter {
+  display: inline-block;
+  transition: color 0.3s ease;
+>>>>>>> 456f9a4ad7f90347a360dd8b90f4b88a66969bf7
 }
