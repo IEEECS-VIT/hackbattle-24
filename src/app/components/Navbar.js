@@ -44,19 +44,19 @@ export default function Navbar({ loginAction }) {
           {" "}
           <li className="hover:underline">Timeline</li>
         </Link>
-        <Link href="/sponsors">
+        {/* <Link href="/sponsors">
           {" "}
           <li className="hover:underline">Sponsors</li>
-        </Link>
+        </Link> */}
       </ul>
 
       {/* Login Button - Hidden on Mobile */}
-      <button
+      {/* <button
         className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700 hover:cursor-not-allowed"
         onClick={loginAction}
       >
         LOGIN
-      </button>
+      </button> */}
 
       {/* Mobile Menu Button */}
       <button className="md:hidden block " onClick={toggleMenu}>
@@ -101,6 +101,11 @@ export default function Navbar({ loginAction }) {
             <li className="hover:underline cursor-pointer text-center">
               <a href="#faq" onClick={toggleMenu}>
                 FAQ
+              </a>
+            </li>
+            <li className="hover:underline cursor-pointer text-center">
+              <a href="/timeline" onClick={toggleMenu}>
+                Timeline
               </a>
             </li>
           </ul>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+
 export default function Card() {
   return (
     <div className="min-h-screen flex flex-col lg:flex-col xl:flex-row justify-center  gap-10 lg:gap-[17%] items-center ">
