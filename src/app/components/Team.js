@@ -6,15 +6,35 @@ import TeamLeader from "./TeamLeader";
 import { useEffect } from "react";
 import axios from "axios";
 import TeamNew from "./TeamNew";
+import local from "next/font/local";
 
 export default function Team() {
-  function getTeamDetails(userId) {}
-
   function routeToHome() {
     window.location.href = "/";
   }
+  function getTeamDetails(accessToken) {
+    axios
+      .get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching team details:", error);
+      });
+  }
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const token = localStorage.getItem("AccessToken");
+    getTeamDetailst(token);
+  }, []);
 
   return (
     <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
@@ -40,12 +60,24 @@ export default function Team() {
         YOUR TEAM!
       </p>
       <div className="flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8">
-        <TeamNew name="Aniruddha Neema" position="Team Leader" logo="/pacmanteam.svg"/>
-        <TeamNew name="Aniruddha Neema" position="Team Member" logo="/pacmanmember.svg"/>
-        <TeamNew name="Aniruddha Neema" position="Team Member" logo="/pacmanaddmember.svg"/>
-        <TeamNew/>
-        <TeamNew/>
-        <TeamNew/>
+        <TeamNew
+          name="Aniruddha Neema"
+          position="Team Leader"
+          logo="/pacmanteam.svg"
+        />
+        <TeamNew
+          name="Aniruddha Neema"
+          position="Team Member"
+          logo="/pacmanmember.svg"
+        />
+        <TeamNew
+          name="Aniruddha Neema"
+          position="Team Member"
+          logo="/pacmanaddmember.svg"
+        />
+        <TeamNew />
+        <TeamNew />
+        <TeamNew />
       </div>
     </div>
   );
