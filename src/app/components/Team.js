@@ -33,7 +33,6 @@ export default function Team() {
   if (!teamData) {
     return <div>Loading...</div>;
   }
-
   const teamMembers = [
     {
       name: teamData.teamLeader.name,
