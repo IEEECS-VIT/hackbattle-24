@@ -1,4 +1,4 @@
-export default function TeamNew({ position = "Team Member", name = "Add Member" }) {
+export default function TeamNew({ position = "Team Member", name = "Add Member" ,setCodePopup}) {
     // Determine if it's the Team Leader or Team Member
     const isTeamLeader = position === "Team Leader";
     const isTeamMember = name === "Add Member";
@@ -21,11 +21,19 @@ export default function TeamNew({ position = "Team Member", name = "Add Member" 
       : isTeamMember
       ? "/pacmanaddmember.svg"
       : "/pacmanmember.svg"; // Default image
+
+    function handleClick(){
+        
+            setCodePopup(true);
+    
+    }
   
     return (
-      <div className="flex items-center justify-center h-fit">
+      <div className="flex items-center justify-center h-fit"
+      onClick={handleClick}
+      >
         <div
-          className={`border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] xl:w-[35vw] xl:h-[18vw] bg-[${backgroundColor}] w-[75vw] h-[22vh] lg:w-[40vw] sm:h-[28vh]`}
+          className={`border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-16px_16px_0_0_#000000] xl:w-[30vw] xl:h-[15vw] bg-[${backgroundColor}] w-[75vw] h-[22vh] lg:w-[40vw] sm:h-[28vh]`}
         >
           <div
             className={`bg-[${backgroundColor}] h-[4vw] md:h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[1vw]`}
@@ -33,22 +41,28 @@ export default function TeamNew({ position = "Team Member", name = "Add Member" 
             <img
               src="/redcircles.svg"
               alt="Red Circles"
-              className="xl:h-[1vh] xl:w-[2vw] lg:h-[2vh] lg:w-[3vw] sm:h-[9vh] sm:w-[6vw] h-[15vh] w-[15vw]"
+              className="xl:h-[2vh] xl:w-[2vw] lg:h-[2vh] lg:w-[3vw] sm:h-[6vh] sm:w-[6vw] h-[7vh] w-[7vw]"
             />
           </div>
-          <div className="border-white border-4 xl:m-6 xl:h-[13vw] sm:h-[20vh] h-[16vh] m-4">
-            <div className="float-left">
+          <div className="border-white border-4 xl:m-3 xl:h-[11vw] sm:h-[20vh] h-[16vh] m-4 flex justify-between">
+            <div className="flex flex-col justify-evenly">
+            <div className="flex items-center">
               <button
                 className={`bg-[${buttonColor}] rounded-2xl border-black border-2 xl:w-[8vw] xl:h-[2vw] lg:w-[12vw] sm:h-[4vh] md:w-[14vw] xl:mt-5 xl:ml-5 lg:mt-4 lg:ml-4 w-[25vw] h-[6vw] mt-3 ml-3 font-pixeboy`}
               >
                 {position}
               </button>
-              <p className="font-mercutio 2xl:text-6xl lg:text-5xl text-white xl:ml-8 xl:mt-4 text-4xl ml-5 min-w-[15vw] max-w-[17vw] break-words text-left leading-tight">
+              </div>
+              <div className="font-mercutio lg:text-[2.5rem] text-white xl:ml-8 text-[2rem] ml-5 min-w-[15vw] max-w-[25vw] text-left leading-tight">
                 {name}
-              </p>
+              </div>
             </div>
-            <div className="float-right">
-              <div className="lg:h-[9vw] lg:w-[9vw] sm:h-[13vw] sm:w-[13vw] h-[18vw] w-[18vw] bg-white rounded-full lg:mt-[5vh] xl:mt-[3.5vh] sm:mt-[4vh] mt-[3vh] mr-[2vw] flex justify-center items-center border-black border-2">
+
+
+
+        <div className="flex-col items-center p-4">
+            <div>
+              <div className="lg:h-[8vw] lg:w-[8vw] sm:h-[13vw] sm:w-[13vw] h-[15vw] w-[15vw] bg-white rounded-full flex justify-center items-center  border-black border-2">
                 <img
                   src={pacmanSrc}
                   alt="pacman"
@@ -56,6 +70,9 @@ export default function TeamNew({ position = "Team Member", name = "Add Member" 
                 />
               </div>
             </div>
+        </div>
+ 
+
           </div>
         </div>
       </div>
