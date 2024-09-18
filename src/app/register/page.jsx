@@ -36,6 +36,7 @@ export default function Memories() {
                             -1px 1px 0 #000, 
                             0.15rem 0.15rem 0 #ff0000, 
                             0.15rem -0.15rem 0 #0D9C9F
+<<<<<<< HEAD
                         `,
           }}
         >
@@ -48,3 +49,14 @@ export default function Memories() {
     </div>
   );
 }
+=======
+                        ` 
+                    }}
+                >
+                    ALREADY REGISTERED? <a href="#" className="text-yellow-300">LOG IN</a>
+                </h2>
+            </div>
+        </div>
+    );
+}
+>>>>>>> 1d62c05bc4bc5b92d4a825bf6fd15a7415b154b3

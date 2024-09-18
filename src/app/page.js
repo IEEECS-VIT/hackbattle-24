@@ -28,9 +28,12 @@ export default function Home() {
       />
       <Landing />
       <About />
+<<<<<<< HEAD
       <Tracks />
       <Conducted />
       <FAQ />
+=======
+>>>>>>> 1d62c05bc4bc5b92d4a825bf6fd15a7415b154b3
     </main>
   );
 }
