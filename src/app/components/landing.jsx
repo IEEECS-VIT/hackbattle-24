@@ -47,13 +47,13 @@ export default function Landing() {
             <p className="font-crackman text-8xl">BATTLE</p>
           </div>
           <a
-            href="https://gravitas.vit.ac.in/events/e748d506-415c-4166-b45f-7485c25406aa"
+            href="https://www.techknowgreen.com/"
             target="_blank"
             data-aos="fade-up"
           >
 
-            <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] py-3 px-2  text-3xl">
-              REGISTER NOW!
+            <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl">
+              Title Sponsor  Techknowgreen
             </button>
           </a>
           <p className="text-2xl text-white" data-aos="fade-up">

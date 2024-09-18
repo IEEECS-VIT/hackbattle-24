@@ -30,6 +30,9 @@ export default function Home() {
       />
       <Landing />
       <About />
+      <Tracks />
+      <Conducted />
+      <FAQ />
 
       <Registration />
     </main>
