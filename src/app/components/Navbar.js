@@ -40,7 +40,6 @@ export default function Navbar({ loginAction }) {
         <li className="hover:underline">
           <a href="/#faq">FAQ</a>
         </li>
-        {/* <li className="hover:underline">Team</li> */}
         <Link href="/timeline">
           {" "}
           <li className="hover:underline">Timeline</li>
@@ -84,39 +83,26 @@ export default function Navbar({ loginAction }) {
 
           {/* Menu Items */}
           <ul className="flex flex-col gap-8 mt-12">
-            <li
-              className="hover:underline cursor-pointer text-center"
-              onClick={toggleMenu}
-            >
-              Home
+            <li className="hover:underline cursor-pointer text-center">
+              <a href="#home" onClick={toggleMenu}>
+                Home
+              </a>
             </li>
-            <li
-              className="hover:underline cursor-pointer text-center"
-              onClick={toggleMenu}
-            >
-              Tracks
+            <li className="hover:underline cursor-pointer text-center">
+              <a href="#tracks" onClick={toggleMenu}>
+                Tracks
+              </a>
             </li>
-            <li
-              className="hover:underline cursor-pointer text-center"
-              onClick={toggleMenu}
-            >
-              About
+            <li className="hover:underline cursor-pointer text-center">
+              <a href="#about" onClick={toggleMenu}>
+                About
+              </a>
             </li>
-            <li
-              className="hover:underline cursor-pointer text-center"
-              onClick={toggleMenu}
-            >
-              FAQ
+            <li className="hover:underline cursor-pointer text-center">
+              <a href="#faq" onClick={toggleMenu}>
+                FAQ
+              </a>
             </li>
-            {/* <li
-              className="hover:underline cursor-pointer text-center"
-              onClick={toggleMenu}
-            >
-              Team
-            </li> */}
-            {/* <button className=" bg-customBlue text-[#F5E6DA] font-pixeboy text-5xl  py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700">
-              LOGIN
-            </button> */}
           </ul>
         </div>
       )}
