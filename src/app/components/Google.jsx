@@ -3,8 +3,30 @@ import Draggable from "react-draggable";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
+import local from "next/font/local";
 
 export default function GoogleModal({ visible, onClose }) {
+  const sampleResponse = {
+    teamName: "1984",
+    teamCode: "fhvnmd",
+    teamLeader: {
+      name: "Ansh Mehta",
+      email: "ansh.mehta2022@vitstudent.ac.in",
+    },
+    teamMembers: [
+      {
+        name: "Ansh Mehta",
+        email: "ansh.mehta2022@vitstudent.ac.in",
+        isLeader: true,
+      },
+      {
+        name: "Akshit Anand",
+        email: "akshit.anand2022@vitstudent.ac.in",
+        isLeader: false,
+      },
+    ],
+  };
+
   const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "hackathon-2024-1d92e.firebaseapp.com",
@@ -39,9 +61,15 @@ export default function GoogleModal({ visible, onClose }) {
       )
       .then((res) => {
         const userStatus = res.data.status;
+        console.log(userStatus);
         if (userStatus === 0) {
           //User exists but not in a team
           //redirect to team creation / join page
+        } else if (userStatus === 1) {
+          //user goes to team
+          //get team details
+          localStorage.setItem("AccessToken", accessToken);
+          window.location.href = "/team";
         }
       })
       .catch((error) => {
@@ -58,6 +86,7 @@ export default function GoogleModal({ visible, onClose }) {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        console.log(user);
         // IdP data available using getAdditionalUserInfo(result)
         getUserContext(user.accessToken);
         // ...
