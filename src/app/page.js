@@ -9,6 +9,8 @@ import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
 import { useState } from "react";
 import Google from "./components/Google";
+import RegisterForm from "./components/RegisterForm";
+import Registration from "./components/Login";
 
 export default function Home() {
   const [googleVisible, setGoogleVisible] = useState(false);
@@ -28,7 +30,11 @@ export default function Home() {
       />
       <Landing />
       <About />
+      <Tracks />
+      <Conducted />
+      <FAQ />
 
+      <Registration />
     </main>
   );
 }
