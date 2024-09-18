@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Card from "../components/track_single_component"
 
 export default function Sponsors() {
   return (

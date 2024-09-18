@@ -9,8 +9,7 @@ import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
 import { useState } from "react";
 import Google from "./components/Google";
-import Image from "next/image";
-
+import TaskSub from "./components/TaskSub"
 export default function Home() {
   const [googleVisible, setGoogleVisible] = useState(false);
 
@@ -32,6 +31,7 @@ export default function Home() {
       <Tracks />
       <Conducted />
       <FAQ />
+      <TaskSub />
 
     </main>
   );
