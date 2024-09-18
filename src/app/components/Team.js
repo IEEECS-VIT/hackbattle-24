@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TeamNew from "./TeamNew";
+import Code from "./Code";
 
 export default function Team() {
   const [teamData, setTeamData] = useState(null);
+  const [codePopup, setCodePopup] = useState(false);
 
   function routeToHome() {
     window.location.href = "/";
@@ -34,11 +36,11 @@ export default function Team() {
     return <div>Loading...</div>;
   }
   const teamMembers = [
-    {
-      name: teamData.teamLeader.name,
-      position: "Team Leader",
-      logo: "/pacmanteam.svg",
-    },
+    // {
+    //   name: teamData.teamLeader.name,
+    //   position: "Team Leader",
+    //   logo: "/pacmanteam.svg",
+    // },
     ...teamData.teamMembers.map((member) => ({
       name: member.name,
       position: member.isLeader ? "Team Leader" : "Team Member",
@@ -72,18 +74,18 @@ export default function Team() {
         HACKBATTLE 2024
       </p>
       <p className="font-pixeboy md:text-7xl text-5xl text-center mb-[2vw]">
-        YOUR TEAM!
+        {"Your team : "}{teamData.teamName}
       </p>
       <div className="flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8">
         {allSlots.map((slot, index) => (
           <TeamNew
-            key={index} // Use index as key if you don’t have a unique identifier
-            name={slot.name || ""}
-            position={slot.position || ""}
-            logo={slot.logo || ""}
+            name={slot.name}
+            position={slot.position}
+            setCodePopup = {setCodePopup}
           />
         ))}
       </div>
+      <Code visible={codePopup} code={teamData.teamCode} setCodePopup={setCodePopup}/>
     </div>
   );
 }

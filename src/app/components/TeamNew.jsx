@@ -1,4 +1,4 @@
-export default function TeamNew({ position = "Team Member", name = "Add Member" }) {
+export default function TeamNew({ position = "Team Member", name = "Add Member" ,setCodePopup}) {
     // Determine if it's the Team Leader or Team Member
     const isTeamLeader = position === "Team Leader";
     const isTeamMember = name === "Add Member";
@@ -21,9 +21,17 @@ export default function TeamNew({ position = "Team Member", name = "Add Member" 
       : isTeamMember
       ? "/pacmanaddmember.svg"
       : "/pacmanmember.svg"; // Default image
+
+    function handleClick(){
+        
+            setCodePopup(true);
+    
+    }
   
     return (
-      <div className="flex items-center justify-center h-fit">
+      <div className="flex items-center justify-center h-fit"
+      onClick={handleClick}
+      >
         <div
           className={`border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-16px_16px_0_0_#000000] xl:w-[30vw] xl:h-[15vw] bg-[${backgroundColor}] w-[75vw] h-[22vh] lg:w-[40vw] sm:h-[28vh]`}
         >
