@@ -43,17 +43,17 @@ export default function Landing() {
             data-aos="fade-down"
           />
           <div data-aos="zoom-in">
+            <p className="text-3xl">techknowgreen presents.....</p>
             <p className="font-crackman text-8xl text-black">HACK</p>
             <p className="font-crackman text-8xl">BATTLE</p>
           </div>
           <a
-            href="https://www.techknowgreen.com/"
+            href="https://gravitas.vit.ac.in/events/e748d506-415c-4166-b45f-7485c25406aa/"
             target="_blank"
             data-aos="fade-up"
           >
-
             <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl">
-              Title Sponsor  Techknowgreen
+              Register Now!
             </button>
           </a>
           <p className="text-2xl text-white" data-aos="fade-up">
