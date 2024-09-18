@@ -2,28 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-.text-with-border {
-    color: white; /* Color of the text */
-    -webkit-text-stroke: 1px black; /* Text border for Webkit browsers */
-    text-stroke: 1px black; /* Text border for other browsers that support it */
-    -webkit-font-smoothing: antialiased; /* To improve rendering on some browsers */
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; /* Enhance legibility */
-  }
-  
-@layer utilities {
-  .text-shadow {
-    text-shadow: -4px 4px 0px black;
-  }
-  .text-shadowfinal {
-    text-shadow: -3px 3px 0px #FF553E;
-  }
-}
-
-.big-shadow {
-  box-shadow: -15px 15px 0px rgba(0, 0, 0, 0.6); /* Added missing values for the shadow */
-=======
 .glow-text {
     text-shadow: 2px 2px 0 #ff0000, -2px -2px 0 #0d9c9f, 2px -2px 0 #0d9c9f,
       -2px 2px 0 #ff0000, 4px 4px 10px #000;
@@ -58,5 +36,4 @@
 }.letter {
   display: inline-block;
   transition: color 0.3s ease;
->>>>>>> 0837e073ef8a0133ad4c7dfe5476f96cdc357e32
 }
