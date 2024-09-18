@@ -110,13 +110,13 @@ export default function GoogleModal({ visible, onClose }) {
         onClick={onClose}
       ></div>
       <Draggable handle=".handle">
-        <div className="relative z-50 w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[35vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white">
+        <div className="relative z-50 w-[65vw] sm:h-[35vh] h-[25vh] lg:h-[42.5vh] lg:w-[40.77vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white">
           <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex justify-between items-center border-black border-b-2 px-[0.5vw] handle cursor-move">
             <img
               src="/yellow-circles.svg"
               alt="Yellow Circles"
-              className="h-[1vh] lg:h-[2vh]"
-            />
+              className="h-[1vh] lg:h-[2vh] w-auto"
+            />  
             <button
               onClick={onClose}
               className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
@@ -125,15 +125,22 @@ export default function GoogleModal({ visible, onClose }) {
             </button>
           </div>
 
-          <div className="flex flex-col items-center h-[38vh] font-pixeboy text-[3vh] lg:text-[5vh]">
-            <p className="py-[5vh] [text-shadow:2px_2px_4px_var(--tw-shadow-color)] shadow-[#3EB85D]">
-              LOGIN WITH GOOGLE
-            </p>
+          <div className="flex flex-col sm:flex-row justify-evenly w-[90%] ml-[2.5vw] sm:justify-around sm:items-center h-[90%] font-pixeboy text-[3vh] lg:text-[5vh]">
+            <img
+              src="finalgoogle.svg"
+              className="h-[5vh] sm:h-[7.5vh] mt-[1vh] md:h-[8vh] lg:h-[20%] "
+              alt="Final Google"
+            />
+
             <button
-              className="bg-[#4285F4] mt-[5vh] px-[4vw] py-[1vh] text-white border-black border-2 hover:bg-[#357AE8] transition-colors duration-200"
+              className="rounded-lg sm:text-[3.9vh] text-[2.5vh] px-[4vw] py-[1vh] h-[5vh] sm:h-[12.51vh] text-white border-black border-2 bg-[#FFC642] transition-colors duration-200"
+              style={{
+                textShadow:
+                  "1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000",
+              }}
               onClick={handleClick}
             >
-              GOOGLE
+              LOGIN WITH GOOGLE
             </button>
           </div>
         </div>

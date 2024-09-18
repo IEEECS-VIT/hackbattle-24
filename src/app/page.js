@@ -31,6 +31,12 @@ export default function Home() {
       <Tracks />
       <Conducted />
       <FAQ />
+<<<<<<< HEAD
+=======
+      <TaskSub />
+
+      <Registration />
+>>>>>>> a35e8d3ca9a4206630b42ed3a3df9dd969e82864
     </main>
   );
 }

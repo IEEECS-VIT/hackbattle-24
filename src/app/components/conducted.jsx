@@ -1,28 +1,17 @@
-"use client";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+import TeamCode from "./Code";
+import Card from "./spon_single_component"
 
-export default function Conducted() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
-
+export default function Tracks() {
   return (
-    <section className="h-screen relative flex flex-col items-center justify-around overflow-hidden">
-      <img
-        src="desk-6.svg"
-        alt="bg"
-        className="absolute w-full h-full object-cover z-[-1] opacity-90"
-      />
-      <h1
-        className="absolute top-0 text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-crackman text-center text-black mt-4"
-        data-aos="fade-down"
-      >
+
+    <section
+      className="relative min-h-[100vh] bg-[#35B857] flex flex-col items-center justify-center "
+      id="tracks"
+    >
+      {/* Title */}
+      <p className="bg-[#35B857] pt-2 text-6xl w-full sm:w-[50vw] h-[10vh] text-center font-pixeboy mt-3 mb-6">
         SPONSORED BY
+<<<<<<< HEAD
       </h1>
       <div className="md:hidden flex flex-col items-center justify-center gap-8 mt-20">
         <img
@@ -77,6 +66,17 @@ export default function Conducted() {
         className="hidden md:block absolute right-[12%] bottom-[20%] md:w-48 md:h-40 lg:w-[270px] lg:h-40 object-contain"
         data-aos="fade-up-left"
       />
+=======
+      </p>
+
+      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-28 p-4 pb-10">
+        <Card title="Techknowgreen" imageSrc="./techgreenlogo.jpg" />
+        <Card title="Cream Stone" imageSrc="./creamlogo.png" />
+        <Card title="Burger King" imageSrc="./bglogo.cms" />
+        
+        <Card title="Ease My Trip" imageSrc="./easelogo.jpg" />
+      </div>
+>>>>>>> a35e8d3ca9a4206630b42ed3a3df9dd969e82864
     </section>
   );
 }
