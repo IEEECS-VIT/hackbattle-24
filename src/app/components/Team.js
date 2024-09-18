@@ -1,40 +1,56 @@
 "use client";
 
-import TeamMember from "./TeamMember";
-import AddMember from "./AddMember";
-import TeamLeader from "./TeamLeader";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import TeamNew from "./TeamNew";
-import local from "next/font/local";
 
 export default function Team() {
+  const [teamData, setTeamData] = useState(null);
+
   function routeToHome() {
     window.location.href = "/";
   }
-  function getTeamDetails(accessToken) {
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("AccessToken");
+    console.log(accessToken);
+
     axios
-      .get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+      .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
       .then((res) => {
+        setTeamData(res.data);
         console.log(res.data);
       })
       .catch((error) => {
         console.error("Error fetching team details:", error);
       });
+  }, []);
+
+  if (!teamData) {
+    return <div>Loading...</div>;
   }
 
-  useEffect(() => {
-    const token = localStorage.getItem("AccessToken");
-    getTeamDetailst(token);
-  }, []);
+  const teamMembers = [
+    {
+      name: teamData.teamLeader.name,
+      position: "Team Leader",
+      logo: "/pacmanteam.svg",
+    },
+    ...teamData.teamMembers.map((member) => ({
+      name: member.name,
+      position: member.isLeader ? "Team Leader" : "Team Member",
+      logo: member.isLeader ? "/pacmanteam.svg" : "/pacmanmember.svg",
+    })),
+  ];
+
+  // Ensure there are always 6 TeamNew components
+  const totalSlots = 6;
+  const emptySlots = totalSlots - teamMembers.length;
+  const allSlots = [...teamMembers, ...Array(emptySlots).fill({})];
 
   return (
     <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
@@ -60,24 +76,14 @@ export default function Team() {
         YOUR TEAM!
       </p>
       <div className="flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8">
-        <TeamNew
-          name="Aniruddha Neema"
-          position="Team Leader"
-          logo="/pacmanteam.svg"
-        />
-        <TeamNew
-          name="Aniruddha Neema"
-          position="Team Member"
-          logo="/pacmanmember.svg"
-        />
-        <TeamNew
-          name="Aniruddha Neema"
-          position="Team Member"
-          logo="/pacmanaddmember.svg"
-        />
-        <TeamNew />
-        <TeamNew />
-        <TeamNew />
+        {allSlots.map((slot, index) => (
+          <TeamNew
+            key={index} // Use index as key if you don’t have a unique identifier
+            name={slot.name || ""}
+            position={slot.position || ""}
+            logo={slot.logo || ""}
+          />
+        ))}
       </div>
     </div>
   );
