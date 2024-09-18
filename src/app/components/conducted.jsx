@@ -25,11 +25,12 @@ export default function Conducted() {
         SPONSORED BY
       </h1>
       <div className="md:hidden flex flex-col items-center justify-center gap-8 mt-20">
-        <img
-          src="./bglogo.cms"
-          alt="BG Logo"
-          className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
+      <img
+          src="./techgreenlogo.jpg"
+          alt="Tech Green Logo"
+          className="w-56 h-56 sm:w-40 sm:h-40 object-contain"
           data-aos="zoom-in"
+          data-aos-delay="600"
         />
         <img
           src="./creamlogo.png"
@@ -46,15 +47,15 @@ export default function Conducted() {
           data-aos-delay="400"
         />
         <img
-          src="./techgreenlogo.jpg"
-          alt="Tech Green Logo"
-          className="w-56 h-56 sm:w-40 sm:h-40 object-contain"
+          src="./bglogo.cms"
+          alt="BG Logo"
+          className="top-[15%] w-36 h-36 sm:w-40 sm:h-40 object-contain"
           data-aos="zoom-in"
-          data-aos-delay="600"
         />
+        
       </div>
       <img
-        src="./bglogo.cms"
+        src="./techgreenlogo.jpg"
         alt="BG Logo"
         className="hidden md:block absolute top-[6%] left-[17%] md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain"
         data-aos="fade-right"
@@ -72,9 +73,10 @@ export default function Conducted() {
         data-aos="fade-up-right"
       />
       <img
-        src="./techgreenlogo.jpg"
+        
+        src="./bglogo.cms"
         alt="Tech Green Logo"
-        className="hidden md:block absolute right-[12%] bottom-[29%] md:w-48 md:h-48 lg:w-[270px] lg:h-auto object-contain"
+        className="hidden md:block absolute right-[12%] bottom-[20%] md:w-48 md:h-40 lg:w-[270px] lg:h-40 object-contain"
         data-aos="fade-up-left"
       />
     </section>
