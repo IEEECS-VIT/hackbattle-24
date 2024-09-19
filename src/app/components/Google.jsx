@@ -51,11 +51,11 @@ export default function GoogleModal({ visible, onClose }) {
     // accessToken is the Google Access Token received after login
     axios
       .post(
-        ${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token`,
         {},
         {
           headers: {
-            Authorization: Bearer ${accessToken},
+            Authorization: `Bearer ${accessToken}`,
           },
         }
       )
