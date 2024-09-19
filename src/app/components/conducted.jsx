@@ -12,12 +12,12 @@ export default function Tracks() {
         SPONSORED BY
       </p>
 
-      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-28 p-4 pb-10">
-        <Card title="Techknowgreen" imageSrc="./techgreenlogo.jpg" />
-        <Card title="Cream Stone" imageSrc="./creamlogo.png" />
-        <Card title="Burger King" imageSrc="./bglogo.cms" />
+      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-36 p-4 pb-8">
+        <Card title="" imageSrc="./technogreen_new.svg" />
+        <Card title="" imageSrc="./creamstone_new.svg" />
+        <Card title="" imageSrc="./burger_king_pixel.svg" />
 
-        <Card title="Ease My Trip" imageSrc="./easelogo.jpg" />
+        <Card title="" imageSrc="./easemytrip_new.svg" />
       </div>
     </section>
   );
