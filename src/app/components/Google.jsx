@@ -51,11 +51,11 @@ export default function GoogleModal({ visible, onClose }) {
     // accessToken is the Google Access Token received after login
     axios
       .post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token`,
+        ${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token,
         {},
         {
           headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: Bearer ${accessToken},
           },
         }
       )
@@ -117,15 +117,12 @@ export default function GoogleModal({ visible, onClose }) {
               alt="Yellow Circles"
               className="h-[1vh] lg:h-[2vh] w-auto"
             />  
-<<<<<<< HEAD
             <button
               onClick={onClose}
               className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
             >
               &#x2715;
             </button>
-=======
->>>>>>> 1d62c05bc4bc5b92d4a825bf6fd15a7415b154b3
           </div>
 
           <div className="flex flex-col sm:flex-row justify-evenly w-[90%] ml-[2.5vw] sm:justify-around sm:items-center h-[90%] font-pixeboy text-[3vh] lg:text-[5vh]">
@@ -134,23 +131,14 @@ export default function GoogleModal({ visible, onClose }) {
               className="h-[5vh] sm:h-[7.5vh] mt-[1vh] md:h-[8vh] lg:h-[20%] "
               alt="Final Google"
             />
-<<<<<<< HEAD
 
             <button
               className="rounded-lg sm:text-[3.9vh] text-[2.5vh] px-[4vw] py-[1vh] h-[5vh] sm:h-[12.51vh] text-white border-black border-2 bg-[#FFC642] transition-colors duration-200"
-=======
-            <button
-              className="rounded-lg sm:text-[3.9vh]  text-[2.5vh] px-[4vw] py-[1vh] h-[5vh] sm:h-[12.51vh] text-white border-black border-2 bg-[#FFC642] transition-colors duration-200"
->>>>>>> 1d62c05bc4bc5b92d4a825bf6fd15a7415b154b3
               style={{
                 textShadow:
                   "1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000",
               }}
-<<<<<<< HEAD
               onClick={handleClick}
-=======
-              //onClick={handleClick}
->>>>>>> 1d62c05bc4bc5b92d4a825bf6fd15a7415b154b3
             >
               LOGIN WITH GOOGLE
             </button>
@@ -160,4 +148,3 @@ export default function GoogleModal({ visible, onClose }) {
     </div>
   );
 }
-
