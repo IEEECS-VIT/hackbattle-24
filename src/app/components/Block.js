@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RegistrationPopup from "./RegistrationPopup";
+import RegistrationPopup from "./registrationPopup";
 
 export default function Block({ src, icon, role }) {
   const [visible, setVisible] = useState(false);
