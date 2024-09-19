@@ -3,29 +3,9 @@ import Draggable from "react-draggable";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
-import local from "next/font/local";
 
-export default function GoogleModal({ visible, onClose }) {
-  const sampleResponse = {
-    teamName: "1984",
-    teamCode: "fhvnmd",
-    teamLeader: {
-      name: "Ansh Mehta",
-      email: "ansh.mehta2022@vitstudent.ac.in",
-    },
-    teamMembers: [
-      {
-        name: "Ansh Mehta",
-        email: "ansh.mehta2022@vitstudent.ac.in",
-        isLeader: true,
-      },
-      {
-        name: "Akshit Anand",
-        email: "akshit.anand2022@vitstudent.ac.in",
-        isLeader: false,
-      },
-    ],
-  };
+export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
+  if (!visible) return null;
 
   const firebaseConfig = {
     apiKey: "hackbattle24-backend-orcin.vercel.app",
@@ -44,13 +24,10 @@ export default function GoogleModal({ visible, onClose }) {
   });
 
   const auth = getAuth();
-  if (!visible) return null;
 
-  function getUserContext(accessToken) {
-    console.log(accessToken);
-    // accessToken is the Google Access Token received after login
-    axios
-      .post(
+  async function getUserContext(accessToken) {
+    try {
+      const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token`,
         {},
         {
@@ -58,49 +35,35 @@ export default function GoogleModal({ visible, onClose }) {
             Authorization: `Bearer ${accessToken}`,
           },
         }
-      )
-      .then((res) => {
-        const userStatus = res.data.status;
-        console.log(userStatus);
-        if (userStatus === 0) {
-          //User exists but not in a team
-          //redirect to team creation / join page
-        } else if (userStatus === 1) {
-          //user goes to team
-          //get team details
-          localStorage.setItem("AccessToken", accessToken);
-          window.location.href = "/team";
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching user context:", error);
-      });
+      );
+      const userStatus = res.data.status;
+      if (userStatus === 0) {
+        // User exists but not in a team
+        // Redirect to team creation / join page
+        window.location.href = "/create-join-team";
+      } else if (userStatus === 1) {
+        // User is in a team
+        localStorage.setItem("AccessToken", accessToken);
+        onLoginSuccess();
+        window.location.href = "/team";
+      }
+    } catch (error) {
+      console.error("Error fetching user context:", error);
+      // Handle error (e.g., show error message to user)
+    }
   }
 
-  function handleClick() {
-    // Implement Google login logic here
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        console.log(user);
-        // IdP data available using getAdditionalUserInfo(result)
-        getUserContext(user.accessToken);
-        // ...
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
-      });
+  async function handleClick() {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      await getUserContext(user.accessToken);
+    } catch (error) {
+      console.error("Login error:", error);
+      // Handle Errors here (e.g., show error message to user)
+    }
   }
 
   return (
@@ -116,7 +79,7 @@ export default function GoogleModal({ visible, onClose }) {
               src="/yellow-circles.svg"
               alt="Yellow Circles"
               className="h-[1vh] lg:h-[2vh] w-auto"
-            />  
+            />
             <button
               onClick={onClose}
               className="text-black hover:bg-red-300 transition-colors duration-200 w-4 h-4 flex items-center justify-center rounded-full bg-red-600 border border-black font-bold text-xs"
