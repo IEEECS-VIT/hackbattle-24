@@ -57,18 +57,13 @@ export default function TeamNew({
             </div>
           </div>
 
-
-
-        <div className="flex flex-col items-center p-4 justify-center">
-          <div className="flex-col items-center p-4">
-            <div>
-              <div className="lg:h-[8vw] lg:w-[8vw] sm:h-[13vw] sm:w-[13vw] h-[15vw] w-[15vw] bg-white rounded-full flex justify-center items-center  border-black border-2">
-                <img
-                  src={pacmanSrc}
-                  alt="pacman"
-                  className="xl:h-20 xl:w-20 sm:w-16 sm:h-16 w-10 h-10"
-                />
-              </div>
+          <div className="flex flex-col items-center p-4 justify-center">
+            <div className="lg:h-[8vw] lg:w-[8vw] sm:h-[13vw] sm:w-[13vw] h-[15vw] w-[15vw] bg-white rounded-full flex justify-center items-center border-black border-2">
+              <img
+                src={pacmanSrc}
+                alt="pacman"
+                className="xl:h-20 xl:w-20 sm:w-16 sm:h-16 w-10 h-10"
+              />
             </div>
           </div>
         </div>
