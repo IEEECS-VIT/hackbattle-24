@@ -35,23 +35,20 @@ export default function Team() {
   if (!teamData) {
     return <div>Loading...</div>;
   }
-  const teamMembers = [
-    // {
-    //   name: teamData.teamLeader.name,
-    //   position: "Team Leader",
-    //   logo: "/pacmanteam.svg",
-    // },
-    ...teamData.teamMembers.map((member) => ({
-      name: member.name,
-      position: member.isLeader ? "Team Leader" : "Team Member",
-      logo: member.isLeader ? "/pacmanteam.svg" : "/pacmanmember.svg",
-    })),
-  ];
+
+  const teamMembers = teamData.teamMembers.map((member) => ({
+    name: member.name,
+    position: member.isLeader ? "Team Leader" : "Team Member",
+    logo: member.isLeader ? "/pacmanteam.svg" : "/pacmanmember.svg",
+  }));
 
   // Ensure there are always 6 TeamNew components
   const totalSlots = 6;
   const emptySlots = totalSlots - teamMembers.length;
-  const allSlots = [...teamMembers, ...Array(emptySlots).fill({})];
+  const allSlots = [
+    ...teamMembers,
+    ...Array(emptySlots).fill({ name: "Add Member", position: "Team Member" }),
+  ];
 
   return (
     <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
@@ -74,18 +71,24 @@ export default function Team() {
         HACKBATTLE 2024
       </p>
       <p className="font-pixeboy md:text-7xl text-5xl text-center mb-[2vw]">
-        {"Your team : "}{teamData.teamName}
+        {"Your team : "}
+        {teamData.teamName}
       </p>
       <div className="flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8">
         {allSlots.map((slot, index) => (
           <TeamNew
+            key={index}
             name={slot.name}
             position={slot.position}
-            setCodePopup = {setCodePopup}
+            setCodePopup={setCodePopup}
           />
         ))}
       </div>
-      <Code visible={codePopup} code={teamData.teamCode} setCodePopup={setCodePopup}/>
+      <Code
+        visible={codePopup}
+        code={teamData.teamCode}
+        setCodePopup={setCodePopup}
+      />
     </div>
   );
 }
