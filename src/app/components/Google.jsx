@@ -32,6 +32,7 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
         {},
         {
           headers: {
+            "Access-Control-Allow-Origin": "*",
             Authorization: `Bearer ${accessToken}`,
           },
         }
@@ -40,7 +41,8 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
       if (userStatus === 0) {
         // User exists but not in a team
         // Redirect to team creation / join page
-        window.location.href = "/create-join-team";
+        localStorage.setItem("AccessToken", accessToken);
+        window.location.href = "/register";
       } else if (userStatus === 1) {
         // User is in a team
         localStorage.setItem("AccessToken", accessToken);
