@@ -1,7 +1,9 @@
-import RegisterForm from "../components/RegisterForm";
+"use client";
+import Registration from "../components/Login";
 
-export default function Memories() {
+export default function Page() {
   return (
+<<<<<<< HEAD
     <div className="relative p-8 bg-register bg-[#2ebf54] h-screen flex flex-col items-center justify-center overflow-hidden">
       <img
         src="/ieeecslogo.svg"
@@ -47,6 +49,11 @@ export default function Memories() {
         </h2>
       </div>
     </div>
+=======
+    <>
+      <Registration />
+    </>
+>>>>>>> 48b516553f5acdc905065954acb7c3240e7b85ae
   );
 }
 =======

@@ -9,6 +9,7 @@ import Tracks from "./components/track";
 import Speaker from "./components/speaker";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
+import Addmember from "./components/track";
 import Google from "./components/Google";
 
 export default function Home() {
@@ -69,6 +70,9 @@ export default function Home() {
       <Navbar loginAction={handleLoginAction} text={loginStatus} />
       <Landing />
       <About />
+      <Speaker/>
+      <Addmember/>
+      <FAQ/>
     </main>
   );
 }

@@ -7,12 +7,12 @@ export default function Card() {
   return (
     <div className="min-h-screen flex flex-col lg:flex-col xl:flex-row justify-center  gap-10 lg:gap-[17%] items-center ">
       <div className="w-[135%]  md:w-[65vw] xl:w-[47vw] h-[29vh] lg:mt-[40%] lg:w-[100%] xl:mt-[20%] xl:h-[45vh] border-black border-4 rounded-lg shadow-[10px_10px_0_0_#3E8BFF] lg:shadow-[15px_15px_0_0_#3E8BFF] md:shadow-[15px_15px_0_0_#3E8BFF]  relative bg-red-700 lg:mb-[39vh]">
-        <div className="bg-[#28B6BA] h-[8vw] md:h-[6vh] lg:h-[8vh] flex justify-between border-black border-b-1 pl-[1vw]">
-          <div className="font-pixeboy lg:mt-2 text-[5vw] md:ml-[3%] md:mt-[-1%] lg:ml-[2%] xl:text-[2vw] lg:text-[4vw] bg-transparent border-none focus:outline-none">
+        <div className="bg-[#28B6BA]  h-[8vw] md:h-[6vh] lg:h-[8vh] flex justify-between border-black border-b-1 pl-[1vw]">
+          <div className="font-pixeboy  lg:mt-2 text-[5vw] md:ml-[3%] md:mt-[-1%] lg:ml-[2%] xl:text-[2vw] lg:text-[4vw] bg-transparent border-none focus:outline-none">
             {`<Github Link>`}
           </div>
 
-          <div className="font-pixeboy xl:text-[3vw]  text-[5vw] md:mr-[2%] md:mt-[-2%] lg:mr-[11%] lg:mt-0 lg:text-[3vw]">
+          <div className="font-pixeboy transition-transform duration-300 ease-in-out transform hover:scale-125 xl:text-[3vw]  text-[5vw] md:mr-[2%] md:mt-[-2%] lg:mr-[11%] lg:mt-0 lg:text-[3vw]">
             {`o o o X `}
           </div>
         </div>
