@@ -83,7 +83,7 @@ export default function Landing() {
           data-aos="fade-left"
         />
       </main>
-      <div className="absolute -bottom-[60px] w-full z-10">
+      <div className="absolute -bottom-[60px] w-full z-10 overflow-x-clip">
         <Marquee />
       </div>
     </>
