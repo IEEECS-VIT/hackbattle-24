@@ -17,7 +17,7 @@ export default function Tracks() {
         <Card title="Fintech" imageSrc="./fintech.svg" />
         <Card title="Healthcare" imageSrc="./health.svg" />
         <Card title="Open Innovation" imageSrc="./openinn.svg" />
-        <Card title="Sponsor Based" imageSrc="./spontrack.svg" />
+        <Card title="SDG (Sponsor Track)" imageSrc="./spontrack.svg" />
         <Card title="IoT" imageSrc="./iot.svg" />
       </div>
     </section>
