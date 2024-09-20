@@ -8,9 +8,10 @@ export default function Tracks() {
       id="tracks"
     >
       {/* Title */}
-      <p className="bg-[#35B857] pt-2 text-7xl w-full sm:w-[50vw] h-[10vh] text-center font-crackman mt-4 mb-8">
+      <p className="bg-[#35B857] pt-4 text-center w-full sm:w-[90vw] h-[12vh] font-crackman mt-4 mb-2 text-5xl sm:text-5xl md:text-6xl lg:text-7xl">
         SPONSORED BY
       </p>
+
 
       {/* Container for the cards */}
       <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-8 p-4 pb-8 mt-4 ">
