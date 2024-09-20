@@ -16,7 +16,7 @@ function Card({ title, imageSrc }) {
               alt=""
               className="h-[50%] mb-2 mt-6"
             />
-            <p className="text-3xl lg:text-4xl text-yellow-500">{title}</p>
+            <p className="text-3xl lg:text-4xl text-center text-yellow-500">{title}</p>
           </div>
         </div>
   );
