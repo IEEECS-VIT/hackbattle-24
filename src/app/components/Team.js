@@ -62,19 +62,19 @@ export default function Team() {
           <Loading />
         </div>
       )}
-      <img
+      {/* <img
         src="/ieee-cs-logo.svg"
         alt="logo"
         className="absolute left-[3vw] md:h-32 md:w-32 h-15 w-20 sm:mt-0 mt-5"
-      />
+      /> */}
       <button
-        className="absolute left-[3vw] md:top-[9vh] top-[7vh] mt-5"
+        className="absolute left-[3vw] md:top-[9vh] top-[7vh] mt-1"
         onClick={routeToHome}
       >
         <img
           src="/back-arrow.svg"
           alt="arrow"
-          className="md:h-20 md:w-20 h-16 w-16"
+          className="md:h-20 md:w-20 h-24 w-16"
         />
       </button>
       <p className="font-pixeboy md:text-5xl text-3xl glow-text text-white text-center mt-8">
