@@ -16,7 +16,8 @@
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-draggable": "^4.4.6"
+    "react-draggable": "^4.4.6",
+    "react-qr-code": "^2.0.15"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
