@@ -125,16 +125,15 @@ export default function About() {
       className="bg-[#6F3CDC] w-full h-[100vh] flex items-center font-pixeboy relative"
       id="about"
     >
-      <div
-        className="w-[90%] sm:w-[60%] ml-[5%]" 
-        ref={textRef}
-      >
-        <p className="text-6xl md:text-8xl">ABOUT</p>
-        <p className="md:text-[calc(5vh+1rem)] text-[calc(3vh+1rem)]">{textElements}</p>
+      <div className="w-[90%] sm:w-[60%]  ml-[5%]" ref={textRef}>
+        <p className="text-7xl md:text-8xl ">ABOUT</p>
+        <p className="lg:text-[calc(4vh+1rem)] text-[calc(2.5vh+1rem)]">
+          {textElements}
+        </p>
       </div>
 
       {/* Pacman Circles with Masking Effect */}
-      <div 
+      <div
         className="absolute right-[5%] hidden sm:block"
         style={{
           clipPath: clipPathValue, // Masking effect as you scroll down
