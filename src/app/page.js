@@ -14,7 +14,7 @@ import Google from "./components/Google";
 export default function Home() {
   const [googleVisible, setGoogleVisible] = useState(false);
   const [loginStatus, setLoginStatus] = useState("LOGIN");
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Home() {
           localStorage.removeItem("AccessToken");
         }
       }
-      setIsLoading(false);
+      // setIsLoading(false);
     };
 
     checkAuthStatus();
@@ -53,9 +53,11 @@ export default function Home() {
     }
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>; // Or a more sophisticated loading component
-  }
+  // if (isLoading) {
+  //   return <div class="flex items-center justify-center h-screen">
+  //     <img src="./loader.gif"></img>
+  //   </div>; // Or a more sophisticated loading component
+  // }
 
   return (
     <main className="overflow-hidden w-full">
