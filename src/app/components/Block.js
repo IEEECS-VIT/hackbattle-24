@@ -27,7 +27,7 @@ export default function Block({ src, icon, role }) {
       </div>
       <div className="flex space-x-4 justify-center relative lg:my-8">
         <button
-          className="bg-[#3E8BFF] lg:px-8 text-white border-2 border-black font-pixeboy w-[40vw] h-[5vh] text-[2.5vh] lg:w-[18vw] lg:h-[10vh] lg:text-[6vh] "
+          className="bg-[#3E8BFF] lg:px-8 text-white border-2 border-black font-pixeboy text-3xl p-1.5 w-[40vw] h-[5vh] text-[2.5vh] lg:w-[18vw] lg:h-[10vh] lg:text-[6vh] "
           onClick={handleButtonClick}
         >
           {role === "team leader" ? "Create Team" : "Join Team"}
