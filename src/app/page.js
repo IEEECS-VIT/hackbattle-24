@@ -16,6 +16,7 @@ export default function Home() {
   const [loginStatus, setLoginStatus] = useState("LOGIN");
   // const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     const checkAuthStatus = async () => {
       const accessToken = localStorage.getItem("AccessToken");

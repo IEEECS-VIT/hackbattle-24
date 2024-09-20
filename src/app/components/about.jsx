@@ -118,21 +118,24 @@ export default function About() {
   const pacmanMarginTop = `${scrollPercentage * scrollMultiplier}vh`;
 
   // Calculate the clip path or mask effect for PacmanCircles based on scroll
-  const clipPathValue = `inset(${scrollPercentage * 125}% 0 0 0)`; // Clip the top progressively as you scroll
+  const clipPathValue = `inset(${scrollPercentage * 100}% 0 0 0)`; // Clip the top progressively as you scroll
 
   return (
     <div
       className="bg-[#6F3CDC] w-full h-[100vh] flex items-center font-pixeboy relative"
       id="about"
     >
-      <div className="w-[60%] ml-[5%]" ref={textRef}>
+      <div
+        className="w-[90%] sm:w-[60%] ml-[5%]" 
+        ref={textRef}
+      >
         <p className="text-6xl md:text-8xl">ABOUT</p>
-        <p className="text-3xl md:text-6xl">{textElements}</p>
+        <p className="md:text-[calc(5vh+1rem)] text-[calc(3vh+1rem)]">{textElements}</p>
       </div>
 
       {/* Pacman Circles with Masking Effect */}
-      <div
-        className="absolute right-[5%]"
+      <div 
+        className="absolute right-[5%] hidden sm:block"
         style={{
           clipPath: clipPathValue, // Masking effect as you scroll down
           transition: "clip-path 0.1s ease", // Smooth transition
@@ -143,10 +146,10 @@ export default function About() {
 
       {/* Pacman Image */}
       <div
-        className="absolute right-[1%] top-[2.5%] lg:top-[2%] lg:right-[3.5%]"
+        className="absolute right-[1%] top-[2.5%] lg:top-[2%] lg:right-[3.5%] hidden sm:block"
         style={{ marginTop: pacmanMarginTop }}
       >
-        <Image src={Pacman} height={200} className="rotate-90" />
+        <Image src={Pacman} height={200} className="rotate-90 mt-4" />
       </div>
     </div>
   );

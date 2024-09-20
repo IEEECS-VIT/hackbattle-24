@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import Draggable from "react-draggable";
+import QR from "./QR.js";
 
 export default function Code({ visible, code, setCodePopup }) {
   const [isCopied, setIsCopied] = useState(false);
+  const [qr, setQr] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -12,13 +14,18 @@ export default function Code({ visible, code, setCodePopup }) {
     setTimeout(() => setIsCopied(false), 1500); // Reset after 1.5 seconds
   };
 
+  const handleCloseQR = () => {
+    setQr(false);
+  };
+
   return (
+
     <div
       className={`fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-50 ${
         visible ? "visible" : "hidden"
       }`}
     >
-      <Draggable handle=".handle">
+        <Draggable handle=".handle">
         <div className="relative w-[80vw] sm:w-[65vw] md:w-[50vw] lg:w-[35vw] h-auto border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white z-60">
           <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[0.5vw] handle cursor-move">
             <img
@@ -42,11 +49,11 @@ export default function Code({ visible, code, setCodePopup }) {
                   }`}
                   onClick={handleCopy}
                 />
-                <img
-                  src="/qr-code.svg"
-                  alt="QR Code"
-                  className="h-6 sm:h-8 md:h-10"
-                />
+                <button
+                  onClick={() => {setQr(true)}}
+                >
+                  <img src="/qr-code.svg" alt="QR Code" className="h-[3vh] lg:h-[4vh]" onClick={() => {<QR visible={true}/>} } />
+                </button>
               </div>
             </div>
             {isCopied && (
@@ -64,7 +71,9 @@ export default function Code({ visible, code, setCodePopup }) {
             </button>
           </div>
         </div>
-      </Draggable>
+        </Draggable>
+        {qr && <QR visible={qr} onClose={handleCloseQR} code={code}/>}
     </div>
+
   );
 }

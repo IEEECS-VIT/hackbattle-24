@@ -104,7 +104,7 @@ const Faq = () => {
       /> */}
 
       {/* Content in front of the background */}
-      <div className="relative z-10 flex flex-col items-center gap-4 text-center my-12">
+      <div className="relative z-10 flex flex-col items-center font-pixeboy gap-4 text-center my-12">
         <p className="text-[10vh] lg:text-[20vh]">FAQS</p>
       </div>
 
