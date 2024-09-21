@@ -28,7 +28,9 @@ export default function Home() {
           }
         );
         if (res?.data?.status === 1) {
-          setLoginStatus("TEAM");
+          setLoginStatus("Dashboard");
+        } else {
+          setLoginStatus("Register");
         }
       } catch (err) {
         toast.error("Unable to verify token. Please login again.");
@@ -44,6 +46,8 @@ export default function Home() {
   const handleLoginAction = () => {
     if (loginStatus === "LOGIN") {
       setGoogleVisible(true);
+    } else if (loginStatus === "Register") {
+      window.location.href = "/register";
     } else {
       window.location.href = "/team";
     }
