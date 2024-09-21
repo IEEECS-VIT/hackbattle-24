@@ -16,7 +16,7 @@ export default function Timeline() {
 
   return (
     <div className="overflow-hidden ">
-      <Navbar />
+      <Navbar text="LOGIN"/>
       <section className="relative w-screen h-[100vh] md:h-[100vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
         <div className="hidden lg:block" > 

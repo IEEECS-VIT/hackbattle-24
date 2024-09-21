@@ -27,12 +27,9 @@ export default function Registration() {
         />
       </button>
       <div className="relative h-screen w-full hidden lg:block">
-        <img
-          src="/login.jpg"
-          className="h-full w-full absolute z-0 object-cover"
-          alt="Background"
-        />
-        <p className="z-20 absolute left-1/2 transform -translate-x-1/2 text-white text-[11vh] font-pixeboy glow-text text-center">
+        <img src="/login.jpg" className="h-full w-full absolute z-0 object-cover" alt="Background" />
+        {/* <img src="/ieee-cs-logo.svg" alt="IEEE CS Logo" className="z-10 absolute top-2 left-4" /> */}
+        <p className="z-20 absolute left-1/2 mt-2 transform -translate-x-1/2 text-white text-[8vh] font-pixeboy glow-text text-center">
           Hackbattle 2024
         </p>
 
