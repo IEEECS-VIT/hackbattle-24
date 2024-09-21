@@ -8,6 +8,7 @@ import About from "./components/about";
 import Tracks from "./components/track";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
+// import Loading from "./components/loading";
 import Google from "./components/Google";
 
 export default function Home() {
