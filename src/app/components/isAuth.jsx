@@ -33,11 +33,10 @@ export default function isAuth(Component) {
               },
             }
           );
-
           if (res?.data?.status === 1) {
-            setIsVerified(true);
+            window.location.href = "/team";
           } else {
-            throw new Error("Invalid token");
+            setIsVerified(true);
           }
         } catch (err) {
           toast.error("Unable to verify token. Please login again.");
