@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Loading from "./loading";
@@ -11,6 +11,7 @@ export default function isAuth(Component) {
     const [isVerified, setIsVerified] = useState(false);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
+    const pathname = usePathname();
 
     useEffect(() => {
       const checkAuthStatus = async () => {
@@ -34,9 +35,15 @@ export default function isAuth(Component) {
             }
           );
           if (res?.data?.status === 1) {
-            window.location.href = "/team";
-          } else {
+            if (pathname === "/register") {
+              router.push("/team");
+            }
             setIsVerified(true);
+          } else if (res?.data?.status === 0) {
+            setIsVerified(true);
+            if (pathname === "/team") {
+              router.push("/register");
+            }
           }
         } catch (err) {
           toast.error("Unable to verify token. Please login again.");

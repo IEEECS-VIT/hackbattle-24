@@ -13,11 +13,16 @@ function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
   const router = useRouter();
+
   function routeToHome() {
     router.push("/");
   }
 
   useEffect(() => {
+    if (localStorage.getItem("UserStatus") === "0") {
+      // toast.error("You are not in a team. Please create a team first.");
+      return;
+    }
     const accessToken = localStorage.getItem("AccessToken");
     axios
       .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`, {
