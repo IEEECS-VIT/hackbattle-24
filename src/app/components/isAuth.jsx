@@ -35,11 +35,13 @@ export default function isAuth(Component) {
             }
           );
           if (res?.data?.status === 1) {
+            localStorage.setItem("UserStatus", 1);
             if (pathname === "/register") {
               router.push("/team");
             }
             setIsVerified(true);
           } else if (res?.data?.status === 0) {
+            localStorage.setItem("UserStatus", 0);
             setIsVerified(true);
             if (pathname === "/team") {
               router.push("/register");
