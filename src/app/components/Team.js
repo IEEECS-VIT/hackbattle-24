@@ -6,23 +6,20 @@ import TeamNew from "./TeamNew";
 import Code from "./Code";
 import Loading from "./loading";
 import toast from "react-hot-toast";
+import isAuth from "./isAuth";
+import { useRouter } from "next/router";
 
-export default function Team() {
+function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
 
   function routeToHome() {
-    window.location.href = "/";
+    const router = useRouter();
+    router.push("/");
   }
 
   useEffect(() => {
     const accessToken = localStorage.getItem("AccessToken");
-    if (!accessToken) {
-      toast.error("Please login to view your team details");
-      routeToHome();
-      return;
-    }
-
     axios
       .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`, {
         headers: {
@@ -36,7 +33,7 @@ export default function Team() {
       .catch((error) => {
         toast.error("Error fetching team details. Please try again.");
         console.error("Error fetching team details:", error);
-        routeToHome(); // Optionally redirect if there's an error
+        routeToHome();
       });
   }, []);
 
@@ -105,3 +102,5 @@ export default function Team() {
     </div>
   );
 }
+
+export default isAuth(Team);
