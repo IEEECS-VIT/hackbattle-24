@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Landing from "./components/landing";
@@ -49,8 +48,6 @@ export default function Home() {
       window.location.href = "/team";
     }
   };
-
-  
 
   return (
     <>

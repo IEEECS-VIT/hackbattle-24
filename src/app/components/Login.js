@@ -1,6 +1,10 @@
 import Block from "./Block";
+import { useSearchParams } from "next/navigation";
 
 export default function Registration() {
+  const joinId = useSearchParams().get("joinId");
+  console.log(joinId);
+
   const routeToHome = () => {
     window.location.href = "/";
   };
@@ -36,11 +40,17 @@ export default function Registration() {
               />
             </div>
             <div className="lg:flex lg:justify-center lg:items-center lg:space-x-24 h-full">
-              <Block src="/red2.jpg" icon="red-icon.svg" role="team leader" />
+              <Block
+                src="/red2.jpg"
+                icon="red-icon.svg"
+                role="team leader"
+                joinId={joinId}
+              />
               <Block
                 src="/yellow2.jpg"
                 icon="blue-icon.svg"
                 role="team member"
+                joinId={joinId}
               />
             </div>
           </div>
@@ -66,7 +76,12 @@ export default function Registration() {
                 className="h-[1.5vh] ml-[.5vh] mt-[.5vh]"
               />
             </div>
-            <Block src="/red2.jpg" icon="red-icon.svg" role="team leader" />
+            <Block
+              src="/red2.jpg"
+              icon="red-icon.svg"
+              role="team leader"
+              joinId={joinId}
+            />
           </div>
           <div className="relative flex flex-col items-center pb-4 justify-between border-4 border-black w-[80vw] bg-white shadow-[-10px_10px_0_0_#000000] h-[38vh]">
             <div className="bg-[#8C78F7] h-[3vh] w-full flex border-black border-b-2 ">
@@ -76,7 +91,12 @@ export default function Registration() {
                 className="h-[1.5vh] ml-[.5vh] mt-[.5vh]"
               />
             </div>
-            <Block src="/yellow2.jpg" icon="blue-icon.svg" role="team member" />
+            <Block
+              src="/yellow2.jpg"
+              icon="blue-icon.svg"
+              role="team member"
+              joinId={joinId}
+            />
           </div>
         </div>
       </div>

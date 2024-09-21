@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RegistrationPopup from "./registrationPopup";
 
-export default function Block({ src, icon, role }) {
+export default function Block({ src, icon, role, joinId }) {
   const [visible, setVisible] = useState(false);
   const [teamName, setTeamName] = useState("");
   const [teamCode, setTeamCode] = useState("");
@@ -41,6 +41,7 @@ export default function Block({ src, icon, role }) {
         teamCode={teamCode}
         setTeamCode={setTeamCode}
         setPopupVisible={setVisible}
+        joinId={joinId}
       />
     </div>
   );

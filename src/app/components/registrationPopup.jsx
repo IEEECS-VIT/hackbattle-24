@@ -12,10 +12,32 @@ export default function RegistrationPopup({
   teamCode,
   setTeamCode,
   setPopupVisible,
+  joinId,
 }) {
   const [loading, setLoading] = useState(false);
-
   const isValidTeamName = (name) => /^[a-zA-Z0-9_ ]+$/.test(name);
+
+  useEffect(() => {
+    const handleJoinId = async () => {
+      if (joinId) {
+        const accessToken = localStorage.getItem("AccessToken");
+        if (accessToken) {
+          try {
+            setLoading(true);
+            await joinTeam(accessToken, joinId);
+          } catch (error) {
+            toast.error("Error joining team. Please try manually.");
+          } finally {
+            setLoading(false);
+          }
+        } else {
+          toast.error("Please log in to join a team.");
+        }
+      }
+    };
+
+    handleJoinId();
+  }, [joinId]);
 
   async function createTeam(accessToken, teamName) {
     try {
@@ -56,13 +78,22 @@ export default function RegistrationPopup({
       if (res.status === 200) {
         toast.success("Joined team successfully!");
         window.location.href = "/team";
+        return true;
       }
     } catch (error) {
-      toast.error("Error joining team. Please try again.");
-      console.error("Error joining team:", error);
+      if (error.response && error.response.status === 400) {
+        const errorMessage =
+          error.response.data?.error ||
+          "Bad Request. Please check the team code.";
+        toast.error(errorMessage);
+      } else {
+        toast.error("Error joining team. Please try again.");
+      }
+      console.error("Error joining team:", error.response || error);
     } finally {
       setLoading(false);
     }
+    return false;
   }
 
   const handleDone = async () => {

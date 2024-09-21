@@ -49,7 +49,30 @@ const toastOptions = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/Pixeboy.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Crackman.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Mercutio.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={`${pixeboy.variable}  ${crackman.variable} ${mercutio.variable}`}
       >
