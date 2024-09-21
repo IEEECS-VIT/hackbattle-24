@@ -6,8 +6,8 @@ import axios from "axios";
 import Loading from "./loading";
 
 export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
-  if (!visible) return null;
   const [loading, setLoading] = useState(false);
+  if (!visible) return null;
   const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "hackathon-2024-1d92e.firebaseapp.com",
