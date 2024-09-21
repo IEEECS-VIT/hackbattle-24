@@ -10,13 +10,13 @@ function Card({ title, imageSrc }) {
               className="h-[2vh] lg:h-[3vh]"
             />
           </div>
-          <div className="flex flex-col items-center w-full h-[20vh] lg:h-[35vh] font-pixeboy text-[3vh] lg:text-[5vh]">
+          <div className="flex flex-col items-center w-full h-[20vh] lg:h-[35vh] font-pixeboy text-[5vh] lg:text-[5vh]">
             <img
               src={imageSrc}
               alt=""
               className="h-[50%] mb-2 mt-6"
             />
-            <p className="text-3xl lg:text-4xl text-center text-yellow-500">{title}</p>
+            <p className="text-[1.42rem] md:text-[1.90rem] lg:text-4xl text-center text-yellow-500">{title}</p>
           </div>
         </div>
   );
