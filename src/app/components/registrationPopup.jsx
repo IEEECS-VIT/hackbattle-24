@@ -53,6 +53,7 @@ export default function RegistrationPopup({
       );
       if (res.status === 201) {
         toast.success("Team created successfully!");
+        localStorage.setItem("UserStatus", 1);
         window.location.href = "/team";
       }
     } catch (error) {
