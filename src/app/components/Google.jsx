@@ -43,8 +43,7 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
       localStorage.setItem("AccessToken", accessToken);
       if (userStatus == 0) {
         // User exists but not in a team
-        // Redirect to team creation / join page
-        // window.location.href = "/register";
+        window.location.href = "/register";
         console.log("User exists but not in a team");
         
       } else if (userStatus == 1) {

@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import Block from "./Block";
 import { useSearchParams } from "next/navigation";
 
 export default function Registration() {
   const joinId = useSearchParams().get("joinId");
   console.log(joinId);
+  useEffect(() => {
+    if (localStorage.getItem("UserStatus") === "1") {
+      window.location.href = "/team";
+    }
+  }, []);
 
   const routeToHome = () => {
     window.location.href = "/";
