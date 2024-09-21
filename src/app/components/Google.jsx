@@ -38,14 +38,17 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
         }
       );
       const userStatus = res.data.status;
-      if (userStatus === 0) {
+      console.log(userStatus);
+      localStorage.setItem("UserStatus", userStatus);
+      localStorage.setItem("AccessToken", accessToken);
+      if (userStatus == 0) {
         // User exists but not in a team
         // Redirect to team creation / join page
-        localStorage.setItem("AccessToken", accessToken);
-        window.location.href = "/register";
-      } else if (userStatus === 1) {
+        // window.location.href = "/register";
+        console.log("User exists but not in a team");
+        
+      } else if (userStatus == 1) {
         // User is in a team
-        localStorage.setItem("AccessToken", accessToken);
         onLoginSuccess();
         window.location.href = "/team";
       }
