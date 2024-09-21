@@ -30,7 +30,7 @@ export default function QR({ visible, onClose, code }) {
               <QRCode
                 size={300} // Increased size for better scanning
                 style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                value={`http://localhost:3000/register?joinId=${code}`}
+                value={`https://hackbattle.ieeecsvit.com/register?joinId=${code}`}
                 viewBox={`0 0 256 256`}
                 bgColor="#fff" // Changed background to white
                 fgColor="#000" // Changed foreground to black
