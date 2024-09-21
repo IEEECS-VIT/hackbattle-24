@@ -48,6 +48,7 @@ export default function isAuth(Component) {
         } catch (err) {
           toast.error("Unable to verify token. Please login again.");
           localStorage.removeItem("AccessToken");
+          localStorage.removeItem("UserStatus");
           router.push("/");
         } finally {
           setLoading(false);

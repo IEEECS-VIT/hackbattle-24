@@ -29,12 +29,15 @@ export default function Home() {
         );
         if (res?.data?.status === 1) {
           setLoginStatus("Dashboard");
+          localStorage.setItem("UserStatus", 1);
         } else {
           setLoginStatus("Register");
+          localStorage.setItem("UserStatus", 0);
         }
       } catch (err) {
         toast.error("Unable to verify token. Please login again.");
         localStorage.removeItem("AccessToken");
+        localStorage.removeItem("UserStatus");
       }
     }
   }, []);
