@@ -78,6 +78,7 @@ export default function RegistrationPopup({
       );
       if (res.status === 200) {
         toast.success("Joined team successfully!");
+        localStorage.setItem("UserStatus", 1);
         window.location.href = "/team";
         return true;
       }
