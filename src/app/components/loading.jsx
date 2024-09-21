@@ -1,8 +1,11 @@
 export default function Loading() {
-    return (
-      <div className="flex justify-center items-center h-[10vh] w-[10vw]">
-        <img src="./loader.gif" alt="LOADINGGGGGG" />
-      </div>
-    );
-  }
-  
+  return (
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 z-50">
+      <img
+        src="./loader.gif"
+        alt="Loading..."
+        style={{ height: "10vh", width: "10vh" }}
+      />
+    </div>
+  );
+}

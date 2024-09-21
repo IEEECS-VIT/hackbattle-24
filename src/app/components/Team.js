@@ -1,22 +1,25 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TeamNew from "./TeamNew";
 import Code from "./Code";
 import Loading from "./loading";
+import toast from "react-hot-toast";
+import isAuth from "./isAuth";
+import { useRouter } from "next/router";
 
-export default function Team() {
+function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
 
   function routeToHome() {
-    window.location.href = "/";
+    const router = useRouter();
+    router.push("/");
   }
 
   useEffect(() => {
     const accessToken = localStorage.getItem("AccessToken");
-
     axios
       .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get-team`, {
         headers: {
@@ -25,9 +28,12 @@ export default function Team() {
       })
       .then((res) => {
         setTeamData(res.data);
+        toast.success("Team data fetched successfully!");
       })
       .catch((error) => {
+        toast.error("Error fetching team details. Please try again.");
         console.error("Error fetching team details:", error);
+        routeToHome();
       });
   }, []);
 
@@ -42,7 +48,10 @@ export default function Team() {
     const emptySlots = totalSlots - teamMembers.length;
     const allSlots = [
       ...teamMembers,
-      ...Array(emptySlots).fill({ name: "Add Member", position: "Team Member" }),
+      ...Array(emptySlots).fill({
+        name: "Add Member",
+        position: "Team Member",
+      }),
     ];
 
     return allSlots.map((slot, index) => (
@@ -57,16 +66,7 @@ export default function Team() {
 
   return (
     <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
-      {!teamData && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50">
-          <Loading />
-        </div>
-      )}
-      {/* <img
-        src="/ieee-cs-logo.svg"
-        alt="logo"
-        className="absolute left-[3vw] md:h-32 md:w-32 h-15 w-20 sm:mt-0 mt-5"
-      /> */}
+      {!teamData && <Loading />}
       <button
         className="absolute left-[3vw] md:top-[9vh] top-[7vh] mt-1"
         onClick={routeToHome}
@@ -85,7 +85,11 @@ export default function Team() {
         {teamData ? teamData.teamName : "Loading..."}
       </p>
 
-      <div className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-16 mb-20 ${!teamData ? 'opacity-30' : ''}`}>
+      <div
+        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-16 md:mb-0 mb-20 ${
+          !teamData ? "opacity-30" : ""
+        }`}
+      >
         {teamData && renderTeamMembers()}
       </div>
       {teamData && (
@@ -98,3 +102,5 @@ export default function Team() {
     </div>
   );
 }
+
+export default isAuth(Team);

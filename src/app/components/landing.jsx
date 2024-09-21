@@ -81,6 +81,8 @@ export default function Landing() {
           alt="Abstract Background"
           className="absolute top-5 h-[95%] right-0 md:max-w-[50%] md:opacity-[100] opacity-[10] w-full hidden md:block"
           data-aos="fade-left"
+          priority={true}
+          loading="eager" 
         />
       </main>
       <div className="absolute -bottom-[60px] w-full z-10">
