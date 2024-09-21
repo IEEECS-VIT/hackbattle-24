@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function TeamMember(props) {
@@ -22,7 +23,7 @@ export default function TeamMember(props) {
             className="border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] xl:w-[35vw] xl:h-[18vw] bg-[#2EBF54] w-[75vw] h-[22vh] lg:w-[40vw] sm:h-[28vh]"
           >
             <div className="bg-[#2EBF54] h-[4vw] md:h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[1vw]">
-              <img
+              <Image
                 src="/yellow-circles.svg"
                 alt="Red Circles"
                 className="xl:h-[1vh] xl:w-[2vw] lg:h-[2vh] lg:w-[3vw] sm:h-[9vh] sm:w-[6vw] h-[10vh] w-[8vw]"
@@ -44,7 +45,7 @@ export default function TeamMember(props) {
               </div>
               <div className="float-right">
                 <div className="lg:h-[9vw] lg:w-[9vw] sm:h-[13vw] sm:w-[13vw] h-[18vw] w-[18vw] bg-white rounded-full lg:mt-[5vh] xl:mt-[3.5vh] sm:mt-[4vh] mt-[3vh] mr-[2vw] flex justify-center items-center border-black border-2">
-                  <img
+                  <Image
                     src="/pacmanmember.svg"
                     alt="pacman"
                     className="xl:h-20 xl:w-20 sm:w-16 sm:h-16 w-10 h-10"

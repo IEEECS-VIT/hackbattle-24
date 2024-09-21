@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Card from "./cards";
 
 export default function TaskSub() {
   return (
     <div className="relative w-screen h-screen bg-[#FEC46F] overflow-hidden">
-      <img
+      <Image
         src="pixelated-filter.svg"
         alt="Overlay Image"
         className="absolute inset-0 w-full h-full object-cover opacity-70"

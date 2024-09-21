@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function TeamNew({
   position = "Team Member",
   name = "Add Member",
@@ -37,7 +39,7 @@ export default function TeamNew({
         <div
           className={`bg-[${backgroundColor}] h-[4vw] md:h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[1vw]`}
         >
-          <img
+          <Image
             src="/redcircles.svg"
             alt="Red Circles"
             className="xl:h-[2vh] xl:w-[2vw] lg:h-[2vh] lg:w-[3vw] sm:h-[6vh] sm:w-[6vw] h-[7vh] w-[7vw]"
@@ -59,7 +61,7 @@ export default function TeamNew({
 
           <div className="flex flex-col items-center p-4 justify-center">
             <div className="lg:h-[8vw] lg:w-[8vw] sm:h-[13vw] sm:w-[13vw] h-[15vw] w-[15vw] bg-white rounded-full flex justify-center items-center border-black border-2">
-              <img
+              <Image
                 src={pacmanSrc}
                 alt="pacman"
                 className="xl:h-20 xl:w-20 sm:w-16 sm:h-16 w-10 h-10"

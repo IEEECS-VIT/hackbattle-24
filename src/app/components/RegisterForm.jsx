@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function RegisterForm({ role }) {
     // Define styles based on the role
     const isTeamLeader = role === 'teamLeader';
@@ -21,7 +23,7 @@ export default function RegisterForm({ role }) {
                     <div className="overlay w-full h-full absolute top-0 left-0 opacity-50"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center text-center">
                         {/* Including the SVG from the public folder */}
-                        <img 
+                        <Image
                             src={iconSrc} 
                             alt={`${roleText} Icon`} 
                             className="w-2/3 mb-4" 

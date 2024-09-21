@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Loading from "./loading";
+import Image from "next/image";
 
 export default function RegistrationPopup({
   visible,
@@ -133,7 +134,7 @@ export default function RegistrationPopup({
     >
       <div className="relative w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[35vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white z-60">
         <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[0.5vw]">
-          <img
+          <Image
             src="/yellow-circles.svg"
             alt="Yellow Circles"
             className="h-[1vh] lg:h-[2vh]"

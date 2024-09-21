@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 import QR from "./QR.js";
+import Image from "next/image.js";
 
 export default function Code({ visible, code, setCodePopup }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -28,7 +29,7 @@ export default function Code({ visible, code, setCodePopup }) {
         <Draggable handle=".handle">
         <div className="relative w-[80vw] sm:w-[65vw] md:w-[50vw] lg:w-[35vw] h-auto border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white z-60">
           <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[0.5vw] handle cursor-move">
-            <img
+            <Image
               src="/yellow-circles.svg"
               alt="Yellow Circles"
               className="h-[1vh] lg:h-[2vh]"
@@ -41,7 +42,7 @@ export default function Code({ visible, code, setCodePopup }) {
             <div className="bg-[#FFC642] w-full inline-flex items-center justify-between text-white px-4 py-2 border-black border-2 rounded-lg glow-text">
               <p className="truncate flex-grow mr-2">{code}</p>
               <div className="flex items-center gap-2 flex-shrink-0">
-                <img
+                <Image
                   src="/copy-icon.svg"
                   alt="Copy Icon"
                   className={`h-6 sm:h-8 md:h-10 cursor-pointer transition-transform duration-200 ${
@@ -52,7 +53,7 @@ export default function Code({ visible, code, setCodePopup }) {
                 <button
                   onClick={() => {setQr(true)}}
                 >
-                  <img src="/qr-code.svg" alt="QR Code" className="h-[3vh] lg:h-[4vh]" onClick={() => {<QR visible={true}/>} } />
+                  <Image src="/qr-code.svg" alt="QR Code" className="h-[3vh] lg:h-[4vh]" onClick={() => {<QR visible={true}/>} } />
                 </button>
               </div>
             </div>

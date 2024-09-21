@@ -7,6 +7,7 @@ import Code from "./Code";
 import Loading from "./loading";
 import toast from "react-hot-toast";
 import isAuth from "./isAuth";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 function Team() {
@@ -70,7 +71,7 @@ function Team() {
         className="absolute left-[3vw] md:top-[9vh] top-[7vh] mt-1"
         onClick={routeToHome}
       >
-        <img
+        <Image
           src="/back-arrow.svg"
           alt="arrow"
           className="md:h-20 md:w-20 h-24 w-16"

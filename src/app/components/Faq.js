@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Accordion from "./Accordion.js";
+import Image from "next/image.js";
 
 const HackFaqItems = [
   {
@@ -97,7 +98,7 @@ const Faq = () => {
       id="faq"
     >
       {/* Background Image */}
-      {/* <img
+      {/* <Image
         src="/purple.png"
         className="absolute top-0 left-0 h-full w-full object-cover z-0"
         alt="Background"

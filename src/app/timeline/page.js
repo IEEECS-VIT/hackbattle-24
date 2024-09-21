@@ -29,7 +29,7 @@ export default function Timeline() {
             className="object-contain"
           />
         </div>
-        <img
+        <Image
           src="pixelated-filter.svg"
           alt="Overlay Image"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -45,7 +45,7 @@ export default function Timeline() {
             className="object-contain"
           />
           </div>
-          <img
+          <Image
           src="pixelated-filter.svg"
           alt="Overlay Image"
           className="absolute inset-0 w-full h-full object-cover opacity-70"

@@ -1,11 +1,12 @@
 "use client"; 
+import Image from "next/image";
 
 export default function Soon() {
   return (
     <div className={`flex justify-center items-center h-screen`}>
       <div className="w-[65vw] h-[35vh] lg:h-[45vh] lg:w-[45vw] border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000]">
         <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[0.5vw] ">
-          <img src="/yellow-circles.svg" alt="Yellow Circles" className="h-[1vh] lg:h-[2vh]" />
+          <Image src="/yellow-circles.svg" alt="Yellow Circles" className="h-[1vh] lg:h-[2vh]" />
         </div>
         <div className="flex flex-col items-center h-[38vh] font-pixeboy text-[3vh] lg:text-[5vh]">
           <p className="py-[5vh] [text-shadow:2px_2px_4px_var(--tw-shadow-color)] shadow-[#3EB85D]"></p>

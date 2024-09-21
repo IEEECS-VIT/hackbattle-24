@@ -1,5 +1,6 @@
 import Draggable from "react-draggable";
 import QRCode from "react-qr-code";
+import Image from "next/image";
 
 export default function QR({ visible, onClose, code }) {
   return (
@@ -11,7 +12,7 @@ export default function QR({ visible, onClose, code }) {
       <Draggable handle=".handle">
         <div className="relative w-[80vw] sm:w-[65vw] md:w-[50vw] lg:w-[35vw] h-auto border-black border-4 shadow-[-10px_10px_0_0_#000000] lg:shadow-[-20px_20px_0_0_#000000] bg-white z-60">
           <div className="bg-[#28B6BA] h-[2vh] lg:h-[3vh] flex items-center border-black border-b-2 pl-[0.5vw] handle cursor-move">
-            <img
+            <Image
               src="/yellow-circles.svg"
               alt="Yellow Circles"
               className="h-[1vh] lg:h-[2vh]"
