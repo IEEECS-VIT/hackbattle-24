@@ -7,7 +7,7 @@ import Code from "./Code";
 import Loading from "./loading";
 import toast from "react-hot-toast";
 import isAuth from "./isAuth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function Team() {
   const [teamData, setTeamData] = useState(null);
