@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
+import Loading from "./loading";
 
 export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
   if (!visible) return null;
-
+  const [loading, setLoading] = useState(false);
   const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "hackathon-2024-1d92e.firebaseapp.com",
@@ -27,6 +28,7 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
 
   async function getUserContext(accessToken) {
     try {
+      setLoading(true);
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/verify-token`,
         {},
@@ -43,15 +45,17 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
       localStorage.setItem("AccessToken", accessToken);
       if (userStatus == 0) {
         // User exists but not in a team
+        setLoading(false);
         window.location.href = "/register";
         console.log("User exists but not in a team");
-        
       } else if (userStatus == 1) {
+        setLoading(false);
         // User is in a team
         onLoginSuccess();
         window.location.href = "/team";
       }
     } catch (error) {
+      setLoading(false);
       console.error("Error fetching user context:", error);
       // Handle error (e.g., show error message to user)
     }
@@ -72,6 +76,7 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+      {loading && <Loading />}
       <div
         className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={onClose}
