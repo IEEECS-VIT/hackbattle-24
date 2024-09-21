@@ -12,9 +12,8 @@ import { useRouter } from "next/router";
 function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
-
+  const router = useRouter();
   function routeToHome() {
-    const router = useRouter();
     router.push("/");
   }
 
