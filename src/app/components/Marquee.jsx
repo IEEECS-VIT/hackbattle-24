@@ -5,7 +5,7 @@ export default function Marquee() {
   const words = ["COLLABORATE", "CODE", "CONQUER"];
 
   return (
-    <div className="font-pixeboy md:w-[99.9%] overflow-x-hidden text-3xl rotate-2">
+    <div className="font-pixeboy w-[101%] translate-x-[-0.25rem] overflow-x-clip text-3xl rotate-2">
       {colors.map((color, index) => (
         <div
           key={index}
