@@ -32,7 +32,7 @@ export default function Registration() {
           className="h-full w-full absolute z-0 object-cover"
           alt="Background"
         />
-        <p className="z-20 absolute left-1/2 transform -translate-x-1/2 text-white text-[11vh] font-pixeboy glow-text text-center">
+        <p className="w-fit z-20 absolute left-1/2 transform -translate-x-1/2 text-white text-[9vh] font-pixeboy glow-text text-center">
           Hackbattle 2024
         </p>
 
@@ -63,10 +63,10 @@ export default function Registration() {
         </div>
       </div>
 
-      <div className="relative h-screen w-full lg:hidden">
+      <div className="h-screen w-full lg:hidden">
         <img
           src="/teal.jpg"
-          className="h-full w-full absolute z-0 object-cover"
+          className="h-[110%] w-full absolute z-0 object-cover overflow-hidden"
           alt="Background"
         />
         <p className="z-30 relative top-16  text-white text-[5vh] font-pixeboy glow-text text-center">

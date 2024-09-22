@@ -21,13 +21,13 @@ export default function Block({ src, icon, role, joinId }) {
         <h2 className="text-[4vh] lg:text-[6vh] text-white font-pixeboy">
           {role}
         </h2>
-        <div className="bg-white border-white rounded-full w-[22vw] lg:w-[15vw] h-[10vh] lg:h-[30vh] flex items-center justify-center mx-auto mt-2">
+        <div className="bg-white border-white rounded-full h-[10vh] w-[10vh] sm:h-[10vh] sm:w-[10vh] lg:h-[23vh] lg:w-[23vh] flex items-center justify-center mx-auto mt-2">
           <img src={icon} className="size-16 lg:size-32" alt="Icon" />
         </div>
       </div>
       <div className="flex space-x-4 justify-center relative lg:my-8">
         <button
-          className="bg-[#3E8BFF] lg:px-8 text-white border-2 border-black font-pixeboy text-3xl p-1.5 w-[40vw] h-[5vh] text-[2.5vh] lg:w-[18vw] lg:h-[10vh] lg:text-[6vh] "
+          className="bg-[#3E8BFF] lg:px-6 text-white border-2 border-black font-pixeboy text-3xl p-1.5 w-[40vw] h-[5vh] text-[2.5vh] lg:w-[18vw] lg:h-[10vh] lg:text-[4vh] "
           onClick={handleButtonClick}
         >
           {role === "team leader" ? "Create Team" : "Join Team"}
