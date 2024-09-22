@@ -1,14 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar({ loginAction, text }) {
+export default function Navbar({ setGoogleVisible }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authStatus, setAuthStatus] = useState(null);
+
+  // Check auth status from localStorage on component mount
+  useEffect(() => {
+    const accessToken = localStorage.getItem("AccessToken");
+    if (accessToken) {
+      setAuthStatus("authenticated");
+    } else {
+      setAuthStatus("unauthenticated");
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Handle login/logout behavior
+  const handleAuthButton = () => {
+    if (authStatus === "unauthenticated") {
+      setGoogleVisible(true); // Show Google login modal
+    } else {
+      localStorage.removeItem("AccessToken"); // Log out by removing token
+      setAuthStatus("unauthenticated"); // Update state
+    }
   };
 
   return (
@@ -28,7 +49,6 @@ export default function Navbar({ loginAction, text }) {
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
         <Link href="/">
-          {" "}
           <li className="hover:underline">Home</li>
         </Link>
         <li className="hover:underline">
@@ -41,21 +61,16 @@ export default function Navbar({ loginAction, text }) {
           <a href="/#faq">FAQ</a>
         </li>
         <Link href="/timeline">
-          {" "}
           <li className="hover:underline">Timeline</li>
         </Link>
-        {/* <Link href="/sponsors">
-          {" "}
-          <li className="hover:underline">Sponsors</li>
-        </Link> */}
       </ul>
 
-      {/* Login Button - Hidden on Mobile */}
+      {/* Login/Logout Button */}
       <button
         className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700"
-        onClick={loginAction}
+        onClick={handleAuthButton}
       >
-        {text}
+        {authStatus === "unauthenticated" ? "Login" : "Logout"}
       </button>
 
       {/* Mobile Menu Button */}
@@ -71,7 +86,6 @@ export default function Navbar({ loginAction, text }) {
       {/* Full-Screen Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center text-6xl font-bold font-pixeboy z-[1001]">
-          {/* Cross Icon in the Full-Screen Menu */}
           <button className="absolute top-5 right-5" onClick={toggleMenu}>
             <Image
               src="cross-icon.svg"
