@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Discord from "../../../public/discord_logo.svg";
 
 export default function Navbar({ setGoogleVisible }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function Navbar({ setGoogleVisible }) {
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex items-center gap-12 text-black font-bold text-3xl tracking-wider">
+      <ul className="hidden md:flex items-center lg:gap-12 md:gap-6 text-black font-bold text-3xl tracking-wider">
         <Link href="/">
           <li className="hover:underline">Home</li>
         </Link>
@@ -63,26 +64,33 @@ export default function Navbar({ setGoogleVisible }) {
         <Link href="/timeline">
           <li className="hover:underline">Timeline</li>
         </Link>
+        <li>
+          <a href="https://discord.gg/Yj77zdEH" target="_blank">
+            <Image src={Discord} width={40} height={40} alt="Discord Logo" />
+          </a>
+        </li>
       </ul>
 
-      {/* Login/Logout Button */}
-      <button
-        className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700"
-        onClick={handleAuthButton}
-      >
-        {authStatus === "unauthenticated" ? "Login" : "Logout"}
-      </button>
+      <div className="flex gap-4 lg:px-4 md:p-0">
+        {/* Login/Logout Button */}
+        <button
+          className="block md:block bg-customBlue text-[#F5E6DA] font-pixeboy text-3xl px-4 py-1 rounded-sm border-2 border-black shadow-[4px_4px_0px_#333] hover:bg-blue-700"
+          onClick={handleAuthButton}
+        >
+          {authStatus === "unauthenticated" ? "Login" : "Logout"}
+        </button>
 
-      {/* Mobile Menu Button */}
-      <button className="md:hidden block " onClick={toggleMenu}>
-        <Image
-          src={isMenuOpen ? "cross-icon.svg" : "burger-menu.svg"}
-          width={50}
-          height={50}
-          alt={isMenuOpen ? "Close Menu" : "Open Menu"}
-        />
-      </button>
+        {/* Mobile Menu Button */}
 
+        <button className="md:hidden block " onClick={toggleMenu}>
+          <Image
+            src={isMenuOpen ? "cross-icon.svg" : "burger-menu.svg"}
+            width={50}
+            height={50}
+            alt={isMenuOpen ? "Close Menu" : "Open Menu"}
+          />
+        </button>
+      </div>
       {/* Full-Screen Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center text-6xl font-bold font-pixeboy z-[1001]">
@@ -98,28 +106,39 @@ export default function Navbar({ setGoogleVisible }) {
           {/* Menu Items */}
           <ul className="flex flex-col gap-8 mt-12">
             <li className="hover:underline cursor-pointer text-center">
-              <a href="#home" onClick={toggleMenu}>
+              <a href="/#home" onClick={toggleMenu}>
                 Home
               </a>
             </li>
             <li className="hover:underline cursor-pointer text-center">
-              <a href="#tracks" onClick={toggleMenu}>
+              <a href="/#tracks" onClick={toggleMenu}>
                 Tracks
               </a>
             </li>
             <li className="hover:underline cursor-pointer text-center">
-              <a href="#about" onClick={toggleMenu}>
+              <a href="/#about" onClick={toggleMenu}>
                 About
               </a>
             </li>
             <li className="hover:underline cursor-pointer text-center">
-              <a href="#faq" onClick={toggleMenu}>
+              <a href="/#faq" onClick={toggleMenu}>
                 FAQ
               </a>
             </li>
             <li className="hover:underline cursor-pointer text-center">
               <a href="/timeline" onClick={toggleMenu}>
                 Timeline
+              </a>
+            </li>
+            <li>
+              <a href="https://discord.gg/Yj77zdEH" target="_blank">
+                <Image
+                  src={Discord}
+                  width={35}
+                  height={35}
+                  alt="Discord Logo"
+                  className="mx-auto"
+                />
               </a>
             </li>
           </ul>

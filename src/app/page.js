@@ -10,6 +10,7 @@ import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
 // import Loading from "./components/loading";
 import Google from "./components/Google";
+import Speaker from "./components/speaker";
 
 export default function Home() {
   const [googleVisible, setGoogleVisible] = useState(false);
@@ -75,6 +76,7 @@ export default function Home() {
         <Landing loginStatus={loginStatus} />
         <About />
         <Tracks />
+        <Speaker />
         <Conducted />
         <FAQ />
       </main>
