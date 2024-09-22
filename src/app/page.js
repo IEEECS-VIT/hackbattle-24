@@ -50,10 +50,9 @@ export default function Home() {
   const handleLoginAction = () => {
     if (loginStatus === "LOGIN") {
       setGoogleVisible(true);
-    } else if (loginStatus === "Register") {
-      window.location.href = "/register";
     } else {
-      window.location.href = "/team";
+      localStorage.removeItem("AccessToken");
+      localStorage.removeItem("UserStatus");
     }
   };
 
@@ -68,8 +67,12 @@ export default function Home() {
             setGoogleVisible(false);
           }}
         />
-        <Navbar loginAction={handleLoginAction} text={loginStatus} />
-        <Landing />
+        <Navbar
+          loginAction={handleLoginAction}
+          text={loginStatus}
+          setGoogleVisible={() => setGoogleVisible(true)}
+        />
+        <Landing loginStatus={loginStatus} />
         <About />
         <Tracks />
         <Conducted />

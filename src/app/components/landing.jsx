@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,9 +9,12 @@ import abstractbg from "../../assets/landingbg.svg";
 import Marquee from "./Marquee";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+import toast from "react-hot-toast";
 
-export default function Landing() {
+export default function Landing({ loginStatus }) {
   const eventDate = new Date("2024-09-25T08:00:00");
+
+  const [authStatus, setAuthStatus] = useState(loginStatus);
 
   useEffect(() => {
     AOS.init({
@@ -19,7 +22,23 @@ export default function Landing() {
       easing: "ease-out",
       once: true,
     });
-  }, []);
+
+    // Sync authStatus with loginStatus prop
+    const accessToken = localStorage.getItem("AccessToken");
+    if (accessToken) {
+      setAuthStatus("authenticated");
+    } else {
+      setAuthStatus("unauthenticated");
+    }
+  }, [loginStatus]);
+
+  const handleButtonClick = () => {
+    if (authStatus === "unauthenticated") {
+      toast.error("Please login to join the team.");
+    } else {
+      window.location.href = "/team"; // Redirect to team/dashboard
+    }
+  };
 
   return (
     <>
@@ -47,17 +66,16 @@ export default function Landing() {
             <p className="font-crackman text-8xl text-black">HACK</p>
             <p className="font-crackman text-8xl">BATTLE</p>
           </div>
-          <a
-            href="https://gravitas.vit.ac.in/events/e748d506-415c-4166-b45f-7485c25406aa/"
-            target="_blank"
-            data-aos="fade-up"
+          <button
+            className={`bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl ${
+              authStatus === "unauthenticated" ? "cursor-not-allowed" : ""
+            }`}
+            onClick={handleButtonClick}
           >
-            <button className="bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl">
-              Register Now!
-            </button>
-          </a>
+            {authStatus === "unauthenticated" ? "Join Team" : "Dashboard"}
+          </button>
           <p className="text-2xl text-white" data-aos="fade-up">
-            TIME REMAINING...
+            HACK STARTS IN...
           </p>
           <FlipClockCountdown
             digitBlockStyle={{
@@ -82,7 +100,7 @@ export default function Landing() {
           className="absolute top-5 h-[95%] right-0 md:max-w-[50%] md:opacity-[100] opacity-[10] w-full hidden md:block"
           data-aos="fade-left"
           priority={true}
-          loading="eager" 
+          loading="eager"
         />
       </main>
       <div className="absolute -bottom-[60px] w-full z-10 overflow-x-clip">
