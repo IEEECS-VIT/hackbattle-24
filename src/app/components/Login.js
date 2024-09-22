@@ -27,9 +27,12 @@ export default function Registration() {
         />
       </button>
       <div className="relative h-screen w-full hidden lg:block">
-        <img src="/login.jpg" className="h-full w-full absolute z-0 object-cover" alt="Background" />
-        {/* <img src="/ieee-cs-logo.svg" alt="IEEE CS Logo" className="z-10 absolute top-2 left-4" /> */}
-        <p className="z-20 absolute left-1/2 mt-2 transform -translate-x-1/2 text-white text-[8vh] font-pixeboy glow-text text-center">
+        <img
+          src="/login.jpg"
+          className="h-full w-full absolute z-0 object-cover"
+          alt="Background"
+        />
+        <p className="w-fit z-20 absolute left-1/2 transform -translate-x-1/2 text-white text-[9vh] font-pixeboy glow-text text-center">
           Hackbattle 2024
         </p>
 
@@ -60,10 +63,10 @@ export default function Registration() {
         </div>
       </div>
 
-      <div className="relative h-screen w-full lg:hidden">
+      <div className="h-screen w-full lg:hidden">
         <img
           src="/teal.jpg"
-          className="h-full w-full absolute z-0 object-cover"
+          className="h-[110%] w-full absolute z-0 object-cover overflow-hidden"
           alt="Background"
         />
         <p className="z-30 relative top-16  text-white text-[5vh] font-pixeboy glow-text text-center">
