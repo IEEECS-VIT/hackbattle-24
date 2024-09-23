@@ -1,10 +1,10 @@
 export default function TeamNew({
   position = "Team Member",
-  name = "Add Member",
+  name = "Click To Add Member",
   setCodePopup,
 }) {
   const isTeamLeader = position === "Team Leader";
-  const isAddMember = name === "Add Member";
+  const isAddMember = name === "Click To Add Member";
 
   const backgroundColor = isTeamLeader
     ? "#3E8BFF"
@@ -52,7 +52,7 @@ export default function TeamNew({
                 {position}
               </button>
             </div>
-            <div className="font-mercutio lg:text-[2.5rem] text-white xl:ml-8 text-[2rem] ml-5 min-w-[15vw] max-w-[25vw] text-left leading-tight">
+            <div className="font-mercutio lg:text-[2.5rem] text-white xl:ml-8 text-[1.7rem] ml-5 min-w-[15vw] max-w-[25vw] text-left leading-tight">
               {name}
             </div>
           </div>

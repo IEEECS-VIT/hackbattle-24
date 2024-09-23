@@ -4,10 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const words = [
   "20+ YOE",
-  "DevOps Engineer",
-  "Cloud Expert",
-  "Agile Coach",
-  "Tech Guru",
+  "DevOps Evangelist",
+  "Author",
+  "Speaker",
+  "Youtuber",
+  "Spiritual Alchemist",
+  "Mentor",
+  "DevOps Ambassador",
 ];
 
 const CursorWord = ({ word, position }) => {
