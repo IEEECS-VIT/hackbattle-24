@@ -94,7 +94,7 @@ export default function Speaker() {
 
   return (
     <section
-      className="h-screen flex flex-col p-4 md:p-8 bg-gradient-to-br from-[#fb624c] to-[#ff8a70] overflow-hidden relative"
+      className="sm:h-screen h-[70vh] flex flex-col p-4 md:p-8 bg-gradient-to-br from-[#fb624c] to-[#ff8a70] overflow-hidden relative"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter} // Update mouse enter handler
       onMouseLeave={() => setIsAnimating(false)}
@@ -108,7 +108,7 @@ export default function Speaker() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-pixeboy text-black text-center mb-4"
+        className="text-6xl sm:text-5xl md:text-6xl lg:text-8xl font-pixeboy text-black text-center mb-4"
       >
         SPEAKER
       </motion.h1>

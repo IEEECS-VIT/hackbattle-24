@@ -13,15 +13,31 @@ export default function Tracks() {
       </p>
 
       {/* Container for the cards */}
-      <div className="w-full flex flex-wrap justify-center gap-12 lg:gap-8 p-4 pb-8 mt-4 ">
-        {/* First row with 1 image */}
-        <div className="w-full flex justify-center">
-          <Card title="" imageSrc="./technogreen_new.svg" />
+      <div className="w-full flex flex-wrap justify-center gap-8 lg:gap-8 p-4 pb-8 mt-4">
+        {/* Cards all taking full width with gap between them */}
+        <div className="w-full flex flex-col items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
+          <Card
+            title=""
+            imageSrc="./technogreen_new.svg"
+            className="w-full sm:w-auto"
+          />
+          <Card
+            title=""
+            imageSrc="./creamstone_new.svg"
+            className="w-full sm:w-auto"
+          />
         </div>
-        {/* Second row with 2 images */}
-        <div className="w-full flex justify-center space-x-12">
-          <Card title="" imageSrc="./burger_king_pixel.svg" />
-          <Card title="" imageSrc="./easemytrip_new.svg" />
+        <div className="w-full flex flex-col items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
+          <Card
+            title=""
+            imageSrc="./burger_king_pixel.svg"
+            className="w-full sm:w-auto"
+          />
+          <Card
+            title=""
+            imageSrc="./easemytrip_new.svg"
+            className="w-full sm:w-auto"
+          />
         </div>
       </div>
     </section>

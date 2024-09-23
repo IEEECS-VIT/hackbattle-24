@@ -99,7 +99,7 @@ function Team() {
     const allSlots = [
       ...teamMembers,
       ...Array(emptySlots).fill({
-        name: "Click To Add Member",
+        name: "Add Member",
         position: "Team Member",
       }),
     ];
