@@ -15,7 +15,6 @@ export default function RegistrationPopup({
   joinId,
 }) {
   const [loading, setLoading] = useState(false);
-  const isValidTeamName = (name) => /^[a-zA-Z0-9_ ]+$/.test(name);
 
   useEffect(() => {
     const handleJoinId = async () => {
@@ -58,7 +57,17 @@ export default function RegistrationPopup({
         window.location.href = "/team";
       }
     } catch (error) {
-      toast.error("Error creating team. Please try again.");
+      if (
+        error.response &&
+        (error.response.status === 400 || error.response.status === 404)
+      ) {
+        const errorMessage =
+          error.response.data?.error ||
+          "Bad Request. Please check the team code.";
+        toast.error(errorMessage);
+      } else {
+        toast.error("Error creating team. Please try again.");
+      }
       console.error("Error creating team:", error);
     } finally {
       setLoading(false);
@@ -84,11 +93,16 @@ export default function RegistrationPopup({
         return true;
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if (
+        error.response &&
+        (error.response.status === 400 || error.response.status === 404)
+      ) {
         const errorMessage =
           error.response.data?.error ||
           "Bad Request. Please check the team code.";
         toast.error(errorMessage);
+      } else if (error.response && error.response.status === 500) {
+        toast.error("Internal Server Error");
       } else {
         toast.error("Error joining team. Please try again.");
       }
@@ -108,19 +122,17 @@ export default function RegistrationPopup({
 
     if (isLeader) {
       if (teamName.trim()) {
-        if (isValidTeamName(teamName)) {
-          await createTeam(accessToken, teamName);
-        } else {
-          toast.error(
-            "Only letters, numbers, spaces, and underscores are allowed."
-          );
-        }
+        await createTeam(accessToken, teamName);
       } else {
         toast.error("Team name cannot be empty.");
       }
     } else {
       if (teamCode.trim()) {
-        await joinTeam(accessToken, teamCode);
+        if (/^\d{6}$/.test(teamCode)) {
+          await joinTeam(accessToken, teamCode);
+        } else {
+          toast.error("Team code must be exactly 6 digits.");
+        }
       } else {
         toast.error("Team code cannot be empty.");
       }

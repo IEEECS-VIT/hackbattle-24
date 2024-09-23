@@ -8,12 +8,13 @@ import Loading from "./loading";
 import toast from "react-hot-toast";
 import isAuth from "./isAuth";
 import { useRouter } from "next/navigation";
-import LeaveTeamPopup from "./LeaveTeamPopup"; // Import the new component
+import LeaveTeamPopup from "./LeaveTeamPopup";
 
 function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
-  const [leavePopup, setLeavePopup] = useState(false); // State for leave team popup
+  const [leavePopup, setLeavePopup] = useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   function routeToHome() {
@@ -36,25 +37,52 @@ function Team() {
         toast.success("Team data fetched successfully!");
       })
       .catch((error) => {
-        toast.error("Error fetching team details. Please try again.");
-        console.error("Error fetching team details:", error);
+        if (
+          error.response &&
+          (error.response?.status === 404 || error.response?.status === 400)
+        ) {
+          const errorMessage =
+            error.response.data?.error || "Error fetching team details";
+          toast.error(errorMessage);
+        } else {
+          toast.error("Error fetching team details. Please try again.");
+        }
         routeToHome();
       });
   }, []);
 
   const handleLeaveTeam = () => {
     setLeavePopup(false);
-    const accessToken = localStorage.getItem("AccessToken")
-    axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/leave-team`, {}, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      }
-    }).then(() => {
-      toast.success("You have left the team.");
-      routeToHome();
-    }).catch(error => {
-      toast.error("Error leaving the team. Please try again.");
-    });
+    const accessToken = localStorage.getItem("AccessToken");
+    setLoading(true);
+    axios
+      .post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/leave-team`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+      .then(() => {
+        setLoading(false);
+        toast.success("You have left the team.");
+        routeToHome();
+      })
+      .catch((error) => {
+        setLoading(false);
+        if (
+          error.response &&
+          (error.response.status === 400 || error.response.status === 404)
+        ) {
+          const errorMessage =
+            error.response.data?.error || "Error leaving the team.";
+          toast.error(errorMessage);
+        } else {
+          toast.error("Error leaving the team. Please try again.");
+        }
+      });
   };
 
   const renderTeamMembers = () => {
@@ -64,7 +92,7 @@ function Team() {
         position: member.isLeader ? "Team Leader" : "Team Member",
         logo: member.isLeader ? "/pacmanteam.svg" : "/pacmanmember.svg",
       }))
-      .sort((a, b) => (a.position === "Team Leader" ? -1 : 1));
+      .sort((a) => (a.position === "Team Leader" ? -1 : 1));
 
     const totalSlots = 6;
     const emptySlots = totalSlots - teamMembers.length;
@@ -88,7 +116,7 @@ function Team() {
 
   return (
     <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
-      {!teamData && <Loading />}
+      {(!teamData || loading) && <Loading />}
       <button
         className="absolute left-[3vw] top-[3vh] mt-1"
         onClick={routeToHome}
