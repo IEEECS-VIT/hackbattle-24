@@ -50,6 +50,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KRXQXY85DH"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-KRXQXY85DH');
+        </script>
         <link
           rel="preload"
           href="/fonts/Pixeboy.ttf"
