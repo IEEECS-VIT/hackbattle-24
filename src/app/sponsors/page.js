@@ -10,7 +10,7 @@ export default function Sponsors() {
       <Navbar />
 
       {/* Desktop View */}
-      <div className="relative w-full h-screen hidden lg:block bg-[#35167C] overflow-y-clip">
+      <div className="relative w-full h-full hidden lg:block bg-[#35167C]">
         
         {/* Background Image (absolute positioning behind the sponsor image) */}
         <div className="absolute inset-0 z-0 pt-12"> {/* Positioned absolutely to fill the screen */}
