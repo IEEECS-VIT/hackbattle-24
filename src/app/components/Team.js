@@ -115,12 +115,9 @@ function Team() {
   };
 
   return (
-    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')] md:pb-4">
+    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
       {(!teamData || loading) && <Loading />}
-      <button
-        className="absolute left-[3vw] top-[3vh] mt-1"
-        onClick={routeToHome}
-      >
+      <button className="absolute left-[3vw] top-[3vh]" onClick={routeToHome}>
         <img
           src="/back-arrow.svg"
           alt="arrow"
@@ -128,8 +125,8 @@ function Team() {
         />
       </button>
 
-      <div className="text-center mt-8">
-        <p className="font-pixeboy md:text-5xl text-3xl glow-text text-white">
+      <div className="text-center">
+        <p className="font-pixeboy md:text-5xl text-3xl glow-text text-white p-2">
           HACKBATTLE 2024
         </p>
         <p className="font-pixeboy md:text-5xl text-3xl  mt-8">
@@ -142,7 +139,7 @@ function Team() {
           </p>
         )}
         <button
-          className=" right-[3vw] md:top-[3vh] mt-[2vw] md:mt-[4vh] bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
+          className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
           onClick={() => setLeavePopup(true)}
         >
           Leave Team
@@ -150,7 +147,7 @@ function Team() {
       </div>
 
       <div
-        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 md:mb-0 pb-12 ${
+        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 md:mb-0 pb-8 ${
           !teamData ? "opacity-30" : ""
         }`}
       >

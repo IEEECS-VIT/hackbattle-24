@@ -64,8 +64,10 @@ export default function Landing({ loginStatus }) {
           />
           <div data-aos="zoom-in">
             <p className="text-3xl">techknowgreen presents.....</p>
-            <p className="font-crackman text-8xl text-black">HACK</p>
-            <p className="font-crackman text-8xl">BATTLE</p>
+            <p className="font-crackman sm:text-8xl text-7xl text-black">
+              HACK
+            </p>
+            <p className="font-crackman sm:text-8xl text-7xl">BATTLE</p>
           </div>
           <button
             className={`bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl ${
