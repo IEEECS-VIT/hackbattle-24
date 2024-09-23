@@ -19,6 +19,7 @@ export default function RegistrationPopup({
   useEffect(() => {
     const handleJoinId = async () => {
       if (joinId) {
+
         const accessToken = localStorage.getItem("AccessToken");
         if (accessToken) {
           try {
@@ -43,7 +44,7 @@ export default function RegistrationPopup({
       setLoading(true);
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/create-team`,
-        { teamName: teamName },
+        { teamName: teamName.toUpperCase() },
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
