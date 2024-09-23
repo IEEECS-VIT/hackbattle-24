@@ -142,7 +142,7 @@ function Team() {
           </p>
         )}
         <button
-          className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
+          className=" right-[3vw] md:top-[3vh] mt-[2vw] md:mt-[4vh] bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
           onClick={() => setLeavePopup(true)}
         >
           Leave Team
@@ -150,7 +150,7 @@ function Team() {
       </div>
 
       <div
-        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 md:mb-0 mb-20 ${
+        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 md:mb-0 pb-12 ${
           !teamData ? "opacity-30" : ""
         }`}
       >
