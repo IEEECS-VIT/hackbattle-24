@@ -115,7 +115,7 @@ function Team() {
   };
 
   return (
-    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]">
+    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]  lg:pb-16">
       {(!teamData || loading) && <Loading />}
       <button
         className="absolute left-[3vw] top-[3vh] mt-1"
@@ -145,7 +145,7 @@ function Team() {
       </div>
 
       <div
-        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-16 md:mb-0 mb-20 ${
+        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 lg:mt-16 md:mb-0 mb-20 ${
           !teamData ? "opacity-30" : ""
         }`}
       >
