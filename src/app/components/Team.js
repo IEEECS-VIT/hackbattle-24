@@ -99,7 +99,7 @@ function Team() {
     const allSlots = [
       ...teamMembers,
       ...Array(emptySlots).fill({
-        name: "Add Member",
+        name: "Click To Add Member",
         position: "Team Member",
       }),
     ];
@@ -115,7 +115,7 @@ function Team() {
   };
 
   return (
-    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')]  lg:pb-16">
+    <div className="h-screen overflow-auto bg-[#FF553E] relative bg-[url('/pixel.svg')] md:pb-4">
       {(!teamData || loading) && <Loading />}
       <button
         className="absolute left-[3vw] top-[3vh] mt-1"
@@ -132,10 +132,15 @@ function Team() {
         <p className="font-pixeboy md:text-5xl text-3xl glow-text text-white">
           HACKBATTLE 2024
         </p>
-        <p className="font-pixeboy md:text-5xl text-3xl mb-[2vw] mt-8">
+        <p className="font-pixeboy md:text-5xl text-3xl  mt-8">
           {"Your team : "}
           {teamData ? teamData.teamName : "Loading..."}
         </p>
+        {teamData && teamData.teamMembers.length < 3 && (
+          <p className="text-[1.1rem] text-sans text-yellow-200 font-bold">
+            *Teams should have atleast 3 members to participate
+          </p>
+        )}
         <button
           className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
           onClick={() => setLeavePopup(true)}
@@ -145,7 +150,7 @@ function Team() {
       </div>
 
       <div
-        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 lg:mt-16 md:mb-0 mb-20 ${
+        className={`flex justify-around items-center flex-wrap lg:flex-row flex-col lg:gap-y-16 gap-y-8 mt-12 md:mb-0 mb-20 ${
           !teamData ? "opacity-30" : ""
         }`}
       >

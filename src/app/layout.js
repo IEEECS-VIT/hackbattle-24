@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
       >
         <Toaster position="bottom-right" toastOptions={toastOptions} />
         {children}
-        <GoogleAnalytics gaId="G-BWH9M7QSWP" />
+        <GoogleAnalytics gaId="G-KRXQXY85DH" />
       </body>
     </html>
   );
