@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const pixeboy = localFont({
   src: "fonts/Pixeboy.ttf",
@@ -50,15 +51,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KRXQXY85DH"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-KRXQXY85DH');
-        </script>
         <link
           rel="preload"
           href="/fonts/Pixeboy.ttf"
@@ -68,7 +60,7 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="preload"
-          href="/fonts/Crackman.otf"
+          href="public/fonts/Crackman.otf"
           as="font"
           type="font/otf"
           crossOrigin="anonymous"
@@ -87,6 +79,7 @@ export default function RootLayout({ children }) {
       >
         <Toaster position="bottom-right" toastOptions={toastOptions} />
         {children}
+        <GoogleAnalytics gaId="G-KRXQXY85DH" />
       </body>
     </html>
   );
