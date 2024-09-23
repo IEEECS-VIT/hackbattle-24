@@ -73,7 +73,9 @@ export default function Home() {
           text={loginStatus}
           setGoogleVisible={() => setGoogleVisible(true)}
         />
-        <Landing loginStatus={loginStatus} />
+        <Landing loginStatus={loginStatus}
+        setGoogleVisible={() => setGoogleVisible(true)}
+        />
         <About />
         <Tracks />
         <Speaker />
