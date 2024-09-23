@@ -12,9 +12,10 @@ import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import toast from "react-hot-toast";
 
 export default function Landing({ loginStatus }) {
-  const eventDate = new Date("2024-09-25T08:00:00");
+  const eventDate = new Date("2024-09-25T10:00:00");
 
   const [authStatus, setAuthStatus] = useState(loginStatus);
+  const [isCountdownComplete, setCountdownComplete] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -74,25 +75,33 @@ export default function Landing({ loginStatus }) {
           >
             {authStatus === "unauthenticated" ? "Join Team" : "Dashboard"}
           </button>
-          <p className="text-2xl text-white" data-aos="fade-up">
-            HACK STARTS IN...
-          </p>
-          <FlipClockCountdown
-            digitBlockStyle={{
-              color: "black",
-              backgroundColor: "yellow",
-              height: 40,
-              width: 30,
-              fontSize: 30,
-              fontWeight: 600,
-            }}
-            dividerStyle={{
-              backgroundColor: "blue",
-              color: "blue",
-              height: 2,
-            }}
-            to={eventDate.getTime()}
-          />
+
+          {!isCountdownComplete && ( // Conditionally render text and countdown
+            <>
+              <p className="text-2xl text-white" data-aos="fade-up">
+                HACK STARTS IN...
+              </p>
+              <FlipClockCountdown
+                digitBlockStyle={{
+                  color: "black",
+                  backgroundColor: "yellow",
+                  height: 40,
+                  width: 30,
+                  fontSize: 30,
+                  fontWeight: 600,
+                }}
+                dividerStyle={{
+                  backgroundColor: "blue",
+                  color: "blue",
+                  height: 2,
+                }}
+                to={eventDate.getTime()}
+                onComplete={() => {
+                  setCountdownComplete(true); // Set countdown as complete
+                }}
+              />
+            </>
+          )}
         </section>
         <Image
           src={abstractbg}
