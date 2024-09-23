@@ -1,10 +1,10 @@
 export default function TeamNew({
   position = "Team Member",
-  name = "Click To Add Member",
+  name = "Add Member",
   setCodePopup,
 }) {
   const isTeamLeader = position === "Team Leader";
-  const isAddMember = name === "Click To Add Member";
+  const isAddMember = name === "Add Member";
 
   const backgroundColor = isTeamLeader
     ? "#3E8BFF"
