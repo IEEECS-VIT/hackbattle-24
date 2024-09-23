@@ -11,7 +11,6 @@ import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";
 // import Loading from "./components/loading";
 import Google from "./components/Google";
-import Card from "./components/cards";
 import Speaker from "./components/speaker";
 
 export default function Home() {
@@ -80,7 +79,6 @@ export default function Home() {
         <Tracks />
         <Speaker />
         <Conducted />
-        <Card/>
         <FAQ />
       </main>
     </>
