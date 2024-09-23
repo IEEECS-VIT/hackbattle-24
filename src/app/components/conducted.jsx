@@ -15,7 +15,7 @@ export default function Tracks() {
       {/* Container for the cards */}
       <div className="w-full flex flex-wrap justify-center gap-8 lg:gap-8 p-4 pb-8 mt-4">
         {/* Cards all taking full width with gap between them */}
-        <div className="w-full flex flex-col items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
+        <div className="w-full flex flex-col justify-center items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
           <Card
             title=""
             imageSrc="./technogreen_new.svg"
@@ -27,7 +27,7 @@ export default function Tracks() {
             className="w-full sm:w-auto"
           />
         </div>
-        <div className="w-full flex flex-col items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
+        <div className="w-full flex flex-col justify-center items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
           <Card
             title=""
             imageSrc="./burger_king_pixel.svg"
