@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import Landing from "./components/landing";
 import About from "./components/about";
+import { toast } from "react-hot-toast";
 import Tracks from "./components/track";
 import Conducted from "./components/conducted";
 import FAQ from "./components/Faq";

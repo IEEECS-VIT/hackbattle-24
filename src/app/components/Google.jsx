@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
 import Loading from "./loading";
+import toast from "react-hot-toast";
 
 export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
   const [loading, setLoading] = useState(false);
@@ -55,6 +56,15 @@ export default function GoogleModal({ visible, onClose, onLoginSuccess }) {
         window.location.href = "/team";
       }
     } catch (error) {
+      if (error.response.status === 401) {
+        toast.error("Unable to verify token.Login Again");
+        localStorage.removeItem("AccessToken");
+        localStorage.removeItem("UserStatus");
+      } else if (error.response && error.response.status === 404) {
+        toast.error("User not registered for event.");
+        localStorage.removeItem("AccessToken");
+        localStorage.removeItem("UserStatus");
+      }
       setLoading(false);
       console.error("Error fetching user context:", error);
       // Handle error (e.g., show error message to user)
