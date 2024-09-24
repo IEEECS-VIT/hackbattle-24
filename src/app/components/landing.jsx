@@ -60,13 +60,13 @@ export default function Landing({ loginStatus }) {
     if (now < new Date("2024-09-25T10:00:00")) {
       return "HACK STARTS IN...";
     } else if (now < new Date("2024-09-25T16:30:00")) {
-      return "NEXT EVENT AT 4:30 PM...";
-    } else if (now < new Date("2024-09-25T23:00:00")) {
-      return "NEXT EVENT AT 11:00 PM...";
+      return "REVIEW-0 AT 4:30 PM...";
+    } else if (now < new Date("2024-09-25T22:30:00")) {
+      return "REVIEW-1 AT 10:30 PM...";
     } else if (now < new Date("2024-09-26T04:30:00")) {
-      return "NEXT EVENT AT 4:30 AM...";
+      return "REVIEW-2 AT 4:30 AM...";
     } else if (now < new Date("2024-09-26T14:00:00")) {
-      return "NEXT EVENT AT 2:00 PM...";
+      return "REVIEW-3 AT 2:00 PM...";
     } else {
       return "ALL EVENTS COMPLETED";
     }
