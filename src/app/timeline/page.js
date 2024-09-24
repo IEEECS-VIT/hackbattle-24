@@ -4,8 +4,11 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import Image from "next/image";
 import Card from "../components/cards";
+import Google from "../components/Google"
 
 export default function Timeline() {
+  const [googleVisible, setGoogleVisible] = useState(false);
+  const [loginStatus, setLoginStatus] = useState("LOGIN");
   const [type, setType] = useState(2);
 
   const handleChangeState = (newState) => {
@@ -14,9 +17,28 @@ export default function Timeline() {
     }
   };
 
+  const handleLoginAction = () => {
+    if (loginStatus === "LOGIN") {
+      setGoogleVisible(true);
+    } else {
+      localStorage.removeItem("AccessToken");
+      localStorage.removeItem("UserStatus");
+    }
+  };
+  
   return (
     <div className="overflow-hidden ">
-      <Navbar text="LOGIN"/>
+      <Google
+          visible={googleVisible}
+          onClose={() => setGoogleVisible(false)}
+          onLoginSuccess={() => {
+            setLoginStatus("TEAM");
+            setGoogleVisible(false);
+          }}
+        />
+      <Navbar loginAction={handleLoginAction}
+          text={loginStatus}
+          setGoogleVisible={() => setGoogleVisible(true)}/>
       <section className="relative w-screen h-[100vh] md:h-[100vh] bg-[#5AD178] overflow-hidden">
         {/* Dynamically use images based on the `type` state */}
         <div className="hidden lg:block" > 
