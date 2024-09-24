@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       boxShadow: {
         custom: '-1rem 1rem 0 0 black',
+        purple_shadow: '0 4px 20px rgba(128, 0, 128, 0.5)', 
       },
       backgroundImage: {
         "memories":"url('/memories.svg')",
