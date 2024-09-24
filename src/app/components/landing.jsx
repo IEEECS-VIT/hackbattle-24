@@ -11,10 +11,11 @@ import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import toast from "react-hot-toast";
 
-export default function Landing({ loginStatus, setGoogleVisible }) {
-  const eventDate = new Date("2024-09-25T10:00:00");
+
+export default function Landing({ loginStatus }) {
 
   const [authStatus, setAuthStatus] = useState(loginStatus);
+  const [eventTime, setEventTime] = useState(new Date("2024-09-25T10:00:00"));
   const [isCountdownComplete, setCountdownComplete] = useState(false);
 
   useEffect(() => {
@@ -24,12 +25,27 @@ export default function Landing({ loginStatus, setGoogleVisible }) {
       once: true,
     });
 
-    // Sync authStatus with loginStatus prop
     const accessToken = localStorage.getItem("AccessToken");
     if (accessToken) {
       setAuthStatus("authenticated");
     } else {
       setAuthStatus("unauthenticated");
+    }
+
+    // Set the timer dynamically based on the current time
+    const now = new Date();
+    if (now < new Date("2024-09-25T10:00:00")) {
+      setEventTime(new Date("2024-09-25T10:00:00"));
+    } else if (now < new Date("2024-09-25T16:30:00")) {
+      setEventTime(new Date("2024-09-25T16:30:00"));
+    } else if (now < new Date("2024-09-25T23:00:00")) {
+      setEventTime(new Date("2024-09-25T23:00:00"));
+    } else if (now < new Date("2024-09-26T04:30:00")) {
+      setEventTime(new Date("2024-09-26T04:30:00"));
+    } else if (now < new Date("2024-09-26T14:00:00")) {
+      setEventTime(new Date("2024-09-26T14:00:00"));
+    } else {
+      setCountdownComplete(true); // No more events
     }
   }, [loginStatus]);
 
@@ -38,6 +54,23 @@ export default function Landing({ loginStatus, setGoogleVisible }) {
       setGoogleVisible(true);
     } else {
       window.location.href = "/team"; // Redirect to team/dashboard
+    }
+  };
+
+  const getEventMessage = () => {
+    const now = new Date();
+    if (now < new Date("2024-09-25T10:00:00")) {
+      return "HACK STARTS IN...";
+    } else if (now < new Date("2024-09-25T16:30:00")) {
+      return "REVIEW-0 AT 4:30 PM...";
+    } else if (now < new Date("2024-09-25T22:30:00")) {
+      return "REVIEW-1 AT 10:30 PM...";
+    } else if (now < new Date("2024-09-26T04:30:00")) {
+      return "REVIEW-2 AT 4:30 AM...";
+    } else if (now < new Date("2024-09-26T14:00:00")) {
+      return "REVIEW-3 AT 2:00 PM...";
+    } else {
+      return "ALL EVENTS COMPLETED";
     }
   };
 
@@ -76,10 +109,10 @@ export default function Landing({ loginStatus, setGoogleVisible }) {
             {authStatus === "unauthenticated" ? "Join Team" : "Dashboard"}
           </button>
 
-          {!isCountdownComplete && ( // Conditionally render text and countdown
+          {!isCountdownComplete && (
             <>
               <p className="text-2xl text-white" data-aos="fade-up">
-                HACK STARTS IN...
+                {getEventMessage()}
               </p>
               <FlipClockCountdown
                 digitBlockStyle={{
@@ -95,9 +128,10 @@ export default function Landing({ loginStatus, setGoogleVisible }) {
                   color: "blue",
                   height: 2,
                 }}
-                to={eventDate.getTime()}
+                to={eventTime.getTime()}
                 onComplete={() => {
-                  setCountdownComplete(true); // Set countdown as complete
+                  // Handle the next countdown event
+                  setCountdownComplete(true);
                 }}
               />
             </>

@@ -4,7 +4,7 @@ export default function ImageComponent({ img }) {
   return (
     <div className="flex justify-center items-center w-full">
       <div className="w-[30vw] h-auto relative">
-        <Image
+        <img
           src={img}
           alt="speaker"
           layout="fill"
