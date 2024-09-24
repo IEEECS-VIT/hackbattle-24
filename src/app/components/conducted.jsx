@@ -1,5 +1,9 @@
 import TeamCode from "./Code";
 import Card from "./spon_single_component";
+import technoGreen from "../../../public/technogreen_new.svg";
+import creamStone from "../../../public/creamstone_new.svg";
+import burgerKing from "../../../public/burger_king_pixel.svg";
+import easeMyTrip from "../../../public/easemytrip_new.svg";
 
 export default function Tracks() {
   return (
@@ -18,24 +22,24 @@ export default function Tracks() {
         <div className="w-full flex flex-col justify-center items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
           <Card
             title=""
-            imageSrc="./technogreen_new.svg"
+            imageSrc={technoGreen}
             className="w-full sm:w-auto"
           />
           <Card
             title=""
-            imageSrc="./creamstone_new.svg"
+            imageSrc={creamStone}
             className="w-full sm:w-auto"
           />
         </div>
         <div className="w-full flex flex-col justify-center items-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-12">
           <Card
             title=""
-            imageSrc="./burger_king_pixel.svg"
+            imageSrc={burgerKing}
             className="w-full sm:w-auto"
           />
           <Card
             title=""
-            imageSrc="./easemytrip_new.svg"
+            imageSrc={easeMyTrip}
             className="w-full sm:w-auto"
           />
         </div>
