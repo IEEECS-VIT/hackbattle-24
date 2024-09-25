@@ -9,9 +9,7 @@ import toast from "react-hot-toast";
 import isAuth from "./isAuth";
 import { useRouter } from "next/navigation";
 import LeaveTeamPopup from "./LeaveTeamPopup";
-
-import SubmissionPopup from "./submissionPopup"; // Import the Submissions Popup
-
+import SubmissionPopup from "./submissionPopup";
 import Notifs from "./Notifs";
 
 function Team() {
@@ -167,12 +165,12 @@ function Team() {
           </p>
         )}
         <div className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 space-x-4">
-          <button
+          {/* <button
             className="bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
             onClick={() => setLeavePopup(true)}
           >
             Leave Team
-          </button>
+          </button> */}
           <button
             className="bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
             onClick={() => setSubmissionPopup(true)} // Button to trigger SubmissionsPopup
@@ -196,16 +194,16 @@ function Team() {
           setCodePopup={setCodePopup}
         />
       )}
-      <LeaveTeamPopup
+      {/* <LeaveTeamPopup
         visible={leavePopup}
         onConfirm={handleLeaveTeam}
         onCancel={() => setLeavePopup(false)}
-      />
+      /> */}
       <SubmissionPopup
         visible={submissionPopup}
         onConfirm={() => setSubmissionPopup(false)} // Close popup after submission
         onCancel={() => setSubmissionPopup(false)} // Cancel submission popup
-
+      />
       <Notifs
         visible={notifPopup}
         reviewNumber={currentReview}
