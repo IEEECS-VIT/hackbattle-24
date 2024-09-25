@@ -9,7 +9,7 @@ import Google from "../components/Google"
 export default function Timeline() {
   const [googleVisible, setGoogleVisible] = useState(false);
   const [loginStatus, setLoginStatus] = useState("LOGIN");
-  const [type, setType] = useState(1);
+  const [type, setType] = useState(2);
 
   const handleChangeState = (newState) => {
     if (newState >= 1 && newState <= 7) {
