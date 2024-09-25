@@ -8,14 +8,14 @@ import Loading from "./loading";
 import toast from "react-hot-toast";
 import isAuth from "./isAuth";
 import { useRouter } from "next/navigation";
-import LeaveTeamPopup from "./LeaveTeamPopup";
+// import LeaveTeamPopup from "./LeaveTeamPopup";
 import SubmissionPopup from "./submissionPopup";
 import Notifs from "./Notifs";
 
 function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
-  const [leavePopup, setLeavePopup] = useState(false);
+  // const [leavePopup, setLeavePopup] = useState(false);
   const [submissionPopup, setSubmissionPopup] = useState(false); // State for SubmissionsPopup
   const [loading, setLoading] = useState(false);
   const [notifPopup, setNotifPopup] = useState(false);
