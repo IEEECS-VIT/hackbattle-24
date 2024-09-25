@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Draggable from "react-draggable";
+import Loading from "./loading";
 
 const SubmissionPopup = ({ visible, onCancel }) => {
   const [submission1, setSubmission1] = useState(
@@ -11,6 +12,7 @@ const SubmissionPopup = ({ visible, onCancel }) => {
   const [submission3, setSubmission3] = useState("");
   const [selectedTrack, setSelectedTrack] = useState("");
   const [trackSubmitted, setTrackSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const tracks = [
     "Game Dev",
@@ -43,6 +45,7 @@ const SubmissionPopup = ({ visible, onCancel }) => {
     }
 
     try {
+      setIsLoading(true);
       const trackResponse = await axios.put(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/submit/track-submission`,
         { track: selectedTrack },
@@ -53,10 +56,12 @@ const SubmissionPopup = ({ visible, onCancel }) => {
         }
       );
 
-      if (trackResponse?.data?.status === 1) {
+      if (trackResponse?.status === 200) {
         setTrackSubmitted(true);
-        toast.success("Track submission successful!");
+        // toast.success("Track submission successful!");
+        onCancel();
       } else {
+        setIsLoading(false);
         const errorMessage = trackResponse?.data?.error;
         if (errorMessage) {
           toast.error(errorMessage);
@@ -80,17 +85,19 @@ const SubmissionPopup = ({ visible, onCancel }) => {
         }
       );
 
-      if (linkResponse?.data?.status === 1) {
+      if (linkResponse?.status === 200) {
         toast.success("Link submission successful!");
         localStorage.setItem("githubLink", submission1);
         onCancel();
       }
     } catch (error) {
+      setIsLoading(false);
       handleSubmissionError(error);
     }
   };
 
   const handleSubmissionError = (error) => {
+    setIsLoading(false);
     if (error.response?.status === 400) {
       const errorMessage = error.response?.data?.error;
       if (errorMessage === "Track already submitted") {
@@ -118,6 +125,7 @@ const SubmissionPopup = ({ visible, onCancel }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-500 backdrop-blur-sm ">
+      {isLoading && <Loading />}
       <Draggable handle=".handle">
         <div className="h-fit sm:w-[450px] w-[90%]  rounded-lg bg-red-600 relative overflow-y-auto flex flex-col border-black border-2 ">
           <div className="bg-yellow-300 text-center py-2 flex justify-between items-center border-b-2 border-pink-300 px-4 handle cursor-move">
