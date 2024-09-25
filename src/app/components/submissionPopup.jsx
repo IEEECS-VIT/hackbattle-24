@@ -57,6 +57,7 @@ const SubmissionPopup = ({ visible, onCancel }) => {
       );
 
       if (trackResponse?.status === 200) {
+        setIsLoading(false);
         setTrackSubmitted(true);
         // toast.success("Track submission successful!");
         onCancel();
@@ -86,6 +87,7 @@ const SubmissionPopup = ({ visible, onCancel }) => {
       );
 
       if (linkResponse?.status === 200) {
+        setIsLoading(false);
         toast.success("Link submission successful!");
         localStorage.setItem("githubLink", submission1);
         onCancel();
