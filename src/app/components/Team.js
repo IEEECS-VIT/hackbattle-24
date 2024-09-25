@@ -9,11 +9,13 @@ import toast from "react-hot-toast";
 import isAuth from "./isAuth";
 import { useRouter } from "next/navigation";
 import LeaveTeamPopup from "./LeaveTeamPopup";
+import SubmissionPopup from "./submissionPopup"; // Import the Submissions Popup
 
 function Team() {
   const [teamData, setTeamData] = useState(null);
   const [codePopup, setCodePopup] = useState(false);
   const [leavePopup, setLeavePopup] = useState(false);
+  const [submissionPopup, setSubmissionPopup] = useState(false); // State for SubmissionsPopup
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -135,15 +137,23 @@ function Team() {
         </p>
         {teamData && teamData.teamMembers.length < 3 && (
           <p className="text-[1.1rem] text-sans text-yellow-200 font-bold">
-            *Teams should have atleast 3 members to participate
+            *Teams should have at least 3 members to participate
           </p>
         )}
-        <button
-          className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
-          onClick={() => setLeavePopup(true)}
-        >
-          Leave Team
-        </button>
+        <div className="md:absolute md:right-[3vw] md:top-[3vh] mt-[2vw] md:mt-0 space-x-4">
+          <button
+            className="bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
+            onClick={() => setLeavePopup(true)}
+          >
+            Leave Team
+          </button>
+          <button
+            className="bg-[#F5ED02] border-2 border-black p-3 text-3xl font-pixeboy"
+            onClick={() => setSubmissionPopup(true)} // Button to trigger SubmissionsPopup
+          >
+            Submissions
+          </button>
+        </div>
       </div>
 
       <div
@@ -164,6 +174,11 @@ function Team() {
         visible={leavePopup}
         onConfirm={handleLeaveTeam}
         onCancel={() => setLeavePopup(false)}
+      />
+      <SubmissionPopup
+        visible={submissionPopup}
+        onConfirm={() => setSubmissionPopup(false)} // Close popup after submission
+        onCancel={() => setSubmissionPopup(false)} // Cancel submission popup
       />
     </div>
   );
