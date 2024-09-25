@@ -17,7 +17,7 @@ function Team() {
   const [codePopup, setCodePopup] = useState(false);
   // const [leavePopup, setLeavePopup] = useState(false);
   const [submissionPopup, setSubmissionPopup] = useState(false); // State for SubmissionsPopup
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [notifPopup, setNotifPopup] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
   const [cleared, setCleared] = useState(false);
@@ -77,39 +77,39 @@ function Team() {
       });
   }, []);
 
-  const handleLeaveTeam = () => {
-    setLeavePopup(false);
-    const accessToken = localStorage.getItem("AccessToken");
-    setLoading(true);
-    axios
-      .post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/leave-team`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
-      .then(() => {
-        setLoading(false);
-        toast.success("You have left the team.");
-        routeToHome();
-      })
-      .catch((error) => {
-        setLoading(false);
-        if (
-          error.response &&
-          (error.response.status === 400 || error.response.status === 404)
-        ) {
-          const errorMessage =
-            error.response.data?.error || "Error leaving the team.";
-          toast.error(errorMessage);
-        } else {
-          toast.error("Error leaving the team. Please try again.");
-        }
-      });
-  };
+  // const handleLeaveTeam = () => {
+  //   setLeavePopup(false);
+  //   const accessToken = localStorage.getItem("AccessToken");
+  //   setLoading(true);
+  //   axios
+  //     .post(
+  //       `${process.env.NEXT_PUBLIC_BACKEND_URL}/leave-team`,
+  //       {},
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}`,
+  //         },
+  //       }
+  //     )
+  //     .then(() => {
+  //       setLoading(false);
+  //       toast.success("You have left the team.");
+  //       routeToHome();
+  //     })
+  //     .catch((error) => {
+  //       setLoading(false);
+  //       if (
+  //         error.response &&
+  //         (error.response.status === 400 || error.response.status === 404)
+  //       ) {
+  //         const errorMessage =
+  //           error.response.data?.error || "Error leaving the team.";
+  //         toast.error(errorMessage);
+  //       } else {
+  //         toast.error("Error leaving the team. Please try again.");
+  //       }
+  //     });
+  // };
 
   const renderTeamMembers = () => {
     const teamMembers = teamData.teamMembers
