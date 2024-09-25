@@ -15,7 +15,7 @@ import toast from "react-hot-toast";
 export default function Landing({ loginStatus }) {
 
   const [authStatus, setAuthStatus] = useState(loginStatus);
-  const [eventTime, setEventTime] = useState(new Date("2024-09-25T10:00:00"));
+  const [eventTime, seteventTime] = useState(new Date("2024-09-25T10:00:00"));
   const [isCountdownComplete, setCountdownComplete] = useState(false);
 
   useEffect(() => {
@@ -33,21 +33,21 @@ export default function Landing({ loginStatus }) {
     }
 
     // Set the timer dynamically based on the current time
-    const now = new Date();
+    const now = new Date(); 
     if (now < new Date("2024-09-25T10:00:00")) {
-      setEventTime(new Date("2024-09-25T10:00:00"));
+      seteventTime(new Date("2024-09-25T10:00:00"));
     } else if (now < new Date("2024-09-25T16:30:00")) {
-      setEventTime(new Date("2024-09-25T16:30:00"));
+      seteventTime(new Date("2024-09-25T16:30:00"));
     } else if (now < new Date("2024-09-25T23:00:00")) {
-      setEventTime(new Date("2024-09-25T23:00:00"));
+      seteventTime(new Date("2024-09-25T23:00:00"));
     } else if (now < new Date("2024-09-26T04:30:00")) {
-      setEventTime(new Date("2024-09-26T04:30:00"));
+      seteventTime(new Date("2024-09-26T04:30:00"));
     } else if (now < new Date("2024-09-26T14:00:00")) {
-      setEventTime(new Date("2024-09-26T14:00:00"));
+      seteventTime(new Date("2024-09-26T14:00:00"));
     } else {
       setCountdownComplete(true); // No more events
     }
-  }, [loginStatus]);
+  },);
 
   const handleButtonClick = () => {
     if (authStatus === "unauthenticated") {
@@ -109,8 +109,8 @@ export default function Landing({ loginStatus }) {
             {authStatus === "unauthenticated" ? "Join Team" : "Dashboard"}
           </button>
 
-          {!isCountdownComplete && (
-            <>
+          {{isCountdownComplete} &&
+          <>
               <p className="text-2xl text-white" data-aos="fade-up">
                 {getEventMessage()}
               </p>
@@ -135,7 +135,8 @@ export default function Landing({ loginStatus }) {
                 }}
               />
             </>
-          )}
+}
+          
         </section>
         <Image
           src={abstractbg}
