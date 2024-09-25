@@ -11,7 +11,9 @@ import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import toast from "react-hot-toast";
 
+
 export default function Landing({ loginStatus }) {
+
   const [authStatus, setAuthStatus] = useState(loginStatus);
   const [eventTime, setEventTime] = useState(new Date("2024-09-25T10:00:00"));
   const [isCountdownComplete, setCountdownComplete] = useState(false);
@@ -49,7 +51,7 @@ export default function Landing({ loginStatus }) {
 
   const handleButtonClick = () => {
     if (authStatus === "unauthenticated") {
-      toast.error("Please login to join the team.");
+      setGoogleVisible(true);
     } else {
       window.location.href = "/team"; // Redirect to team/dashboard
     }
@@ -101,9 +103,7 @@ export default function Landing({ loginStatus }) {
             <p className="font-crackman sm:text-8xl text-7xl">BATTLE</p>
           </div>
           <button
-            className={`bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl ${
-              authStatus === "unauthenticated" ? "cursor-not-allowed" : ""
-            }`}
+            className={`bg-[#F5ED02] border-2 border-black max-w-[250px] p-3  text-3xl `}
             onClick={handleButtonClick}
           >
             {authStatus === "unauthenticated" ? "Join Team" : "Dashboard"}

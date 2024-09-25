@@ -9,7 +9,10 @@ import toast from "react-hot-toast";
 import isAuth from "./isAuth";
 import { useRouter } from "next/navigation";
 import LeaveTeamPopup from "./LeaveTeamPopup";
+
 import SubmissionPopup from "./submissionPopup"; // Import the Submissions Popup
+
+import Notifs from "./Notifs";
 
 function Team() {
   const [teamData, setTeamData] = useState(null);
@@ -17,6 +20,9 @@ function Team() {
   const [leavePopup, setLeavePopup] = useState(false);
   const [submissionPopup, setSubmissionPopup] = useState(false); // State for SubmissionsPopup
   const [loading, setLoading] = useState(false);
+  const [notifPopup, setNotifPopup] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [cleared, setCleared] = useState(false);
   const router = useRouter();
 
   function routeToHome() {
@@ -35,7 +41,27 @@ function Team() {
         },
       })
       .then((res) => {
+        console.log(res.data);
         setTeamData(res.data);
+        if (res.data.status === 0) {
+          setNotifPopup(false);
+        } else if (res.data.status === 1) {
+          setNotifPopup(true);
+          setCurrentReview(2);
+          setCleared(false);
+        } else if (res.data.status === 2) {
+          setNotifPopup(true);
+          setCurrentReview(2);
+          setCleared(true);
+        } else if (res.data.status === 3) {
+          setNotifPopup(true);
+          setCurrentReview(3);
+          setCleared(false);
+        } else if (res.data.status === 4) {
+          setNotifPopup(true);
+          setCurrentReview(3);
+          setCleared(true);
+        }
         toast.success("Team data fetched successfully!");
       })
       .catch((error) => {
@@ -179,6 +205,12 @@ function Team() {
         visible={submissionPopup}
         onConfirm={() => setSubmissionPopup(false)} // Close popup after submission
         onCancel={() => setSubmissionPopup(false)} // Cancel submission popup
+
+      <Notifs
+        visible={notifPopup}
+        reviewNumber={currentReview}
+        cleared={cleared}
+        setVisibility={setNotifPopup}
       />
     </div>
   );
